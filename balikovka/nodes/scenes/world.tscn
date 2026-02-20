@@ -12,7 +12,7 @@ packages_to_spawn = Array[PackedScene]([ExtResource("1_c64on")])
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=2039203491]
 self_modulate = Color(0.12591085, 0.12591085, 0.12591082, 1)
-position = Vector2(608, 532)
+position = Vector2(584, 536)
 scale = Vector2(5, 1.09375)
 texture = ExtResource("2_eml1y")
 
