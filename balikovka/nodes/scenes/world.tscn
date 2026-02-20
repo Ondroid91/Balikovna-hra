@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bn7l5ehykng4a"]
+
+[ext_resource type="PackedScene" uid="uid://dw2eqo2q0nl5y" path="res://nodes/objects/package.tscn" id="1_c64on"]
+[ext_resource type="Texture2D" uid="uid://bhxrwinq87ld7" path="res://icon.svg" id="2_eml1y"]
+[ext_resource type="PackedScene" uid="uid://cjwgm70gk5hpi" path="res://nodes/objects/machine.tscn" id="2_yecwc"]
+
+[node name="world" type="Node2D" unique_id=536107681]
+
+[node name="machine" parent="." unique_id=375230722 node_paths=PackedStringArray("table_pos") instance=ExtResource("2_yecwc")]
+table_pos = NodePath("../table_pos")
+packages_to_spawn = Array[PackedScene]([ExtResource("1_c64on")])
+
+[node name="Icon" type="Sprite2D" parent="." unique_id=2039203491]
+self_modulate = Color(0.12591085, 0.12591085, 0.12591082, 1)
+position = Vector2(608, 532)
+scale = Vector2(5, 1.09375)
+texture = ExtResource("2_eml1y")
+
+[node name="Marker2D2" type="Marker2D" parent="." unique_id=223124965]
+position = Vector2(616, 338)
+
+[node name="table_pos" type="Marker2D" parent="." unique_id=273368610]
+position = Vector2(608, 522)

@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bjyihwwmtp8w2"]
+
+[ext_resource type="Script" uid="uid://cj2bs26jcg4hd" path="res://scripts/scenes/main_scene.gd" id="1_nnkd3"]
+[ext_resource type="PackedScene" uid="uid://bn7l5ehykng4a" path="res://nodes/scenes/world.tscn" id="2_genem"]
+
+[node name="main_scene" type="Node" unique_id=692884037 node_paths=PackedStringArray("currrent_scene")]
+script = ExtResource("1_nnkd3")
+currrent_scene = NodePath("SubViewportContainer/SubViewport/world")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1705460704]
+anchors_preset = -1
+anchor_right = 1.6666666
+anchor_bottom = 1.6666666
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1872226554]
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="world" parent="SubViewportContainer/SubViewport" unique_id=536107681 instance=ExtResource("2_genem")]
