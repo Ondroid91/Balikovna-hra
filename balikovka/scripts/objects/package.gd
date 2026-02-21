@@ -6,7 +6,7 @@ extends Node2D
 
 @export_group("package parameters")
 @export var danger_value : int = 0
-@export var package_number : String
+@export var package_number : String = ""
 @export var package_radiation : int = 0
 @export var package_weight : float = 0.0
 @export var package_damage : int = 0
@@ -21,7 +21,8 @@ var drag_package : bool = false
 @export var package_image : AnimatedSprite2D
 @export var package_button : Button
 @export var package_area : Area2D
-
+@export var package_number_label : Label
+@export var marker : Sprite2D
 
 var in_table_area : bool = false
 
@@ -34,12 +35,15 @@ func _ready() -> void:
 	package_button.button_up.connect(_on_drop_package)
 	should_get_mark()
 	spawn_item_in_package()
+	
+	var ran_num = randi_range(0, gl.all_package_numbers.size() - 1)
+	package_number = gl.all_package_numbers[ran_num]
+	package_number_label.text = gl.all_package_numbers[ran_num]
 
 func _process(delta: float) -> void:
 	if drag_package:
 		global_position = get_global_mouse_position()
 		#print(drag_package)
-
 
 func _on_package_pressed() -> void:
 	#if gl.in_hand == "empty":
@@ -57,7 +61,6 @@ func _on_package_pressed() -> void:
 func _on_drag_package() -> void:
 	if gl.in_hand == "empty":
 		drag_package = true
-
 
 var previos_pos : Marker2D
 func _on_drop_package() -> void:
@@ -149,4 +152,5 @@ func _on_pack_package() -> void:
 func _on_stamp_mark() -> void:
 	if on_table:
 		package_marked = true
+		marker.visible = true
 		print("package marked")

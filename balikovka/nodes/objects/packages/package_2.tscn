@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dns0uqr18dkxu" path="res://nodes/objects/content/cup.tscn" id="6_4u6wv"]
 [ext_resource type="PackedScene" uid="uid://d3ream4h0dg5x" path="res://nodes/objects/content/item_2.tscn" id="7_2uljq"]
 [ext_resource type="PackedScene" uid="uid://dbp35266cnio2" path="res://nodes/objects/content/tooths.tscn" id="8_peaad"]
+[ext_resource type="Texture2D" uid="uid://bhxrwinq87ld7" path="res://icon.svg" id="11_4u6wv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jjc2n"]
 atlas = ExtResource("2_xo6j7")
@@ -36,12 +37,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_td2lr"]
 size = Vector2(104, 104)
 
-[node name="package2" type="Node2D" unique_id=897910164 node_paths=PackedStringArray("package_content", "package_image", "package_button", "package_area")]
+[node name="package2" type="Node2D" unique_id=897910164 node_paths=PackedStringArray("package_content", "package_image", "package_button", "package_area", "package_number_label", "marker")]
 script = ExtResource("1_8ytkg")
 package_content = NodePath("bomb")
 package_image = NodePath("AnimatedSprite2D")
 package_button = NodePath("Button")
 package_area = NodePath("Area2D")
+package_number_label = NodePath("package_number")
+marker = NodePath("marker")
 items_list = Array[PackedScene]([ExtResource("2_hg1e1"), ExtResource("3_pucdj"), ExtResource("4_xo6j7"), ExtResource("5_cb5hv"), ExtResource("6_4u6wv"), ExtResource("7_2uljq"), ExtResource("8_peaad")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2062593142]
@@ -74,3 +77,11 @@ offset_top = -78.0
 offset_right = 40.0
 offset_bottom = -55.0
 metadata/_edit_use_anchors_ = true
+
+[node name="marker" type="Sprite2D" parent="." unique_id=1687077137]
+visible = false
+modulate = Color(1, 0, 0, 1)
+position = Vector2(-80.00001, -80)
+rotation = -0.29028457
+scale = Vector2(0.4375, 0.4375)
+texture = ExtResource("11_4u6wv")

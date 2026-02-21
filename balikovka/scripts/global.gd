@@ -17,10 +17,21 @@ var forbbiten_item_damage : int = 10
 
 var max_damage : int = 200
 var allowed_radiation_level = 20
-var allowd_package_numbers : Array[String] = [
+var all_package_numbers : Array[String] = [
 	"",
 	"1321",
 	"4526",
+	"3421",
+	"6741",
+	"7414",
+	"1014"
+]
+
+var allowd_package_numbers : Array[String] = [
+	"1321",
+	"4526",
+	"3421",
+	"6741",
 ]
 var packages_to_mark : Array[String] = [
 	"4526",

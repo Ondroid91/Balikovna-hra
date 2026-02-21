@@ -21,20 +21,28 @@ anchor_right = 1.0333333
 anchor_bottom = 1.0666667
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="." unique_id=150347692]
-layout_mode = 0
-offset_left = 640.0
-offset_top = 200.0
-offset_right = 1280.0
-offset_bottom = 960.0
-text = "manual text"
-
 [node name="page" type="Panel" parent="." unique_id=1854652530]
 layout_mode = 0
 offset_left = 576.0
 offset_top = 64.0
 offset_right = 1344.0
 offset_bottom = 1024.0
+
+[node name="Label" type="Label" parent="." unique_id=150347692]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 200.0
+offset_right = 1280.0
+offset_bottom = 960.0
+theme_override_font_sizes/font_size = 25
+text = "allowd_package_numbers :
+	\"1321\",
+	\"4526\",
+	\"3421\",
+	\"6741\",
+
+packages_to_mark :
+	\"4526\""
 
 [node name="back" type="Button" parent="." unique_id=423738151]
 layout_mode = 0

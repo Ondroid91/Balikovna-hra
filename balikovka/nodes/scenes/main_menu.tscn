@@ -2,8 +2,10 @@
 
 [ext_resource type="Script" uid="uid://tlgrnt5jlscp" path="res://scripts/scenes/main_menu.gd" id="1_1yc21"]
 
-[node name="main_menu" type="Node2D" unique_id=1543109013]
+[node name="main_menu" type="Node2D" unique_id=1543109013 node_paths=PackedStringArray("play", "quit")]
 script = ExtResource("1_1yc21")
+play = NodePath("Panel/play")
+quit = NodePath("Panel/quit")
 
 [node name="Panel" type="Panel" parent="." unique_id=1580746610]
 offset_left = -64.0
@@ -11,7 +13,7 @@ offset_top = -64.0
 offset_right = 1984.0
 offset_bottom = 1152.0
 
-[node name="Button" type="Button" parent="Panel" unique_id=525045372]
+[node name="play" type="Button" parent="Panel" unique_id=525045372]
 layout_mode = 0
 offset_left = 712.0
 offset_top = 440.0
@@ -19,10 +21,19 @@ offset_right = 1176.0
 offset_bottom = 584.0
 text = "play"
 
+[node name="quit" type="Button" parent="Panel" unique_id=1829262866]
+layout_mode = 0
+offset_left = 712.0
+offset_top = 688.0
+offset_right = 1176.0
+offset_bottom = 832.0
+text = "quit"
+
 [node name="Label" type="Label" parent="Panel" unique_id=154415244]
 layout_mode = 0
-offset_left = 672.0
-offset_top = 208.0
-offset_right = 1320.0
-offset_bottom = 352.0
+offset_left = 640.0
+offset_top = 184.0
+offset_right = 1288.0
+offset_bottom = 328.0
+theme_override_font_sizes/font_size = 50
 text = "game name"

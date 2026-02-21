@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dns0uqr18dkxu" path="res://nodes/objects/content/cup.tscn" id="6_wir1l"]
 [ext_resource type="PackedScene" uid="uid://4q7sfscgyqxx" path="res://nodes/objects/content/books.tscn" id="7_g75bu"]
 [ext_resource type="PackedScene" uid="uid://dbp35266cnio2" path="res://nodes/objects/content/tooths.tscn" id="8_onf1p"]
+[ext_resource type="Texture2D" uid="uid://bhxrwinq87ld7" path="res://icon.svg" id="11_wir1l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n1vgp"]
 atlas = ExtResource("2_hkf07")
@@ -36,13 +37,15 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_td2lr"]
 size = Vector2(104, 104)
 
-[node name="package" type="Node2D" unique_id=897910164 node_paths=PackedStringArray("package_content", "package_image", "package_button", "package_area")]
+[node name="package" type="Node2D" unique_id=897910164 node_paths=PackedStringArray("package_content", "package_image", "package_button", "package_area", "package_number_label", "marker")]
 script = ExtResource("1_lxfn3")
 package_content = NodePath("regular_content")
 package_number = "4526"
 package_image = NodePath("AnimatedSprite2D")
 package_button = NodePath("Button")
 package_area = NodePath("Area2D")
+package_number_label = NodePath("package_number")
+marker = NodePath("marker")
 items_list = Array[PackedScene]([ExtResource("2_gjo1c"), ExtResource("4_hnhxo"), ExtResource("4_8huq6"), ExtResource("5_7w8eq"), ExtResource("6_wir1l"), ExtResource("7_g75bu"), ExtResource("8_onf1p")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2062593142]
@@ -69,14 +72,15 @@ collision_mask = 3
 shape = SubResource("RectangleShape2D_td2lr")
 
 [node name="package_number" type="Label" parent="." unique_id=593479868]
-offset_left = 2.0000153
-offset_top = -62.0
-offset_right = 42.000015
-offset_bottom = -39.0
+offset_left = 64.0
+offset_top = -104.0
+offset_right = 104.0
+offset_bottom = -81.0
 
-[node name="Label" type="Label" parent="." unique_id=1360620570]
-offset_left = 66.000015
-offset_top = -102.0
-offset_right = 107.000015
-offset_bottom = -79.0
-text = "mark"
+[node name="marker" type="Sprite2D" parent="." unique_id=636020272]
+visible = false
+modulate = Color(1, 0, 0, 1)
+position = Vector2(-80.00001, -80)
+rotation = -0.29028457
+scale = Vector2(0.4375, 0.4375)
+texture = ExtResource("11_wir1l")
