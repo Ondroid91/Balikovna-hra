@@ -41,7 +41,7 @@ func _ready() -> void:
 	to_bin_area.area_exited.connect(_on_bin_drop_area_exited)
 
 	origin_bin_pos = bin_image.global_position
-	
+
 
 func _on_destroy_area_entered(area: Area2D) -> void:
 	if is_instance_valid(area):
@@ -62,19 +62,20 @@ func check_package(package : Node2D, send : bool) -> int:
 		if package.package_number == num:
 			num_ok = true
 			break
-	if not num_ok: danger_value += gl.wrong_number_damage
+	if send and not num_ok: danger_value += gl.wrong_number_damage
 	if package.package_radiation > gl.allowed_radiation_level:
 		danger_value += (package.package_radiation - gl.wrong_number_damage)
-	if package.should_be_marked != package.package_marked:
+	if send and package.should_be_marked != package.package_marked:
+		print("wrong mark")
 		danger_value += gl.wrong_mark_damage
 	
 	var content = package.package_content
 	if send and content.damaged: danger_value += gl.damaged_package
 	if send and content.danger: danger_value += gl.danger_package
+	if send and content.forbbiten: danger_value += gl.forbbiten_item_damage
 	
-	print("contetn : ", send, content.danger)
-	if send == false and content.damaged: danger_value += gl.damaged_package
-	if send == false and not content.danger: danger_value += gl.danger_package
+
+	#if send == false and not content.danger: danger_value += gl.danger_package
 	if send == false and content.danger == true and not content.safe_to_destroy:
 		danger_value += gl.danger_package
 		print("danger content")
@@ -99,18 +100,12 @@ func _on_next_button() -> void:
 	next_button.disabled = false
 	next_allowed = true
 
-
 func spawn_object() -> void:
 	if packages_to_spawn.is_empty():
 		return
 	var ran_package := randi_range(0, packages_to_spawn.size() - 1)
 	print(ran_package)
 	var new_package := packages_to_spawn[ran_package].instantiate() as Node2D
-	var chance_to_damage = randi_range(0, gl.chance_to_damaged)
-	if chance_to_damage == 0: new_package.package_content.damaged = true
-	else: new_package.package_content.damaged = false
-	
-	
 	add_child(new_package)
 	new_package.global_position = spawn_pos.global_position
 	new_package.table_pos = table_pos

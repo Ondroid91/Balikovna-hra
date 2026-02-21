@@ -80,6 +80,8 @@ animations = [{
 
 [node name="bomb" type="Node2D" unique_id=184443341 node_paths=PackedStringArray("pack", "wire1", "wire2", "wire3", "red_wire_button", "blue_wire_button", "green_wire_button", "bomb_timer")]
 script = ExtResource("1_bs80y")
+content_image = ExtResource("3_r6ixo")
+damaged_content_image = ExtResource("3_r6ixo")
 pack = NodePath("pack")
 wire1 = NodePath("wire1")
 wire2 = NodePath("wire2")

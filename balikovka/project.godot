@@ -23,6 +23,7 @@ gl="*uid://b6tkte0he1t1k"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=4
 window/stretch/mode="canvas_items"
 
 [input]

@@ -14,7 +14,6 @@ extends Node
 
 func _ready() -> void:
 	set_start_scene()
-	
 
 func _process(delta: float) -> void:
 	parameters.text = (
@@ -25,13 +24,6 @@ func _process(delta: float) -> void:
 		"correct removed : " + str(gl.correctly_removed_packages) + "\n" +
 		"incorrect removed : " + str(gl.incorrectly_removed_packages)
 	)
-
-
-
-
-
-
-
 
 
 func set_start_scene() -> void:

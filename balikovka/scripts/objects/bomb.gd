@@ -1,11 +1,13 @@
 extends Node2D
 
-
-@export var content_image : Texture2D
-@export var damaged_content_image : Texture2D
 @export var damaged : bool = false
 @export var danger : bool = true
+@export var forbbiten : bool = true
 @export var safe_to_destroy : bool = false
+
+@export var item_name : String
+@export var content_image : Texture2D
+@export var damaged_content_image : Texture2D
 
 @export_group("components")
 @export var pacakge : Node2D
@@ -20,6 +22,8 @@ extends Node2D
 @export var green_wire_button : Button
 @export var bomb_timer : Timer
 
+
+
 var cut_wires : Array[bool] = [
 	false,
 	false,
@@ -27,7 +31,6 @@ var cut_wires : Array[bool] = [
 ]
 
 var bomb_activated : bool = false
-
 
 func _ready() -> void:
 	pack.pressed.connect(_on_pack_package)

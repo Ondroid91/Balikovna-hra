@@ -25,13 +25,15 @@ var drag_package : bool = false
 
 var in_table_area : bool = false
 
+@export var items_list : Array[PackedScene]
 
 
 func _ready() -> void:
 	package_button.pressed.connect(_on_package_pressed)
 	package_button.button_down.connect(_on_drag_package)
 	package_button.button_up.connect(_on_drop_package)
-	
+	should_get_mark()
+	spawn_item_in_package()
 
 func _process(delta: float) -> void:
 	if drag_package:
@@ -84,6 +86,21 @@ func _on_drop_package() -> void:
 	else:
 		_on_move_package(previos_pos)
 
+func should_get_mark() -> void:
+	for num in gl.packages_to_mark:
+		if package_number == num:
+			should_be_marked = true
+			break
+
+func spawn_item_in_package() -> void:
+	if package_content:
+		package_content.queue_free()
+	var ran_item = randi_range(0, items_list.size() - 1)
+	var new_item = items_list[ran_item].instantiate()
+	new_item.visible = false
+	new_item.pacakge = self
+	package_content = new_item
+	add_child(new_item)
 
 func _on_move_package(dest : Marker2D):
 	var tween := create_tween()

@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://yeqjjinsyv4"]
 
 [ext_resource type="Script" uid="uid://pskyuno2h3sm" path="res://scripts/objects/package.gd" id="1_8ytkg"]
+[ext_resource type="PackedScene" uid="uid://cwlouw0eosvwu" path="res://nodes/objects/content/bottle.tscn" id="2_hg1e1"]
 [ext_resource type="Texture2D" uid="uid://bw87nd76qx878" path="res://assets/krabice.png" id="2_xo6j7"]
 [ext_resource type="Texture2D" uid="uid://cps32f7f6hlkt" path="res://assets/krabice_ptevrena_.png" id="3_mitpy"]
+[ext_resource type="PackedScene" uid="uid://ck5y32o78tc8r" path="res://nodes/objects/content/regular_content.tscn" id="3_pucdj"]
 [ext_resource type="PackedScene" uid="uid://bang5m5lddygi" path="res://nodes/objects/content/bomb.tscn" id="4_xo6j7"]
 [ext_resource type="Texture2D" uid="uid://c1ff2qt8uvt13" path="res://assets/content/bomb/bomba.png" id="5_mitpy"]
 
@@ -37,6 +39,7 @@ package_content = NodePath("bomb")
 package_image = NodePath("AnimatedSprite2D")
 package_button = NodePath("Button")
 package_area = NodePath("Area2D")
+items_list = Array[PackedScene]([ExtResource("2_hg1e1"), ExtResource("3_pucdj"), ExtResource("4_xo6j7"), ExtResource("2_hg1e1"), ExtResource("3_pucdj")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2062593142]
 scale = Vector2(0.3, 0.3)

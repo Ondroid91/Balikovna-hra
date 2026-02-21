@@ -1,8 +1,10 @@
 [gd_scene format=3 uid="uid://dw2eqo2q0nl5y"]
 
 [ext_resource type="Script" uid="uid://pskyuno2h3sm" path="res://scripts/objects/package.gd" id="1_lxfn3"]
+[ext_resource type="PackedScene" uid="uid://cwlouw0eosvwu" path="res://nodes/objects/content/bottle.tscn" id="2_gjo1c"]
 [ext_resource type="Texture2D" uid="uid://cgrskdk51m2y8" path="res://assets/hotova_krabice.png" id="2_hkf07"]
 [ext_resource type="Texture2D" uid="uid://cps32f7f6hlkt" path="res://assets/krabice_ptevrena_.png" id="3_gjo1c"]
+[ext_resource type="PackedScene" uid="uid://bang5m5lddygi" path="res://nodes/objects/content/bomb.tscn" id="4_8huq6"]
 [ext_resource type="PackedScene" uid="uid://ck5y32o78tc8r" path="res://nodes/objects/content/regular_content.tscn" id="4_hnhxo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n1vgp"]
@@ -33,9 +35,11 @@ size = Vector2(104, 104)
 [node name="package" type="Node2D" unique_id=897910164 node_paths=PackedStringArray("package_content", "package_image", "package_button", "package_area")]
 script = ExtResource("1_lxfn3")
 package_content = NodePath("regular_content")
+package_number = "4526"
 package_image = NodePath("AnimatedSprite2D")
 package_button = NodePath("Button")
 package_area = NodePath("Area2D")
+items_list = Array[PackedScene]([ExtResource("2_gjo1c"), ExtResource("4_hnhxo"), ExtResource("4_8huq6"), ExtResource("2_gjo1c"), ExtResource("4_hnhxo")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2062593142]
 scale = Vector2(0.3, 0.3)
@@ -64,3 +68,10 @@ shape = SubResource("RectangleShape2D_td2lr")
 offset_right = 40.0
 offset_bottom = 23.0
 metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="." unique_id=1360620570]
+offset_left = 64.0
+offset_top = -40.0
+offset_right = 105.0
+offset_bottom = -17.0
+text = "mark"

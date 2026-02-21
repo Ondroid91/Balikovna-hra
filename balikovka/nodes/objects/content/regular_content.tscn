@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://d2uk82kw2dn6" path="res://scripts/objects/regular_content.gd" id="1_rusd2"]
 [ext_resource type="Texture2D" uid="uid://dwk2yi5vgnx25" path="res://assets/content/predmet_cely_good_6.png" id="2_jlexp"]
-[ext_resource type="Texture2D" uid="uid://dxbu2mheb3wjo" path="res://assets/content/predmet2.png" id="2_rusd2"]
 [ext_resource type="Texture2D" uid="uid://dc5nugh7ts4wf" path="res://assets/content/predmet_cely_poskodeny_6.png" id="3_ulueq"]
 
 [node name="regular_content" type="Node2D" unique_id=184443341 node_paths=PackedStringArray("sprite", "pack")]
@@ -14,15 +13,15 @@ pack = NodePath("pack")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=584894951]
 self_modulate = Color(1, 1, 0, 1)
-position = Vector2(-7.9999995, 7.9999995)
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_rusd2")
+texture = ExtResource("2_jlexp")
 
 [node name="pack" type="Button" parent="." unique_id=1343461389]
 offset_left = -64.0
 offset_top = -64.0
 offset_right = 64.0
 offset_bottom = 64.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="." unique_id=452185681]
 visible = false
