@@ -2,7 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bh51ua8ji3j0s" path="res://scripts/scenes/score_board.gd" id="1_83woq"]
 
-[node name="score_board" type="Control" unique_id=113089331]
+[node name="score_board" type="Control" unique_id=113089331 node_paths=PackedStringArray("ending_name", "send_packages", "correct_packages", "correcty_removed", "incorrecty_removed", "back_to_main", "conntinue")]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,6 +11,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_83woq")
+ending_name = NodePath("Panel/ending_name")
+send_packages = NodePath("Panel/send_packages")
+correct_packages = NodePath("Panel/correct_packages")
+correcty_removed = NodePath("Panel/correcty_removed")
+incorrecty_removed = NodePath("Panel/incorrecty_removed")
+back_to_main = NodePath("Panel/back_to_main")
+conntinue = NodePath("Panel/conntinue")
 
 [node name="Panel2" type="Panel" parent="." unique_id=1247691985]
 self_modulate = Color(1, 1, 1, 0)
@@ -28,15 +36,112 @@ anchor_right = 0.73333335
 anchor_bottom = 0.95555556
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="Panel" unique_id=580540403]
-layout_mode = 0
+[node name="ending_name" type="Label" parent="Panel" unique_id=580540403]
+layout_mode = 1
+anchors_preset = -1
 anchor_left = 0.2857143
-anchor_top = 0.0661157
+anchor_top = 0.10743801
 anchor_right = 0.71428573
-anchor_bottom = 0.1373967
+anchor_bottom = 0.1838843
 offset_bottom = -5.0
 theme_override_font_sizes/font_size = 50
 text = "Result"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel" unique_id=281104506]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 256.0
+offset_right = 416.0
+offset_bottom = 298.0
+theme_override_font_sizes/font_size = 30
+text = "send packages : "
+horizontal_alignment = 1
+
+[node name="send_packages" type="Label" parent="Panel" unique_id=875443386]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 256.0
+offset_right = 736.0
+offset_bottom = 298.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Panel" unique_id=111114505]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 320.0
+offset_right = 429.0
+offset_bottom = 362.0
+theme_override_font_sizes/font_size = 30
+text = "correct packages : "
+horizontal_alignment = 1
+
+[node name="correct_packages" type="Label" parent="Panel" unique_id=371449409]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 320.0
+offset_right = 736.0
+offset_bottom = 362.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="Panel" unique_id=2094701902]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 384.0
+offset_right = 440.0
+offset_bottom = 426.0
+theme_override_font_sizes/font_size = 30
+text = "correcty removed : "
+horizontal_alignment = 1
+
+[node name="correcty_removed" type="Label" parent="Panel" unique_id=1686221553]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 384.0
+offset_right = 736.0
+offset_bottom = 426.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="Panel" unique_id=1715732554]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 448.0
+offset_right = 468.0
+offset_bottom = 490.0
+theme_override_font_sizes/font_size = 30
+text = "incorrecty removed : "
+horizontal_alignment = 1
+
+[node name="incorrecty_removed" type="Label" parent="Panel" unique_id=361528378]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 448.0
+offset_right = 736.0
+offset_bottom = 490.0
+theme_override_font_sizes/font_size = 30
+text = "0"
+horizontal_alignment = 1
+
+[node name="back_to_main" type="Button" parent="Panel" unique_id=821743260]
+layout_mode = 0
+offset_left = 224.0
+offset_top = 832.0
+offset_right = 416.0
+offset_bottom = 896.0
+text = "Back to main menu"
+
+[node name="conntinue" type="Button" parent="Panel" unique_id=509016374]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 832.0
+offset_right = 672.0
+offset_bottom = 896.0
+text = "Conntinue"

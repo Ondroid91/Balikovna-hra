@@ -11,4 +11,5 @@ func _ready() -> void:
 	timer.timeout.connect(_on_time_out)
 
 func _on_time_out() -> void:
+	gl.shift_end.emit()
 	print("level finished")

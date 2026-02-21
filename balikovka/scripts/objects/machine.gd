@@ -86,6 +86,9 @@ func check_package(package : Node2D, send : bool) -> int:
 		danger_value += gl.danger_package
 		print("danger content")
 	print("dmg : ", danger_value)
+	if gl.final_damage > (gl.max_damage + danger_value):
+		print("fired")
+		gl.you_are_fired.emit()
 	return danger_value
 
 func _on_next_button() -> void:

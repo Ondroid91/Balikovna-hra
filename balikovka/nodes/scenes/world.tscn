@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://d0atlk6lnhtfc" path="res://nodes/items/stamp.tscn" id="8_ant6f"]
 
 [node name="world" type="Node2D" unique_id=536107681 node_paths=PackedStringArray("manual_button", "timer")]
+process_mode = 1
 script = ExtResource("1_mxg38")
 manual_button = NodePath("manual2")
 timer = NodePath("Timer")
