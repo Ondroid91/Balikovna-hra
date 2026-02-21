@@ -99,6 +99,7 @@ func spawn_item_in_package() -> void:
 	var new_item = items_list[ran_item].instantiate()
 	new_item.visible = false
 	new_item.pacakge = self
+	new_item.global_position -= Vector2(0, 80)
 	package_content = new_item
 	add_child(new_item)
 
@@ -109,7 +110,8 @@ func _on_move_package(dest : Marker2D):
 		"global_position",
 		dest.global_position,
 		0.25
-	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	).set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
+	#.set_trans(Tween.TRANS_LINEAR).set_ease(Tween.EASE_IN_OUT)
 	await tween.finished
 
 func _on_resize_package(value: float) -> void:
@@ -125,6 +127,8 @@ func _on_resize_package(value: float) -> void:
 
 func _on_open_package() -> void:
 	if on_table:
+		if package_content.item_name == "bomb":
+			package_content.bomb_triggered()
 		package_image.frame = 1
 		package_content.visible = true
 		package_opend = true

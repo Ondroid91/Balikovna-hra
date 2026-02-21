@@ -74,7 +74,13 @@ func check_package(package : Node2D, send : bool) -> int:
 	if send and content.danger: danger_value += gl.danger_package
 	if send and content.forbbiten: danger_value += gl.forbbiten_item_damage
 	
-
+	if (
+	send == false
+	and not content.damaged
+	and not content.forbbiten
+	and not content.danger
+	):  
+		danger_value += gl.damaged_package
 	#if send == false and not content.danger: danger_value += gl.danger_package
 	if send == false and content.danger == true and not content.safe_to_destroy:
 		danger_value += gl.danger_package

@@ -78,7 +78,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="bomb" type="Node2D" unique_id=184443341 node_paths=PackedStringArray("pack", "wire1", "wire2", "wire3", "red_wire_button", "blue_wire_button", "green_wire_button", "bomb_timer")]
+[node name="bomb" type="Node2D" unique_id=184443341 node_paths=PackedStringArray("pack", "wire1", "wire2", "wire3", "red_wire_button", "blue_wire_button", "green_wire_button", "bomb_timer", "display_timer")]
 script = ExtResource("1_bs80y")
 content_image = ExtResource("3_r6ixo")
 damaged_content_image = ExtResource("3_r6ixo")
@@ -90,12 +90,13 @@ red_wire_button = NodePath("red_wire")
 blue_wire_button = NodePath("blue_wire")
 green_wire_button = NodePath("green_wire")
 bomb_timer = NodePath("Timer")
+display_timer = NodePath("display")
 
 [node name="pack" type="Button" parent="." unique_id=1449984356]
-offset_left = -128.0
-offset_top = -64.0
-offset_right = 120.0
-offset_bottom = 80.0
+offset_left = -192.0
+offset_top = -160.0
+offset_right = 192.0
+offset_bottom = 168.0
 flat = true
 
 [node name="red_wire" type="Button" parent="." unique_id=501055227]
@@ -145,8 +146,7 @@ position = Vector2(8, 16)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_ge5nm")
 
-[node name="Label" type="Label" parent="." unique_id=452185681]
-visible = false
+[node name="display" type="Label" parent="." unique_id=452185681]
 offset_left = -40.0
 offset_top = 8.0
 offset_right = 24.0

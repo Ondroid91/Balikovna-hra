@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bjepxkk1gwtg3"]
+
+[ext_resource type="Script" uid="uid://bh51ua8ji3j0s" path="res://scripts/scenes/score_board.gd" id="1_83woq"]
+
+[node name="score_board" type="Control" unique_id=113089331]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_83woq")
+
+[node name="Panel2" type="Panel" parent="." unique_id=1247691985]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 1984.0
+offset_bottom = 1152.0
+
+[node name="Panel" type="Panel" parent="." unique_id=924717562]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.26666668
+anchor_top = 0.05925926
+anchor_right = 0.73333335
+anchor_bottom = 0.95555556
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Panel" unique_id=580540403]
+layout_mode = 0
+anchor_left = 0.2857143
+anchor_top = 0.0661157
+anchor_right = 0.71428573
+anchor_bottom = 0.1373967
+offset_bottom = -5.0
+theme_override_font_sizes/font_size = 50
+text = "Result"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

@@ -12,15 +12,14 @@ sprite = NodePath("Sprite2D")
 pack = NodePath("pack")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=584894951]
-self_modulate = Color(1, 1, 0, 1)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_jlexp")
 
 [node name="pack" type="Button" parent="." unique_id=1343461389]
-offset_left = -64.0
-offset_top = -64.0
-offset_right = 64.0
-offset_bottom = 64.0
+offset_left = -120.0
+offset_top = -128.0
+offset_right = 136.0
+offset_bottom = 128.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="." unique_id=452185681]

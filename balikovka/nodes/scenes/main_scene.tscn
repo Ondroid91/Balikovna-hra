@@ -4,15 +4,32 @@
 [ext_resource type="PackedScene" uid="uid://cpygnedh6b6sm" path="res://nodes/scenes/main_menu.tscn" id="2_exqo6"]
 [ext_resource type="PackedScene" uid="uid://bn7l5ehykng4a" path="res://nodes/scenes/world.tscn" id="2_genem"]
 [ext_resource type="PackedScene" uid="uid://c001j2craaa5w" path="res://nodes/UI/manual.tscn" id="3_ksbhw"]
+[ext_resource type="PackedScene" uid="uid://bjepxkk1gwtg3" path="res://nodes/UI/score_board.tscn" id="5_xgvid"]
 
-[node name="main_scene" type="Node" unique_id=692884037 node_paths=PackedStringArray("currrent_scene", "manual_book", "viewport", "parameters")]
+[sub_resource type="Gradient" id="Gradient_exqo6"]
+offsets = PackedFloat32Array(0.4186508)
+colors = PackedColorArray(0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xgvid"]
+gradient = SubResource("Gradient_exqo6")
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[node name="main_scene" type="Node" unique_id=692884037 node_paths=PackedStringArray("currrent_scene", "manual_book", "viewport", "parameters", "score_background", "score_board")]
 script = ExtResource("1_nnkd3")
 currrent_scene = NodePath("SubViewportContainer/SubViewport/world")
 manual_book = NodePath("manual")
 viewport = NodePath("SubViewportContainer/SubViewport")
 parameters = NodePath("parameters")
+score_background = NodePath("score_background")
+score_board = NodePath("score_board")
 main_menu_scene = ExtResource("2_exqo6")
 game_scene = ExtResource("2_genem")
+
+[node name="backgroud" type="Sprite2D" parent="." unique_id=171308082]
+position = Vector2(960.00006, 544)
+scale = Vector2(31.999998, 19.000002)
+texture = SubResource("GradientTexture2D_xgvid")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1705460704]
 anchors_preset = 15
@@ -38,3 +55,11 @@ visible = false
 offset_right = 536.0
 offset_bottom = 256.0
 theme_override_font_sizes/font_size = 30
+
+[node name="score_background" type="Sprite2D" parent="." unique_id=592010302]
+position = Vector2(960.00006, 544)
+scale = Vector2(31.999998, 19.000002)
+texture = SubResource("GradientTexture2D_xgvid")
+
+[node name="score_board" parent="." unique_id=113089331 instance=ExtResource("5_xgvid")]
+visible = false

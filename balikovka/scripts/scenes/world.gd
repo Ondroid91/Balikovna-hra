@@ -10,6 +10,5 @@ func _ready() -> void:
 	timer.start()
 	timer.timeout.connect(_on_time_out)
 
-
 func _on_time_out() -> void:
 	print("level finished")
