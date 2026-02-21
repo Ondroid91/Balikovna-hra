@@ -89,39 +89,33 @@ blue_wire_button = NodePath("blue_wire")
 green_wire_button = NodePath("green_wire")
 bomb_timer = NodePath("Timer")
 
-[node name="pack" type="Button" parent="." unique_id=1343461389]
-offset_left = -64.0
+[node name="pack" type="Button" parent="." unique_id=1449984356]
+offset_left = -128.0
 offset_top = -64.0
-offset_right = 64.0
-offset_bottom = 64.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Label" type="Label" parent="." unique_id=452185681]
-visible = false
-offset_left = -32.0
-offset_top = -88.0
-offset_right = 32.0
-offset_bottom = -65.0
-text = "bomb"
-metadata/_edit_use_anchors_ = true
+offset_right = 120.0
+offset_bottom = 80.0
+flat = true
 
 [node name="red_wire" type="Button" parent="." unique_id=501055227]
 offset_left = -44.0
 offset_top = -54.0
 offset_right = 28.0
 offset_bottom = -45.0
+flat = true
 
 [node name="blue_wire" type="Button" parent="." unique_id=465145628]
 offset_left = -41.0
 offset_top = -39.0
 offset_right = 31.0
 offset_bottom = -27.0
+flat = true
 
 [node name="green_wire" type="Button" parent="." unique_id=1990390157]
 offset_left = -41.0
 offset_top = -19.0
 offset_right = 32.0
 offset_bottom = -9.0
+flat = true
 
 [node name="Timer" type="Timer" parent="." unique_id=343352790]
 wait_time = 10.0
@@ -148,3 +142,12 @@ sprite_frames = SubResource("SpriteFrames_uonrw")
 position = Vector2(8, 16)
 scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_ge5nm")
+
+[node name="Label" type="Label" parent="." unique_id=452185681]
+visible = false
+offset_left = -40.0
+offset_top = 8.0
+offset_right = 24.0
+offset_bottom = 31.0
+text = "10:00"
+metadata/_edit_use_anchors_ = true

@@ -35,7 +35,7 @@ packages_to_spawn = Array[PackedScene]([ExtResource("1_c64on"), ExtResource("6_a
 position = Vector2(960, 928)
 
 [node name="knife" parent="." unique_id=2055013009 instance=ExtResource("4_j21y6")]
-position = Vector2(344, 1040)
+position = Vector2(392, 904)
 
 [node name="tape" parent="." unique_id=869200505 instance=ExtResource("5_k05xx")]
 position = Vector2(1808, 1008)

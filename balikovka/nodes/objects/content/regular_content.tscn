@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://ck5y32o78tc8r"]
 
 [ext_resource type="Script" uid="uid://d2uk82kw2dn6" path="res://scripts/objects/regular_content.gd" id="1_rusd2"]
+[ext_resource type="Texture2D" uid="uid://dwk2yi5vgnx25" path="res://assets/content/predmet_cely_good_6.png" id="2_jlexp"]
 [ext_resource type="Texture2D" uid="uid://dxbu2mheb3wjo" path="res://assets/content/predmet2.png" id="2_rusd2"]
+[ext_resource type="Texture2D" uid="uid://dc5nugh7ts4wf" path="res://assets/content/predmet_cely_poskodeny_6.png" id="3_ulueq"]
 
 [node name="regular_content" type="Node2D" unique_id=184443341 node_paths=PackedStringArray("sprite", "pack")]
 script = ExtResource("1_rusd2")
-content_image = ExtResource("2_rusd2")
+content_image = ExtResource("2_jlexp")
+damaged_content_image = ExtResource("3_ulueq")
 sprite = NodePath("Sprite2D")
 pack = NodePath("pack")
 

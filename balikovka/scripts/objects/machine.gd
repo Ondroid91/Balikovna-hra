@@ -72,12 +72,13 @@ func check_package(package : Node2D, send : bool) -> int:
 	if send and content.damaged: danger_value += gl.damaged_package
 	if send and content.danger: danger_value += gl.danger_package
 	
-	
-	if not send and not content.damaged: danger_value += gl.damaged_package
-	if not send and not content.danger: danger_value += gl.danger_package
-	if not send and not content.safe_to_destroy:
-		danger_value += gl.not_safe_to_destroy
-		print("safe to destroy")
+	print("contetn : ", send, content.danger)
+	if send == false and content.damaged: danger_value += gl.damaged_package
+	if send == false and not content.danger: danger_value += gl.danger_package
+	if send == false and content.danger == true and not content.safe_to_destroy:
+		danger_value += gl.danger_package
+		print("danger content")
+	print("dmg : ", danger_value)
 	return danger_value
 
 func _on_next_button() -> void:
@@ -105,6 +106,11 @@ func spawn_object() -> void:
 	var ran_package := randi_range(0, packages_to_spawn.size() - 1)
 	print(ran_package)
 	var new_package := packages_to_spawn[ran_package].instantiate() as Node2D
+	var chance_to_damage = randi_range(0, gl.chance_to_damaged)
+	if chance_to_damage == 0: new_package.package_content.damaged = true
+	else: new_package.package_content.damaged = false
+	
+	
 	add_child(new_package)
 	new_package.global_position = spawn_pos.global_position
 	new_package.table_pos = table_pos
@@ -132,6 +138,9 @@ func _on_scener_area_entered(area) -> void:
 	if is_instance_valid(area):
 		var package = area.get_parent()
 		var content_image = package.package_content.content_image
+		if package.package_content.damaged:
+			content_image = package.package_content.damaged_content_image
+		
 		if content_image:
 			scan_image.texture = content_image
 		
@@ -169,10 +178,10 @@ func remove_package(package : Node2D) -> void:
 	print("package to destroy ", package)
 	var package_damage = check_package(package, false)
 	if package_damage > 0:
-		gl.correctly_removed_packages += 1
-	else:
 		gl.incorrectly_removed_packages += 1
 		gl.final_damage += gl.wrong_remove_damage
+	else:
+		gl.correctly_removed_packages += 1
 
 	package.queue_free()
 

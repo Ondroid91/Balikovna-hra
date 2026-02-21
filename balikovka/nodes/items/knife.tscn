@@ -11,18 +11,20 @@ item_name = "knife"
 pick = NodePath("Button")
 
 [node name="Knife" type="Sprite2D" parent="." unique_id=956468535]
-position = Vector2(0, 9.094947e-13)
+position = Vector2(-87.99999, 115.99999)
 scale = Vector2(0.2, 0.2)
 texture = SubResource("CompressedTexture2D_016ll")
 
 [node name="Label" type="Label" parent="." unique_id=1774445852]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = -88.0
+offset_top = 116.0
+offset_right = -48.0
+offset_bottom = 139.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="." unique_id=960738001]
-offset_left = -120.0
-offset_top = -128.0
-offset_right = 128.0
-offset_bottom = 128.0
+offset_left = -208.0
+offset_top = -12.0
+offset_right = 40.0
+offset_bottom = 244.0
 flat = true

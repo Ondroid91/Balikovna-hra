@@ -5,6 +5,7 @@ extends Node2D
 @export var safe_to_destroy : bool = false
 
 @export var content_image : Texture2D
+@export var damaged_content_image : Texture2D
 
 @export_group("components")
 @export var pacakge : Node2D
@@ -12,6 +13,10 @@ extends Node2D
 @export var pack : Button
 
 func _ready() -> void:
+	if damaged:
+		sprite.texture = damaged_content_image
+	else:
+		sprite.texture = content_image
 	pack.pressed.connect(_on_pack_package)
 
 

@@ -6,31 +6,35 @@ var alive : bool = true
 
 
 var level_time : float = 300.0
-var wrong_number_damage = 10
-var wrong_mark_damage = 10
-var wrong_remove_damage = 10
 
-var not_safe_to_destroy = 10
-var danger_package = 10
-var damaged_package = 10
-
-
+#penalization
+var wrong_number_damage : int = 10
+var wrong_mark_damage : int = 10
+var wrong_remove_damage : int = 10
+var not_safe_to_destroy : int = 10
+var danger_package : int = 10
+var damaged_package : int = 10
 
 
 var allowed_radiation_level = 20
-
-
 var allowd_package_numbers : Array[String] = [
 	"",
 	"1321",
 	"4526",
 ]
-
 var correct_wire_orcer : Array[String] = [
 	"red",
 	"blue",
 	"green",
 ]
+
+
+# chances
+var chance_to_damaged : int = 5
+
+
+
+
 
 #signals
 signal bomb_expoded
