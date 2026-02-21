@@ -1,0 +1,150 @@
+[gd_scene format=3 uid="uid://bang5m5lddygi"]
+
+[ext_resource type="Script" uid="uid://iojh0ve2shwj" path="res://scripts/objects/bomb.gd" id="1_bs80y"]
+[ext_resource type="Texture2D" uid="uid://c1ff2qt8uvt13" path="res://assets/content/bomb/bomba.png" id="3_r6ixo"]
+[ext_resource type="Texture2D" uid="uid://dj7giigtf5yjg" path="res://assets/content/bomb/drat_1.png" id="4_x4hdi"]
+[ext_resource type="Texture2D" uid="uid://j8why1aaict1" path="res://assets/content/bomb/drat_1_B.png" id="5_6ex1b"]
+[ext_resource type="Texture2D" uid="uid://461bqws6nwd0" path="res://assets/content/bomb/drat_2.png" id="6_ydktx"]
+[ext_resource type="Texture2D" uid="uid://dtuiesahloy16" path="res://assets/content/bomb/drat_2_B.png" id="7_j6xaw"]
+[ext_resource type="Texture2D" uid="uid://cvcytpde7hjfe" path="res://assets/content/bomb/drat_3.png" id="8_1qxy1"]
+[ext_resource type="Texture2D" uid="uid://c32oe3tfo673x" path="res://assets/content/bomb/drat_3_B.png" id="9_xr3ar"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cf6k"]
+atlas = ExtResource("4_x4hdi")
+region = Rect2(0, 0, 1400, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_idf45"]
+atlas = ExtResource("5_6ex1b")
+region = Rect2(0, 0, 1400, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dm1jv"]
+atlas = ExtResource("6_ydktx")
+region = Rect2(0, 0, 1400, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vka8k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cf6k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_idf45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dm1jv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2duvg"]
+atlas = ExtResource("7_j6xaw")
+region = Rect2(0, 0, 1400, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uonrw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dm1jv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2duvg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8eotc"]
+atlas = ExtResource("8_1qxy1")
+region = Rect2(0, 0, 1400, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmhd1"]
+atlas = ExtResource("9_xr3ar")
+region = Rect2(0, 0, 1400, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ge5nm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8eotc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmhd1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="bomb" type="Node2D" unique_id=184443341 node_paths=PackedStringArray("pack", "wire1", "wire2", "wire3", "red_wire_button", "blue_wire_button", "green_wire_button", "bomb_timer")]
+script = ExtResource("1_bs80y")
+pack = NodePath("pack")
+wire1 = NodePath("wire1")
+wire2 = NodePath("wire2")
+wire3 = NodePath("wire3")
+red_wire_button = NodePath("red_wire")
+blue_wire_button = NodePath("blue_wire")
+green_wire_button = NodePath("green_wire")
+bomb_timer = NodePath("Timer")
+
+[node name="pack" type="Button" parent="." unique_id=1343461389]
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="." unique_id=452185681]
+visible = false
+offset_left = -32.0
+offset_top = -88.0
+offset_right = 32.0
+offset_bottom = -65.0
+text = "bomb"
+metadata/_edit_use_anchors_ = true
+
+[node name="red_wire" type="Button" parent="." unique_id=501055227]
+offset_left = -44.0
+offset_top = -54.0
+offset_right = 28.0
+offset_bottom = -45.0
+
+[node name="blue_wire" type="Button" parent="." unique_id=465145628]
+offset_left = -41.0
+offset_top = -39.0
+offset_right = 31.0
+offset_bottom = -27.0
+
+[node name="green_wire" type="Button" parent="." unique_id=1990390157]
+offset_left = -41.0
+offset_top = -19.0
+offset_right = 32.0
+offset_bottom = -9.0
+
+[node name="Timer" type="Timer" parent="." unique_id=343352790]
+wait_time = 10.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=932006975]
+zoom = Vector2(5, 5)
+
+[node name="Bomba" type="Sprite2D" parent="." unique_id=1739095839]
+position = Vector2(7.9999924, 15.999998)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_r6ixo")
+
+[node name="wire1" type="AnimatedSprite2D" parent="." unique_id=905627344]
+position = Vector2(7.9999995, 15.999999)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_vka8k")
+
+[node name="wire2" type="AnimatedSprite2D" parent="." unique_id=316624240]
+position = Vector2(7.9999995, 15.999999)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_uonrw")
+
+[node name="wire3" type="AnimatedSprite2D" parent="." unique_id=693927480]
+position = Vector2(8, 16)
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_ge5nm")

@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://yeqjjinsyv4"]
+
+[ext_resource type="Script" uid="uid://pskyuno2h3sm" path="res://scripts/objects/package.gd" id="1_8ytkg"]
+[ext_resource type="Texture2D" uid="uid://bw87nd76qx878" path="res://assets/krabice.png" id="2_xo6j7"]
+[ext_resource type="Texture2D" uid="uid://cps32f7f6hlkt" path="res://assets/krabice_ptevrena_.png" id="3_mitpy"]
+[ext_resource type="PackedScene" uid="uid://bang5m5lddygi" path="res://nodes/objects/content/bomb.tscn" id="4_xo6j7"]
+[ext_resource type="Texture2D" uid="uid://c1ff2qt8uvt13" path="res://assets/content/bomb/bomba.png" id="5_mitpy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjc2n"]
+atlas = ExtResource("2_xo6j7")
+region = Rect2(0, 0, 1400, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1wumj"]
+atlas = ExtResource("3_mitpy")
+region = Rect2(0, 0, 1400, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gci06"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjc2n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1wumj")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_td2lr"]
+size = Vector2(104, 104)
+
+[node name="package2" type="Node2D" unique_id=897910164 node_paths=PackedStringArray("package_content", "package_image", "package_button", "package_area")]
+script = ExtResource("1_8ytkg")
+package_content = NodePath("bomb")
+package_image = NodePath("AnimatedSprite2D")
+package_button = NodePath("Button")
+package_area = NodePath("Area2D")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2062593142]
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_gci06")
+
+[node name="bomb" parent="." unique_id=184443341 instance=ExtResource("4_xo6j7")]
+visible = false
+position = Vector2(16, 0)
+content_image = ExtResource("5_mitpy")
+
+[node name="Button" type="Button" parent="." unique_id=1137004351]
+offset_left = -144.0
+offset_top = -120.0
+offset_right = 136.0
+offset_bottom = 88.0
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1271142744]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=795936761]
+position = Vector2(-4, -16)
+shape = SubResource("RectangleShape2D_td2lr")
+
+[node name="package_number" type="Label" parent="." unique_id=593479868]
+offset_right = 40.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true

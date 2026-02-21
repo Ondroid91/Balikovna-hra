@@ -1,14 +1,19 @@
 extends Node2D
 
-@export var damaged : bool = false
+
 @export var content_image : Texture2D
 @export var damaged_content_image : Texture2D
-@export var danger_content : bool = true
+@export var damaged : bool = false
+@export var danger : bool = true
 @export var safe_to_destroy : bool = false
 
 @export_group("components")
 @export var pacakge : Node2D
 @export var pack : Button
+
+@export var wire1 : AnimatedSprite2D
+@export var wire2 : AnimatedSprite2D
+@export var wire3 : AnimatedSprite2D
 
 @export var red_wire_button : Button
 @export var blue_wire_button : Button
@@ -32,6 +37,8 @@ func _ready() -> void:
 	green_wire_button.pressed.connect(func(): cut_wire(green_wire_button))
 	bomb_timer.timeout.connect(bomb_explode)
 
+	pacakge = self.get_parent()
+
 func package_opend() -> void:
 	if not bomb_activated:
 		bomb_timer.start()
@@ -45,16 +52,19 @@ func cut_wire(cutted_wire : Button) -> void:
 			red_wire_button.disabled = true
 			var order = gl.correct_wire_orcer.find("red")
 			cut_wires[order] = true
+			wire1.frame = 1
 			check_order(order)
 		blue_wire_button:
 			blue_wire_button.disabled = true
 			var order = gl.correct_wire_orcer.find("blue")
 			cut_wires[order] = true
+			wire2.frame = 1
 			check_order(order)
 		green_wire_button:
 			green_wire_button.disabled = true
 			var order = gl.correct_wire_orcer.find("green")
 			cut_wires[order] = true
+			wire3.frame = 1
 			check_order(order)
 
 
@@ -77,7 +87,6 @@ func check_order(order : int) -> void:
 				safe_to_destroy = true
 			else:
 				bomb_explode()
-	
 
 func bomb_explode() -> void:
 	print("explode")

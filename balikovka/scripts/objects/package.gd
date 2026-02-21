@@ -18,7 +18,7 @@ var drag_package : bool = false
 @export var machine : Node2D
 @export var machine_pos : Marker2D
 @export var table_pos : Marker2D
-@export var package_image : Sprite2D
+@export var package_image : AnimatedSprite2D
 @export var package_button : Button
 @export var package_area : Area2D
 
@@ -56,24 +56,34 @@ func _on_drag_package() -> void:
 	if gl.in_hand == "empty":
 		drag_package = true
 
+
+var previos_pos : Marker2D
 func _on_drop_package() -> void:
 	drag_package = false
-
 	print("drop ", machine.in_drop_area)
 	
 	if machine.in_drop_area:
 		on_table = false
+		previos_pos = machine.package_pos
 		_on_move_package(machine.package_pos)
+		_on_resize_package(1.0)
 	elif machine.in_bin_area:
-		pass
+		package_button.disabled = true
+		_on_move_package(machine.bin_pos)
+		_on_resize_package(1.0)
+		reparent(machine.bin_image)
+		self.package_area.monitorable = false
+		machine.package_on_table = null
+		print("package to destroy ", self)
+		machine.remove_package(self)
 	elif machine.in_table_area:
 		on_table = true
+		previos_pos = table_pos
 		_on_move_package(table_pos)
+		_on_resize_package(2.0)
 	else:
-		if on_table:
-			_on_move_package(table_pos)
-		else:
-			_on_move_package(machine.package_pos)
+		_on_move_package(previos_pos)
+
 
 func _on_move_package(dest : Marker2D):
 	var tween := create_tween()
@@ -83,20 +93,33 @@ func _on_move_package(dest : Marker2D):
 		dest.global_position,
 		0.25
 	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	await tween.finished
+
+func _on_resize_package(value: float) -> void:
+	var tween := create_tween()
+	tween.tween_property(
+		self,
+		"scale",
+		Vector2(value, value),
+		0.25
+	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
+	await tween.finished
 
 func _on_open_package() -> void:
 	if on_table:
+		package_image.frame = 1
+		package_content.visible = true
 		package_opend = true
-		package_image.visible = false
 		package_button.disabled = true
-
 		package_button.mouse_filter = Control.MOUSE_FILTER_IGNORE
 		print("package opend")
 
 func _on_pack_package() -> void:
 	if on_table:
+		package_image.frame = 0
+		package_content.visible = false
 		package_opend = false
-		package_image.visible = true
 		package_button.disabled = false
 		package_button.mouse_filter = Control.MOUSE_FILTER_STOP
 		print("package packed")

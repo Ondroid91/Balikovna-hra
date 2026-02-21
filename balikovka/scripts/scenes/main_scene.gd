@@ -18,9 +18,12 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	parameters.text = (
+		"damage : " + str(gl.final_damage) + "\n" +
 		"sended packages : " + str(gl.sended_packages) + "\n" +
 		"correct packages : " + str(gl.correct_packages) + "\n" +
-		"danger packages : " + str(gl.danger_packages)
+		"danger packages : " + str(gl.danger_packages) + "\n" +
+		"correct removed : " + str(gl.correctly_removed_packages) + "\n" +
+		"incorrect removed : " + str(gl.incorrectly_removed_packages)
 	)
 
 
