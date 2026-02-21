@@ -218,7 +218,7 @@ position = Vector2(304, 200)
 [node name="scan_image" type="Sprite2D" parent="scener" unique_id=763812505]
 self_modulate = Color(0, 0, 0, 1)
 z_index = 2
-position = Vector2(47.999996, -376)
+position = Vector2(71.99999, -392)
 scale = Vector2(0.2, 0.2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scener" unique_id=1411116712]
