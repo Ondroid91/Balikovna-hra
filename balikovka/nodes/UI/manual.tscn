@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://c001j2craaa5w"]
 
 [ext_resource type="Script" uid="uid://b1yffxa1bc3vm" path="res://scripts/objects/manual.gd" id="1_ew4od"]
+[ext_resource type="Texture2D" uid="uid://bmv0q03v6gosg" path="res://assets/items/kniha_1.png" id="2_4mmbl"]
+[ext_resource type="Texture2D" uid="uid://dnu2bllfipn3y" path="res://assets/items/kniha_3.png" id="3_d3xkj"]
+[ext_resource type="Texture2D" uid="uid://uavdvtrqypbo" path="res://assets/items/kniha_5.png" id="4_idk3j"]
 
 [node name="manual" type="Control" unique_id=1604602573 node_paths=PackedStringArray("back")]
 layout_mode = 3
@@ -21,19 +24,33 @@ anchor_right = 1.0333333
 anchor_bottom = 1.0666667
 metadata/_edit_use_anchors_ = true
 
+[node name="back" type="Button" parent="." unique_id=423738151]
+layout_mode = 0
+offset_left = 1520.0
+offset_top = 72.0
+offset_right = 1600.0
+offset_bottom = 152.0
+theme_override_font_sizes/font_size = 40
+text = "×"
+
 [node name="page" type="Panel" parent="." unique_id=1854652530]
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 576.0
 offset_top = 64.0
 offset_right = 1344.0
 offset_bottom = 1024.0
 
-[node name="Label" type="Label" parent="." unique_id=150347692]
+[node name="Kniha1" type="Sprite2D" parent="page" unique_id=2089131129]
+position = Vector2(376, 488)
+texture = ExtResource("2_4mmbl")
+
+[node name="Label" type="Label" parent="page" unique_id=150347692]
 layout_mode = 0
-offset_left = 640.0
-offset_top = 200.0
-offset_right = 1280.0
-offset_bottom = 960.0
+offset_left = -152.0
+offset_top = 216.0
+offset_right = 304.0
+offset_bottom = 856.0
 theme_override_font_sizes/font_size = 25
 text = "allowd_package_numbers :
 	\"1321\",
@@ -44,11 +61,44 @@ text = "allowd_package_numbers :
 packages_to_mark :
 	\"4526\""
 
-[node name="back" type="Button" parent="." unique_id=423738151]
+[node name="page2" type="Panel" parent="." unique_id=1196601325]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 1248.0
-offset_top = 80.0
-offset_right = 1328.0
-offset_bottom = 160.0
-theme_override_font_sizes/font_size = 40
-text = "×"
+offset_left = 576.0
+offset_top = 64.0
+offset_right = 1344.0
+offset_bottom = 1024.0
+
+[node name="Kniha1" type="Sprite2D" parent="page2" unique_id=136718895]
+position = Vector2(376, 488)
+texture = ExtResource("3_d3xkj")
+
+[node name="Label" type="Label" parent="page2" unique_id=955983452]
+layout_mode = 0
+offset_left = -152.0
+offset_top = 216.0
+offset_right = 264.0
+offset_bottom = 824.0
+theme_override_font_sizes/font_size = 25
+
+[node name="page3" type="Panel" parent="." unique_id=655250018]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 576.0
+offset_top = 64.0
+offset_right = 1344.0
+offset_bottom = 1024.0
+
+[node name="Kniha1" type="Sprite2D" parent="page3" unique_id=971865807]
+position = Vector2(376, 488)
+texture = ExtResource("4_idk3j")
+
+[node name="Label" type="Label" parent="page3" unique_id=976174269]
+layout_mode = 0
+offset_left = -152.0
+offset_top = 216.0
+offset_right = 280.0
+offset_bottom = 816.0
+theme_override_font_sizes/font_size = 25
