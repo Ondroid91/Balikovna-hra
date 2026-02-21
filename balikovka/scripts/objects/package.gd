@@ -33,13 +33,13 @@ func _ready() -> void:
 	package_button.pressed.connect(_on_package_pressed)
 	package_button.button_down.connect(_on_drag_package)
 	package_button.button_up.connect(_on_drop_package)
-	should_get_mark()
 	spawn_item_in_package()
 	
 	var ran_num = randi_range(0, gl.all_package_numbers.size() - 1)
 	package_number = gl.all_package_numbers[ran_num]
 	package_number_label.text = gl.all_package_numbers[ran_num]
-
+	should_get_mark()
+	print("should", should_be_marked)
 func _process(delta: float) -> void:
 	if drag_package:
 		global_position = get_global_mouse_position()

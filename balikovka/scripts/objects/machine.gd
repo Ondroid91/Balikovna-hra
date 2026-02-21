@@ -31,6 +31,7 @@ var in_bin_area : bool = false
 var origin_bin_pos : Vector2
 
 func _ready() -> void:
+
 	next_button.pressed.connect(_on_next_button)
 	send_area.area_entered.connect(_on_destroy_area_entered)
 	scener_area.area_entered.connect(_on_scener_area_entered)
@@ -64,17 +65,25 @@ func check_package(package : Node2D, send : bool) -> int:
 		if package.package_number == num:
 			num_ok = true
 			break
-	if send and not num_ok: danger_value += gl.wrong_number_damage
-	if package.package_radiation > gl.allowed_radiation_level:
-		danger_value += (package.package_radiation - gl.wrong_number_damage)
+	if send and not num_ok:
+		danger_value += gl.wrong_number_damage
+		print("wrong num")
+	#if package.package_radiation > gl.allowed_radiation_level:
+	#	danger_value += (package.package_radiation - gl.wrong_number_damage)
 	if send and package.should_be_marked != package.package_marked:
 		print("wrong mark")
 		danger_value += gl.wrong_mark_damage
 	
 	var content = package.package_content
-	if send and content.damaged: danger_value += gl.damaged_package
-	if send and content.danger: danger_value += gl.danger_package
-	if send and content.forbbiten: danger_value += gl.forbbiten_item_damage
+	if send and content.damaged:
+		danger_value += gl.damaged_package
+		print("damaged send")
+	if send and content.danger:
+		danger_value += gl.danger_package
+		print("danger send")
+	if send and content.forbbiten:
+		print("forbbiten send")
+		danger_value += gl.forbbiten_item_damage
 	
 	if (
 	send == false
@@ -83,12 +92,14 @@ func check_package(package : Node2D, send : bool) -> int:
 	and not content.danger
 	and num_ok
 	):  
+		print("ok destroyed")
 		danger_value += gl.damaged_package
 	#if send == false and not content.danger: danger_value += gl.danger_package
 	if send == false and content.danger == true and not content.safe_to_destroy:
 		danger_value += gl.danger_package
-		print("danger content")
-	print("dmg : ", danger_value)
+		print("danger content destroyed")
+	#print("dmg : ", danger_value)
+	print("              ")
 	if gl.final_damage > (gl.max_damage + danger_value):
 		print("fired")
 		gl.you_are_fired.emit()

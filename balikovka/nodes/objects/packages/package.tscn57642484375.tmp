@@ -40,6 +40,7 @@ size = Vector2(104, 104)
 [node name="package" type="Node2D" unique_id=897910164 node_paths=PackedStringArray("package_content", "package_image", "package_button", "package_area", "package_number_label", "marker")]
 script = ExtResource("1_lxfn3")
 package_content = NodePath("regular_content")
+package_number = "4526"
 package_image = NodePath("AnimatedSprite2D")
 package_button = NodePath("Button")
 package_area = NodePath("Area2D")
