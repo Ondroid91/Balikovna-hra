@@ -5,11 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://247xh00ae7de" path="res://assets/enviroment/11.png" id="2_ant6f"]
 [ext_resource type="Texture2D" uid="uid://bhxrwinq87ld7" path="res://icon.svg" id="2_eml1y"]
 [ext_resource type="PackedScene" uid="uid://cjwgm70gk5hpi" path="res://nodes/objects/machine.tscn" id="2_yecwc"]
+[ext_resource type="Texture2D" uid="uid://37svekf253xq" path="res://assets/enviroment/POZADIFINAL.png" id="3_wrf1f"]
 [ext_resource type="PackedScene" uid="uid://ih32b5u7cyge" path="res://nodes/items/knife.tscn" id="4_j21y6"]
+[ext_resource type="Texture2D" uid="uid://2udh46sg7suj" path="res://assets/enviroment/sken.png" id="4_wrf1f"]
 [ext_resource type="PackedScene" uid="uid://bp7vclxy0ga01" path="res://nodes/items/tape.tscn" id="5_k05xx"]
 [ext_resource type="PackedScene" uid="uid://yeqjjinsyv4" path="res://nodes/objects/packages/package_2.tscn" id="6_ant6f"]
 [ext_resource type="Texture2D" uid="uid://uf553p75g2mh" path="res://assets/items/ink.png" id="7_mxg38"]
 [ext_resource type="PackedScene" uid="uid://d0atlk6lnhtfc" path="res://nodes/items/stamp.tscn" id="8_ant6f"]
+[ext_resource type="Texture2D" uid="uid://dekoyy7nf05n1" path="res://assets/items/kniha.png" id="9_wrf1f"]
 
 [node name="world" type="Node2D" unique_id=536107681 node_paths=PackedStringArray("manual_button", "timer")]
 process_mode = 1
@@ -20,6 +23,16 @@ timer = NodePath("Timer")
 [node name="Robotasdadasdaapsd" type="Sprite2D" parent="." unique_id=1259921583]
 position = Vector2(960, 540)
 texture = ExtResource("2_ant6f")
+
+[node name="Pozadiiii" type="Sprite2D" parent="." unique_id=426563966]
+z_index = -1
+position = Vector2(960, 540)
+texture = ExtResource("3_wrf1f")
+
+[node name="Sken" type="Sprite2D" parent="." unique_id=1804704742]
+z_index = 1
+position = Vector2(960, 540)
+texture = ExtResource("4_wrf1f")
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=2039203491]
 visible = false
@@ -36,29 +49,37 @@ packages_to_spawn = Array[PackedScene]([ExtResource("1_c64on"), ExtResource("6_a
 [node name="table_pos" type="Marker2D" parent="." unique_id=273368610]
 position = Vector2(960, 960)
 
-[node name="knife" parent="." unique_id=2055013009 instance=ExtResource("4_j21y6")]
-position = Vector2(525, 826)
+[node name="manual2" type="Button" parent="." unique_id=810283082]
+z_index = 1
+offset_left = 112.0
+offset_top = 584.0
+offset_right = 280.0
+offset_bottom = 784.0
+flat = true
 
-[node name="tape" parent="." unique_id=869200505 instance=ExtResource("5_k05xx")]
-position = Vector2(1773, 906)
+[node name="Kniha" type="Sprite2D" parent="manual2" unique_id=732519228]
+position = Vector2(80, 96)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("9_wrf1f")
 
-[node name="Ink" type="Sprite2D" parent="." unique_id=1080760613]
-position = Vector2(129, 826)
-rotation = -1.5707964
+[node name="items" type="Node2D" parent="." unique_id=1787034250]
+z_index = 4
+
+[node name="Ink" type="Sprite2D" parent="items" unique_id=1080760613]
+position = Vector2(132, 932)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("7_mxg38")
 
-[node name="stamp" parent="." unique_id=856996457 instance=ExtResource("8_ant6f")]
-position = Vector2(140, 796)
+[node name="tape" parent="items" unique_id=869200505 instance=ExtResource("5_k05xx")]
+position = Vector2(1773, 906)
+
+[node name="knife" parent="items" unique_id=2055013009 instance=ExtResource("4_j21y6")]
+position = Vector2(525, 826)
+
+[node name="stamp" parent="items" unique_id=856996457 instance=ExtResource("8_ant6f")]
+position = Vector2(143, 902)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=378877017]
 position = Vector2(960, 540)
-
-[node name="manual2" type="Button" parent="." unique_id=810283082]
-offset_left = 1480.0
-offset_top = 872.0
-offset_right = 1616.0
-offset_bottom = 928.0
-text = "Manual"
 
 [node name="Timer" type="Timer" parent="." unique_id=1162801230]

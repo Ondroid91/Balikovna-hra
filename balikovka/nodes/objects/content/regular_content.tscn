@@ -16,10 +16,11 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_jlexp")
 
 [node name="pack" type="Button" parent="." unique_id=1343461389]
-offset_left = -120.0
+offset_left = -128.0
 offset_top = -128.0
-offset_right = 136.0
+offset_right = 128.0
 offset_bottom = 128.0
+flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="." unique_id=452185681]

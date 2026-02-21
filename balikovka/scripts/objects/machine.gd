@@ -17,6 +17,7 @@ extends Node2D
 @export var scener_photo : Sprite2D
 @export var bin_image : Sprite2D
 @export var scan_image : Sprite2D
+@export var pas_image : AnimatedSprite2D
 
 @export var packages_to_spawn : Array[PackedScene]
 
@@ -41,6 +42,7 @@ func _ready() -> void:
 	to_bin_area.area_exited.connect(_on_bin_drop_area_exited)
 
 	origin_bin_pos = bin_image.global_position
+	
 
 
 func _on_destroy_area_entered(area: Area2D) -> void:
@@ -123,11 +125,12 @@ func spawn_object() -> void:
 	package_on_table = new_package
 	await move_package(new_package, package_pos)
 	middle_occupied = true
+	new_package.z_index = 2
 
 func move_package(pack : Node2D, destination : Marker2D) -> void:
 	if not is_instance_valid(pack):
 		return
-
+	pas_image.play()
 	var tween := create_tween()
 	tween.tween_property(
 		pack,
@@ -137,18 +140,16 @@ func move_package(pack : Node2D, destination : Marker2D) -> void:
 	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
 	await tween.finished
-
+	pas_image.stop()
+	
 func _on_scener_area_entered(area) -> void:
 	if is_instance_valid(area):
 		var package = area.get_parent()
 		var content_image = package.package_content.content_image
 		if package.package_content.damaged:
 			content_image = package.package_content.damaged_content_image
-		
 		if content_image:
 			scan_image.texture = content_image
-		
-
 
 # areas
 func _on_drop_area_entered(area) -> void:

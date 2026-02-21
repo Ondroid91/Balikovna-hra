@@ -73,6 +73,7 @@ func _on_drop_package() -> void:
 		package_button.disabled = true
 		_on_move_package(machine.bin_pos)
 		_on_resize_package(1.0)
+		z_index = 0
 		reparent(machine.bin_image)
 		self.package_area.monitorable = false
 		machine.package_on_table = null

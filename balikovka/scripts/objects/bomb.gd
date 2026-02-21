@@ -1,5 +1,6 @@
 extends Node2D
 
+@export_enum("order1", "order2") var correct_order : String = "order1"
 @export var damaged : bool = false
 @export var danger : bool = true
 @export var forbbiten : bool = true
@@ -31,6 +32,9 @@ var cut_wires : Array[bool] = [
 
 var bomb_activated : bool = false
 
+var my_correct_order : Array[String]
+
+
 func _ready() -> void:
 	pack.pressed.connect(_on_pack_package)
 	
@@ -39,6 +43,11 @@ func _ready() -> void:
 	green_wire_button.pressed.connect(func(): cut_wire(green_wire_button))
 	bomb_timer.timeout.connect(bomb_explode)
 	pacakge = self.get_parent()
+
+	if correct_order == "order1":
+		my_correct_order = gl.correct_wire_order.duplicate()
+	elif correct_order == "order2":
+		my_correct_order = gl.correct_wire_order2.duplicate()
 
 func _process(delta: float) -> void:
 	if bomb_activated:
@@ -55,19 +64,19 @@ func cut_wire(cutted_wire : Button) -> void:
 	match cutted_wire:
 		red_wire_button:
 			red_wire_button.disabled = true
-			var order = gl.correct_wire_orcer.find("red")
+			var order = my_correct_order.find("red")
 			cut_wires[order] = true
 			wire1.frame = 1
 			check_order(order)
 		blue_wire_button:
 			blue_wire_button.disabled = true
-			var order = gl.correct_wire_orcer.find("blue")
+			var order = my_correct_order.find("blue")
 			cut_wires[order] = true
 			wire2.frame = 1
 			check_order(order)
 		green_wire_button:
 			green_wire_button.disabled = true
-			var order = gl.correct_wire_orcer.find("green")
+			var order = my_correct_order.find("green")
 			cut_wires[order] = true
 			wire3.frame = 1
 			check_order(order)

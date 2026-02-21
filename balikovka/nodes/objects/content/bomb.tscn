@@ -98,6 +98,7 @@ offset_top = -160.0
 offset_right = 192.0
 offset_bottom = 168.0
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="red_wire" type="Button" parent="." unique_id=501055227]
 offset_left = -44.0
@@ -105,6 +106,7 @@ offset_top = -54.0
 offset_right = 28.0
 offset_bottom = -45.0
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="blue_wire" type="Button" parent="." unique_id=465145628]
 offset_left = -41.0
@@ -112,6 +114,7 @@ offset_top = -39.0
 offset_right = 31.0
 offset_bottom = -27.0
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="green_wire" type="Button" parent="." unique_id=1990390157]
 offset_left = -41.0
@@ -119,6 +122,7 @@ offset_top = -19.0
 offset_right = 32.0
 offset_bottom = -9.0
 flat = true
+metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="." unique_id=343352790]
 wait_time = 10.0

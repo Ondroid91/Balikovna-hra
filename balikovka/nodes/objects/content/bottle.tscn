@@ -19,10 +19,11 @@ scale = Vector2(0.2, 0.2)
 texture = SubResource("CompressedTexture2D_nrbgc")
 
 [node name="pack" type="Button" parent="." unique_id=1343461389]
-offset_left = -64.0
-offset_top = -64.0
-offset_right = 64.0
-offset_bottom = 64.0
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="Label" type="Label" parent="." unique_id=452185681]

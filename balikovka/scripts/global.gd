@@ -28,10 +28,15 @@ var packages_to_mark : Array[String] = [
 
 
 
-var correct_wire_orcer : Array[String] = [
+var correct_wire_order : Array[String] = [
 	"red",
 	"blue",
 	"green",
+]
+var correct_wire_order2 : Array[String] = [
+	"green",
+	"red",
+	"blue",
 ]
 
 # chances

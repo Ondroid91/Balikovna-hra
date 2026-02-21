@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://bhxrwinq87ld7" path="res://icon.svg" id="2_rn8yu"]
 [ext_resource type="Texture2D" uid="uid://cs36p86a0p1ro" path="res://assets/enviroment/robotasdadasdaapsd.png" id="3_ps6kg"]
 [ext_resource type="Texture2D" uid="uid://criuyym7ijw82" path="res://assets/enviroment/pas_animation_sheet_16_frames.png" id="5_n5xr3"]
+[ext_resource type="Texture2D" uid="uid://bcssofk04c15a" path="res://assets/enviroment/ODPAD.png" id="6_mav8p"]
+[ext_resource type="Texture2D" uid="uid://7jmch4i8jvsm" path="res://assets/enviroment/tlacitko.png" id="6_o5kmq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mav8p"]
 atlas = ExtResource("5_n5xr3")
@@ -133,7 +135,7 @@ size = Vector2(704, 312)
 size = Vector2(24, 186)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rn8yu"]
-size = Vector2(40, 144)
+size = Vector2(40, 359)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n5xr3"]
 size = Vector2(816, 261)
@@ -141,7 +143,7 @@ size = Vector2(816, 261)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ps6kg"]
 size = Vector2(704, 304)
 
-[node name="machine" type="Node2D" unique_id=375230722 node_paths=PackedStringArray("spawn_pos", "package_pos", "exit_pos", "next_button", "send_area", "drop_package", "table_drop_area", "to_bin_area", "bin_pos", "scener_area", "scener_photo", "bin_image", "scan_image")]
+[node name="machine" type="Node2D" unique_id=375230722 node_paths=PackedStringArray("spawn_pos", "package_pos", "exit_pos", "next_button", "send_area", "drop_package", "table_drop_area", "to_bin_area", "bin_pos", "scener_area", "scener_photo", "bin_image", "scan_image", "pas_image")]
 script = ExtResource("1_crc7w")
 spawn_pos = NodePath("spawner")
 package_pos = NodePath("drop_area/package_place")
@@ -156,6 +158,7 @@ scener_area = NodePath("scener")
 scener_photo = NodePath("scener/photo")
 bin_image = NodePath("bin")
 scan_image = NodePath("scener/scan_image")
+pas_image = NodePath("pas")
 packages_to_spawn = Array[PackedScene]([ExtResource("2_ps6kg"), ExtResource("2_ps6kg")])
 
 [node name="Robotasdadasdaapsd" type="Sprite2D" parent="." unique_id=43604159]
@@ -177,14 +180,21 @@ scale = Vector2(22.124998, 1.09375)
 texture = ExtResource("2_rn8yu")
 
 [node name="pas" type="AnimatedSprite2D" parent="." unique_id=521160793]
-position = Vector2(-1248, 144)
+position = Vector2(960, 78)
 sprite_frames = SubResource("SpriteFrames_6lql1")
+frame = 13
+frame_progress = 0.12520841
+
+[node name="Tlacitko" type="Sprite2D" parent="." unique_id=76633684]
+position = Vector2(959, 87)
+texture = ExtResource("6_o5kmq")
 
 [node name="next" type="Button" parent="." unique_id=558975007]
-offset_left = 1488.0
-offset_top = 272.0
-offset_right = 1616.0
-offset_bottom = 392.0
+offset_left = 1782.0
+offset_top = -307.0
+offset_right = 1866.0
+offset_bottom = -196.0
+flat = true
 
 [node name="drop_area" type="Area2D" parent="." unique_id=575317656]
 position = Vector2(960, 200)
@@ -207,10 +217,12 @@ position = Vector2(304, 200)
 
 [node name="scan_image" type="Sprite2D" parent="scener" unique_id=763812505]
 self_modulate = Color(0, 0, 0, 1)
+z_index = 2
 position = Vector2(47.999996, -376)
 scale = Vector2(0.2, 0.2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scener" unique_id=1411116712]
+position = Vector2(0, -107.5)
 shape = SubResource("RectangleShape2D_rn8yu")
 
 [node name="photo" type="Sprite2D" parent="scener" unique_id=1872450593]
@@ -232,11 +244,11 @@ position = Vector2(32, -56)
 shape = SubResource("RectangleShape2D_ps6kg")
 
 [node name="bin" type="Sprite2D" parent="." unique_id=2132948435]
-z_index = 1
+z_index = 2
 y_sort_enabled = true
-position = Vector2(1736, 19.999992)
-scale = Vector2(2.8125, 0.5625)
-texture = ExtResource("2_rn8yu")
+position = Vector2(1728, -8)
+texture = ExtResource("6_mav8p")
+offset = Vector2(-768, 83.99999)
 
 [node name="bin_pos" type="Marker2D" parent="bin" unique_id=1093771742]
 position = Vector2(-14.222222, -7.1111116)

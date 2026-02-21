@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var item_name : String
-
+@export var object_rotation_on_pick : float
 @export_group("components")
 @export var pick : Button
 
@@ -17,6 +17,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if gl.in_hand != item_name: return
+	
 	self.global_position = get_global_mouse_position()
 	if Input.is_action_just_pressed("right_click"):
 		put_item_back()
@@ -24,6 +25,8 @@ func _process(delta: float) -> void:
 		put_item_back()
 
 func put_item_back() -> void:
+	rotation = 0
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	gl.in_hand = "empty"
 	var tween := create_tween()
 	tween.tween_property(
@@ -37,6 +40,8 @@ func put_item_back() -> void:
 	pick.mouse_filter = Control.MOUSE_FILTER_STOP
 
 func _on_picked() -> void:
+	rotation = object_rotation_on_pick
+	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	gl.in_hand = item_name
 	pick.disabled = true
 	pick.mouse_filter = Control.MOUSE_FILTER_IGNORE
