@@ -22,23 +22,29 @@ var drag_package : bool = false
 @export var package_button : Button
 @export var package_area : Area2D
 
-var in_area : bool = false
+
+var in_table_area : bool = false
+
+
 
 func _ready() -> void:
 	package_button.pressed.connect(_on_package_pressed)
 	package_button.button_down.connect(_on_drag_package)
 	package_button.button_up.connect(_on_drop_package)
+	
 
 func _process(delta: float) -> void:
 	if drag_package:
 		global_position = get_global_mouse_position()
+		#print(drag_package)
 
 
 func _on_package_pressed() -> void:
-	if gl.in_hand == "empty":
-		if global_position.distance_to(machine.pakcage_pos.global_position) < 5.0 \
-		or global_position.distance_to(table_pos.global_position) < 5.0:
-			_on_pick_package()
+	#if gl.in_hand == "empty":
+		#if global_position.distance_to(machine.pakcage_pos.global_position) < 5.0 \
+		#or global_position.distance_to(table_pos.global_position) < 5.0:
+			#_on_pick_package()
+		#	pass
 	if gl.in_hand == "knife" and not package_opend:
 		_on_open_package()
 	if gl.in_hand == "tape" and package_opend:
@@ -47,39 +53,33 @@ func _on_package_pressed() -> void:
 		_on_stamp_mark()
 
 func _on_drag_package() -> void:
-	if on_table:
+	if gl.in_hand == "empty":
 		drag_package = true
 
 func _on_drop_package() -> void:
-	on_table = false
 	drag_package = false
-	_on_pick_package()
 
-func set_package():
-	#package_image.texture
-	#package_content_image.texture = package_content.image
-	pass
+	print("drop ", machine.in_drop_area)
+	
+	if machine.in_drop_area:
+		on_table = false
+		_on_move_package(machine.package_pos)
+		print("drop on machine")
+	elif machine.in_bin_area:
+		pass
+	elif machine.in_table_area:
+		print("drop on table")
+		on_table = true
+		_on_move_package(table_pos)
 
-func _on_pick_package():
-	match on_table:
-		false:
-			var tween := create_tween()
-			tween.tween_property(
-				self,
-				"global_position",
-				table_pos.global_position,
-				0.25
-			).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-			on_table = true
-		true:
-			var tween := create_tween()
-			tween.tween_property(
-				self,
-				"global_position",
-				machine.pakcage_pos.global_position,
-				0.25
-			).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
-			on_table = false
+func _on_move_package(dest : Marker2D):
+	var tween := create_tween()
+	tween.tween_property(
+		self,
+		"global_position",
+		dest.global_position,
+		0.25
+	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
 func _on_open_package() -> void:
 	if on_table:

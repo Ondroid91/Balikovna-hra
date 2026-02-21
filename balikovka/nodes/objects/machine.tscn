@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bhxrwinq87ld7" path="res://icon.svg" id="2_rn8yu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ps6kg"]
-size = Vector2(178, 170)
+size = Vector2(289, 277)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crc7w"]
 size = Vector2(24, 186)
@@ -12,14 +12,19 @@ size = Vector2(24, 186)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rn8yu"]
 size = Vector2(40, 144)
 
-[node name="machine" type="Node2D" unique_id=375230722 node_paths=PackedStringArray("spawn_pos", "pakcage_pos", "exit_pos", "next_button", "send_area", "drop_package", "scener_area", "scener_photo")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5xr3"]
+size = Vector2(641, 170)
+
+[node name="machine" type="Node2D" unique_id=375230722 node_paths=PackedStringArray("spawn_pos", "package_pos", "exit_pos", "next_button", "send_area", "drop_package", "table_drop_area", "to_bin_area", "scener_area", "scener_photo")]
 script = ExtResource("1_crc7w")
 spawn_pos = NodePath("spawner")
-pakcage_pos = NodePath("drop_area/package_place")
+package_pos = NodePath("drop_area/package_place")
 exit_pos = NodePath("exit")
 next_button = NodePath("next")
 send_area = NodePath("send_area")
 drop_package = NodePath("drop_area")
+table_drop_area = NodePath("table_area")
+to_bin_area = NodePath("bin_area")
 scener_area = NodePath("scener")
 scener_photo = NodePath("scener/photo")
 
@@ -63,3 +68,16 @@ position = Vector2(304, 200)
 shape = SubResource("RectangleShape2D_rn8yu")
 
 [node name="photo" type="Sprite2D" parent="scener" unique_id=1872450593]
+
+[node name="bin_area" type="Area2D" parent="." unique_id=1889903627]
+position = Vector2(1832, 48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bin_area" unique_id=813280625]
+position = Vector2(-231.5, 0)
+shape = SubResource("RectangleShape2D_n5xr3")
+
+[node name="table_area" type="Area2D" parent="." unique_id=507331463]
+position = Vector2(960, 592)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="table_area" unique_id=302521123]
+shape = SubResource("RectangleShape2D_ps6kg")
