@@ -9,6 +9,7 @@ size = Vector2(128, 128)
 
 [node name="package" type="Node2D" unique_id=897910164 node_paths=PackedStringArray("package_image", "package_button", "package_area")]
 script = ExtResource("1_td2lr")
+package_number = "1321"
 package_image = NodePath("package_image")
 package_button = NodePath("Button")
 package_area = NodePath("Area2D")

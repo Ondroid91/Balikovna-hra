@@ -5,11 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://bn7l5ehykng4a" path="res://nodes/scenes/world.tscn" id="2_genem"]
 [ext_resource type="PackedScene" uid="uid://c001j2craaa5w" path="res://nodes/UI/manual.tscn" id="3_ksbhw"]
 
-[node name="main_scene" type="Node" unique_id=692884037 node_paths=PackedStringArray("currrent_scene", "manual_book", "viewport")]
+[node name="main_scene" type="Node" unique_id=692884037 node_paths=PackedStringArray("currrent_scene", "manual_book", "viewport", "parameters")]
 script = ExtResource("1_nnkd3")
 currrent_scene = NodePath("SubViewportContainer/SubViewport/world")
 manual_book = NodePath("manual")
 viewport = NodePath("SubViewportContainer/SubViewport")
+parameters = NodePath("parameters")
 main_menu_scene = ExtResource("2_exqo6")
 game_scene = ExtResource("2_genem")
 
@@ -31,3 +32,8 @@ main_scene = NodePath("../../..")
 
 [node name="manual" parent="." unique_id=1604602573 instance=ExtResource("3_ksbhw")]
 visible = false
+
+[node name="parameters" type="Label" parent="." unique_id=456466516]
+offset_right = 536.0
+offset_bottom = 256.0
+theme_override_font_sizes/font_size = 30

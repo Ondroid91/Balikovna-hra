@@ -50,6 +50,7 @@ offset_bottom = 496.0
 position = Vector2(960, 200)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="drop_area" unique_id=1827027848]
+position = Vector2(0, -64)
 shape = SubResource("RectangleShape2D_ps6kg")
 
 [node name="package_place" type="Marker2D" parent="drop_area" unique_id=1145435210]

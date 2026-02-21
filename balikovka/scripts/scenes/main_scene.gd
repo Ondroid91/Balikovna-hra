@@ -6,12 +6,29 @@ extends Node
 @export var currrent_scene : Node
 @export var manual_book : Control
 @export var viewport : Viewport
+@export var parameters : Label
 
 @export var main_menu_scene : PackedScene
 @export var game_scene : PackedScene
 
+
 func _ready() -> void:
 	set_start_scene()
+	
+
+func _process(delta: float) -> void:
+	parameters.text = (
+		"sended packages : " + str(gl.sended_packages) + "\n" +
+		"correct packages : " + str(gl.correct_packages) + "\n" +
+		"danger packages : " + str(gl.danger_packages)
+	)
+
+
+
+
+
+
+
 
 
 func set_start_scene() -> void:

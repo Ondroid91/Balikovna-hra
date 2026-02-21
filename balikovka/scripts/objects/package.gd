@@ -10,7 +10,7 @@ extends Node2D
 @export var package_radiation : int = 0
 @export var package_weight : float = 0.0
 @export var package_damage : int = 0
-@export var package_marked : bool = true
+@export var package_marked : bool = false
 var should_be_marked : bool = false
 var drag_package : bool = false
 
@@ -64,13 +64,16 @@ func _on_drop_package() -> void:
 	if machine.in_drop_area:
 		on_table = false
 		_on_move_package(machine.package_pos)
-		print("drop on machine")
 	elif machine.in_bin_area:
 		pass
 	elif machine.in_table_area:
-		print("drop on table")
 		on_table = true
 		_on_move_package(table_pos)
+	else:
+		if on_table:
+			_on_move_package(table_pos)
+		else:
+			_on_move_package(machine.package_pos)
 
 func _on_move_package(dest : Marker2D):
 	var tween := create_tween()
