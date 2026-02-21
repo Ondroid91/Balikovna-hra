@@ -4,40 +4,53 @@
 [ext_resource type="Texture2D" uid="uid://bhxrwinq87ld7" path="res://icon.svg" id="2_rn8yu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crc7w"]
-size = Vector2(98, 186)
+size = Vector2(24, 186)
 
-[node name="machine" type="Node2D" unique_id=375230722 node_paths=PackedStringArray("spawn_pos", "pakcage_pos", "exit_pos", "next_button", "destroy_area")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rn8yu"]
+size = Vector2(40, 144)
+
+[node name="machine" type="Node2D" unique_id=375230722 node_paths=PackedStringArray("spawn_pos", "pakcage_pos", "exit_pos", "next_button", "destroy_area", "scener_area", "scener_photo")]
 script = ExtResource("1_crc7w")
 spawn_pos = NodePath("spawner")
 pakcage_pos = NodePath("package_place")
 exit_pos = NodePath("exit")
-next_button = NodePath("Button")
+next_button = NodePath("next")
 destroy_area = NodePath("destroy_area")
+scener_area = NodePath("scener")
+scener_photo = NodePath("scener/photo")
 
 [node name="spawner" type="Marker2D" parent="." unique_id=1128785729]
-position = Vector2(-64.00006, 200)
+position = Vector2(-128, 200)
 
 [node name="package_place" type="Marker2D" parent="." unique_id=1145435210]
-position = Vector2(511.99994, 200)
+position = Vector2(960, 200)
 
 [node name="exit" type="Marker2D" parent="." unique_id=1592890426]
-position = Vector2(1216, 200)
+position = Vector2(2048, 192)
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=980670040]
 self_modulate = Color(0.23941842, 0.04036948, 0.038442727, 1)
-position = Vector2(516, 200)
-scale = Vector2(13.3125, 1.09375)
+position = Vector2(1079.9999, 200)
+scale = Vector2(22.124998, 1.09375)
 texture = ExtResource("2_rn8yu")
 
-[node name="Button" type="Button" parent="." unique_id=558975007]
-offset_left = 887.99994
-offset_top = 328.0
-offset_right = 959.99994
-offset_bottom = 400.0
+[node name="next" type="Button" parent="." unique_id=558975007]
+offset_left = 1592.0
+offset_top = 376.0
+offset_right = 1720.0
+offset_bottom = 496.0
 
 [node name="destroy_area" type="Area2D" parent="." unique_id=763842483]
-position = Vector2(1216, 72)
+position = Vector2(2008, 72)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="destroy_area" unique_id=1982995221]
-position = Vector2(39, 83)
+position = Vector2(76, 83)
 shape = SubResource("RectangleShape2D_crc7w")
+
+[node name="scener" type="Area2D" parent="." unique_id=1885535041]
+position = Vector2(304, 200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scener" unique_id=1411116712]
+shape = SubResource("RectangleShape2D_rn8yu")
+
+[node name="photo" type="Sprite2D" parent="scener" unique_id=1872450593]

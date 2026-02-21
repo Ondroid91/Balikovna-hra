@@ -1,32 +1,41 @@
-extends Area2D
+extends Node2D
 
 @export var on_table : bool = false
-#package parameters
-@export var package_content : Node2D
-@export var danger_value : int = 0
 @export var package_opend : bool = false
+@export var package_content : Node2D
+
+@export_group("package parameters")
+@export var danger_value : int = 0
 @export var package_number : String
 @export var package_radiation : int = 0
 @export var package_weight : float = 0.0
 @export var package_damage : int = 0
+@export var package_marked : bool = true
 
 @export_group("components")
+@export var machine : Node2D
 @export var machine_pos : Marker2D
 @export var table_pos : Marker2D
 @export var package_image : Sprite2D
-@export var package_content_image: Sprite2D
+@export var package_button : Button
+@export var package_area : Area2D
 
 var in_area : bool = false
 
 func _ready() -> void:
-	mouse_entered.connect(func(): in_area = true)
-	mouse_exited.connect(func(): in_area = false)
+	package_button.pressed.connect(_on_package_pressed)
 
-func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("left_click") and in_area:
-		if gl.in_hand == "empty":
-			print("pick")
+func _on_package_pressed() -> void:
+	if gl.in_hand == "empty":
+		if global_position.distance_to(machine.pakcage_pos.global_position) < 5.0 \
+		or global_position.distance_to(table_pos.global_position) < 5.0:
 			_on_pick_package()
+	if gl.in_hand == "knife" and not package_opend:
+		_on_open_package()
+	if gl.in_hand == "tape" and package_opend:
+		_on_pack_package()
+	if gl.in_hand == "stamp" and not package_opend:
+		_on_stamp_mark()
 
 func set_package():
 	#package_image.texture
@@ -49,15 +58,29 @@ func _on_pick_package():
 			tween.tween_property(
 				self,
 				"global_position",
-				machine_pos.global_position,
+				machine.pakcage_pos.global_position,
 				0.25
 			).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 			on_table = false
 
-func _on_open_package():
+func _on_open_package() -> void:
 	if on_table:
-		pass
+		package_opend = true
+		package_image.visible = false
+		package_button.disabled = true
 
-func _on_pack_package():
+		package_button.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		print("package opend")
+
+func _on_pack_package() -> void:
 	if on_table:
-		on_table = false
+		package_opend = false
+		package_image.visible = true
+		package_button.disabled = false
+		package_button.mouse_filter = Control.MOUSE_FILTER_STOP
+		print("package packed")
+
+func _on_stamp_mark() -> void:
+	if on_table:
+		package_marked = true
+		print("package marked")

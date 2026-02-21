@@ -1,11 +1,18 @@
 [gd_scene format=3 uid="uid://bjyihwwmtp8w2"]
 
 [ext_resource type="Script" uid="uid://cj2bs26jcg4hd" path="res://scripts/scenes/main_scene.gd" id="1_nnkd3"]
+[ext_resource type="PackedScene" uid="uid://cpygnedh6b6sm" path="res://nodes/scenes/main_menu.tscn" id="2_exqo6"]
 [ext_resource type="PackedScene" uid="uid://bn7l5ehykng4a" path="res://nodes/scenes/world.tscn" id="2_genem"]
+[ext_resource type="PackedScene" uid="uid://c001j2craaa5w" path="res://nodes/UI/manual.tscn" id="3_ksbhw"]
 
-[node name="main_scene" type="Node" unique_id=692884037 node_paths=PackedStringArray("currrent_scene")]
+[node name="main_scene" type="Node" unique_id=692884037 node_paths=PackedStringArray("currrent_scene", "manual_book", "viewport")]
 script = ExtResource("1_nnkd3")
+start_scene = "main_menu"
 currrent_scene = NodePath("SubViewportContainer/SubViewport/world")
+manual_book = NodePath("manual")
+viewport = NodePath("SubViewportContainer/SubViewport")
+main_menu_scene = ExtResource("2_exqo6")
+game_scene = ExtResource("2_genem")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=1705460704]
 anchors_preset = -1
@@ -20,4 +27,8 @@ handle_input_locally = false
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
-[node name="world" parent="SubViewportContainer/SubViewport" unique_id=536107681 instance=ExtResource("2_genem")]
+[node name="world" parent="SubViewportContainer/SubViewport" unique_id=536107681 node_paths=PackedStringArray("main_scene") instance=ExtResource("2_genem")]
+main_scene = NodePath("../../..")
+
+[node name="manual" parent="." unique_id=1604602573 instance=ExtResource("3_ksbhw")]
+visible = false

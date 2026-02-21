@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bp7vclxy0ga01"]
+
+[ext_resource type="Script" uid="uid://ni2un5mqr8hb" path="res://scripts/items/item.gd" id="1_28vka"]
+[ext_resource type="Texture2D" uid="uid://tulempdqruy8" path="res://assets/items/tape.png" id="2_28vka"]
+
+[node name="tape" type="Node2D" unique_id=2055013009 node_paths=PackedStringArray("pick")]
+script = ExtResource("1_28vka")
+item_name = "tape"
+pick = NodePath("Button")
+
+[node name="Tape" type="Sprite2D" parent="." unique_id=1500062030]
+position = Vector2(4.7683716e-07, 7.6293945e-06)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_28vka")
+
+[node name="Label" type="Label" parent="." unique_id=1774445852]
+offset_right = 40.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="." unique_id=343321657]
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+flat = true
+metadata/_edit_use_anchors_ = true

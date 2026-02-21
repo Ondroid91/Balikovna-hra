@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ih32b5u7cyge"]
+
+[ext_resource type="Script" uid="uid://ni2un5mqr8hb" path="res://scripts/items/item.gd" id="1_to20b"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_016ll"]
+load_path = "res://.godot/imported/Utility_knife.png-84ac399d3b091c5eab3e1b3f0dd4d6a1.ctex"
+
+[node name="knife" type="Node2D" unique_id=2055013009 node_paths=PackedStringArray("pick")]
+script = ExtResource("1_to20b")
+item_name = "knife"
+pick = NodePath("Button")
+
+[node name="Knife" type="Sprite2D" parent="." unique_id=956468535]
+position = Vector2(0, 9.094947e-13)
+scale = Vector2(0.1, 0.1)
+texture = SubResource("CompressedTexture2D_016ll")
+
+[node name="Label" type="Label" parent="." unique_id=1774445852]
+offset_right = 40.0
+offset_bottom = 23.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="." unique_id=343321657]
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+flat = true
+metadata/_edit_use_anchors_ = true

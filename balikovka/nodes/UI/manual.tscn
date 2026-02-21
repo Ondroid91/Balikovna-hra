@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://c001j2craaa5w"]
+
+[ext_resource type="Script" uid="uid://b1yffxa1bc3vm" path="res://scripts/objects/manual.gd" id="1_ew4od"]
+
+[node name="manual" type="Control" unique_id=1604602573 node_paths=PackedStringArray("back")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ew4od")
+back = NodePath("back")
+
+[node name="backgroud" type="Panel" parent="." unique_id=1348854123]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+anchor_left = -0.033333335
+anchor_top = -0.05185185
+anchor_right = 1.0333333
+anchor_bottom = 1.0666667
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="." unique_id=150347692]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 200.0
+offset_right = 1280.0
+offset_bottom = 960.0
+text = "manual text"
+
+[node name="page" type="Panel" parent="." unique_id=1854652530]
+layout_mode = 0
+offset_left = 576.0
+offset_top = 64.0
+offset_right = 1344.0
+offset_bottom = 1024.0
+
+[node name="back" type="Button" parent="." unique_id=423738151]
+layout_mode = 0
+offset_left = 1248.0
+offset_top = 80.0
+offset_right = 1328.0
+offset_bottom = 160.0
+theme_override_font_sizes/font_size = 40
+text = "×"
