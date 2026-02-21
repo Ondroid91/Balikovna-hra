@@ -14,7 +14,6 @@ func _ready() -> void:
 	set_start_scene()
 
 
-
 func set_start_scene() -> void:
 	match start_scene:
 		"game":

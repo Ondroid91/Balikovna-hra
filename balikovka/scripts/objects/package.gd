@@ -11,6 +11,8 @@ extends Node2D
 @export var package_weight : float = 0.0
 @export var package_damage : int = 0
 @export var package_marked : bool = true
+var should_be_marked : bool = false
+var drag_package : bool = false
 
 @export_group("components")
 @export var machine : Node2D
@@ -24,6 +26,13 @@ var in_area : bool = false
 
 func _ready() -> void:
 	package_button.pressed.connect(_on_package_pressed)
+	package_button.button_down.connect(_on_drag_package)
+	package_button.button_up.connect(_on_drop_package)
+
+func _process(delta: float) -> void:
+	if drag_package:
+		global_position = get_global_mouse_position()
+
 
 func _on_package_pressed() -> void:
 	if gl.in_hand == "empty":
@@ -36,6 +45,15 @@ func _on_package_pressed() -> void:
 		_on_pack_package()
 	if gl.in_hand == "stamp" and not package_opend:
 		_on_stamp_mark()
+
+func _on_drag_package() -> void:
+	if on_table:
+		drag_package = true
+
+func _on_drop_package() -> void:
+	on_table = false
+	drag_package = false
+	_on_pick_package()
 
 func set_package():
 	#package_image.texture

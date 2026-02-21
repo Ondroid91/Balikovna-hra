@@ -3,27 +3,28 @@
 [ext_resource type="Script" uid="uid://cugtneu6y8n87" path="res://scripts/objects/machine.gd" id="1_crc7w"]
 [ext_resource type="Texture2D" uid="uid://bhxrwinq87ld7" path="res://icon.svg" id="2_rn8yu"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ps6kg"]
+size = Vector2(178, 170)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crc7w"]
 size = Vector2(24, 186)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rn8yu"]
 size = Vector2(40, 144)
 
-[node name="machine" type="Node2D" unique_id=375230722 node_paths=PackedStringArray("spawn_pos", "pakcage_pos", "exit_pos", "next_button", "destroy_area", "scener_area", "scener_photo")]
+[node name="machine" type="Node2D" unique_id=375230722 node_paths=PackedStringArray("spawn_pos", "pakcage_pos", "exit_pos", "next_button", "send_area", "drop_package", "scener_area", "scener_photo")]
 script = ExtResource("1_crc7w")
 spawn_pos = NodePath("spawner")
-pakcage_pos = NodePath("package_place")
+pakcage_pos = NodePath("drop_area/package_place")
 exit_pos = NodePath("exit")
 next_button = NodePath("next")
-destroy_area = NodePath("destroy_area")
+send_area = NodePath("send_area")
+drop_package = NodePath("drop_area")
 scener_area = NodePath("scener")
 scener_photo = NodePath("scener/photo")
 
 [node name="spawner" type="Marker2D" parent="." unique_id=1128785729]
 position = Vector2(-128, 200)
-
-[node name="package_place" type="Marker2D" parent="." unique_id=1145435210]
-position = Vector2(960, 200)
 
 [node name="exit" type="Marker2D" parent="." unique_id=1592890426]
 position = Vector2(2048, 192)
@@ -40,11 +41,19 @@ offset_top = 376.0
 offset_right = 1720.0
 offset_bottom = 496.0
 
-[node name="destroy_area" type="Area2D" parent="." unique_id=763842483]
+[node name="drop_area" type="Area2D" parent="." unique_id=575317656]
+position = Vector2(960, 200)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="drop_area" unique_id=1827027848]
+shape = SubResource("RectangleShape2D_ps6kg")
+
+[node name="package_place" type="Marker2D" parent="drop_area" unique_id=1145435210]
+
+[node name="send_area" type="Area2D" parent="." unique_id=763842483]
 position = Vector2(2008, 72)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="destroy_area" unique_id=1982995221]
-position = Vector2(76, 83)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="send_area" unique_id=1982995221]
+position = Vector2(76, 184)
 shape = SubResource("RectangleShape2D_crc7w")
 
 [node name="scener" type="Area2D" parent="." unique_id=1885535041]

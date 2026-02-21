@@ -6,7 +6,25 @@ var in_hand : String = "empty"
 
 # game balance variables
 var level_time : float = 300.0
+var wrong_number_damage = 10
+var wrong_mark_damage = 10
 
+var allowed_radiation_level = 20
+
+
+
+var allowd_package_numbers : Array[String] = [
+	"1321",
+	"4526",
+]
+var correct_wire_orcer : Array[String] = [
+	"red",
+	"blue",
+	"green",
+]
+
+#signals
+signal bomb_expoded
 
 
 

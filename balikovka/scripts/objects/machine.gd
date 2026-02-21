@@ -6,7 +6,10 @@ extends Node2D
 @export var pakcage_pos : Marker2D
 @export var exit_pos : Marker2D
 @export var next_button : Button
+@export var send_area : Area2D
 @export var destroy_area : Area2D
+@export var drop_package : Area2D
+@export var to_bin_area : Area2D
 @export var table_pos : Marker2D
 @export var scener_area : Area2D
 @export var scener_photo : Sprite2D
@@ -18,22 +21,37 @@ var middle_occupied := true
 
 func _ready() -> void:
 	next_button.pressed.connect(_on_next_button)
-	destroy_area.area_entered.connect(_on_destroy_area_entered)
+	send_area.area_entered.connect(_on_destroy_area_entered)
 	scener_area.area_entered.connect(_on_scener_area_entered)
 
 func _on_destroy_area_entered(area: Area2D) -> void:
 	if is_instance_valid(area):
-		area.get_parent().queue_free()
+		var package = area.get_parent()
 		gl.sended_packages += 1
-		var package_damage = check_package()
+		var package_damage = check_package(package)
 		if package_damage > 0:
 			gl.danger_packages += 1
 			gl.final_damage += package_damage
 		else:
 			gl.correct_packages += 1
-			
-func check_package() -> int:
-	return 0
+		package.queue_free()
+
+
+
+func check_package(package : Node2D) -> int:
+	var danger_value : int = 0
+	var num_ok : bool = false
+	for num in gl.allowd_package_numbers:
+		if package.package_number == num:
+			num_ok = true
+			break
+	if not num_ok: danger_value += gl.wrong_number_damage
+	if package.package_radiation > gl.allowed_radiation_level:
+		danger_value += (package.package_radiation - gl.wrong_number_damage)
+	if package.should_be_marked != package.package_marked:
+		danger_value += gl.wrong_mark_damage
+	
+	return danger_value
 
 func _on_next_button() -> void:
 	if not next_allowed: return
@@ -66,6 +84,7 @@ func spawn_object() -> void:
 	package_on_table = new_package
 	await move_package(new_package, pakcage_pos)
 	middle_occupied = true
+
 
 func move_package(pack : Node2D, destination : Marker2D) -> void:
 	if not is_instance_valid(pack):

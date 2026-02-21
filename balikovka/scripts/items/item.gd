@@ -35,6 +35,7 @@ func put_item_back() -> void:
 	await tween.finished
 	pick.disabled = false
 	pick.mouse_filter = Control.MOUSE_FILTER_STOP
+
 func _on_picked() -> void:
 	gl.in_hand = item_name
 	pick.disabled = true

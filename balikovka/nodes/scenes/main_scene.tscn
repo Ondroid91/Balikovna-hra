@@ -7,7 +7,6 @@
 
 [node name="main_scene" type="Node" unique_id=692884037 node_paths=PackedStringArray("currrent_scene", "manual_book", "viewport")]
 script = ExtResource("1_nnkd3")
-start_scene = "main_menu"
 currrent_scene = NodePath("SubViewportContainer/SubViewport/world")
 manual_book = NodePath("manual")
 viewport = NodePath("SubViewportContainer/SubViewport")

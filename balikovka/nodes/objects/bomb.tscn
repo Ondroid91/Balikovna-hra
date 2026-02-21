@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://bang5m5lddygi"]
+
+[ext_resource type="Script" uid="uid://iojh0ve2shwj" path="res://scripts/objects/bomb.gd" id="1_bs80y"]
+[ext_resource type="Texture2D" uid="uid://bhxrwinq87ld7" path="res://icon.svg" id="2_8t4ln"]
+
+[node name="bomb" type="Node2D" unique_id=184443341 node_paths=PackedStringArray("pack", "red_wire_button", "blue_wire_button", "green_wire_button", "bomb_timer")]
+script = ExtResource("1_bs80y")
+pack = NodePath("pack")
+red_wire_button = NodePath("red_wire")
+blue_wire_button = NodePath("blue_wire")
+green_wire_button = NodePath("green_wire")
+bomb_timer = NodePath("Timer")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=584894951]
+self_modulate = Color(1, 0, 0, 1)
+scale = Vector2(0.49999997, 0.46874997)
+texture = ExtResource("2_8t4ln")
+
+[node name="pack" type="Button" parent="." unique_id=1343461389]
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="." unique_id=452185681]
+offset_left = -32.0
+offset_top = -88.0
+offset_right = 32.0
+offset_bottom = -65.0
+text = "bomb"
+metadata/_edit_use_anchors_ = true
+
+[node name="red_wire" type="Button" parent="." unique_id=501055227]
+offset_left = -32.0
+offset_top = -56.0
+offset_right = 40.0
+offset_bottom = -25.0
+text = "red wire"
+
+[node name="blue_wire" type="Button" parent="." unique_id=465145628]
+offset_left = -32.0
+offset_top = -16.0
+offset_right = 40.0
+offset_bottom = 15.0
+text = "blue wire"
+
+[node name="green_wire" type="Button" parent="." unique_id=1990390157]
+offset_left = -32.0
+offset_top = 16.0
+offset_right = 40.0
+offset_bottom = 47.0
+text = "green wire"
+
+[node name="Timer" type="Timer" parent="." unique_id=343352790]
+wait_time = 10.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=932006975]
+zoom = Vector2(5, 5)
