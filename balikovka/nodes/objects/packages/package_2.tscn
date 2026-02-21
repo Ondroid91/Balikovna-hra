@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cps32f7f6hlkt" path="res://assets/krabice_ptevrena_.png" id="3_mitpy"]
 [ext_resource type="PackedScene" uid="uid://ck5y32o78tc8r" path="res://nodes/objects/content/regular_content.tscn" id="3_pucdj"]
 [ext_resource type="PackedScene" uid="uid://bang5m5lddygi" path="res://nodes/objects/content/bomb.tscn" id="4_xo6j7"]
+[ext_resource type="PackedScene" uid="uid://4q7sfscgyqxx" path="res://nodes/objects/content/books.tscn" id="5_cb5hv"]
+[ext_resource type="PackedScene" uid="uid://dns0uqr18dkxu" path="res://nodes/objects/content/cup.tscn" id="6_4u6wv"]
+[ext_resource type="PackedScene" uid="uid://d3ream4h0dg5x" path="res://nodes/objects/content/item_2.tscn" id="7_2uljq"]
+[ext_resource type="PackedScene" uid="uid://dbp35266cnio2" path="res://nodes/objects/content/tooths.tscn" id="8_peaad"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jjc2n"]
 atlas = ExtResource("2_xo6j7")
@@ -38,7 +42,7 @@ package_content = NodePath("bomb")
 package_image = NodePath("AnimatedSprite2D")
 package_button = NodePath("Button")
 package_area = NodePath("Area2D")
-items_list = Array[PackedScene]([ExtResource("2_hg1e1"), ExtResource("3_pucdj"), ExtResource("4_xo6j7"), ExtResource("2_hg1e1"), ExtResource("3_pucdj")])
+items_list = Array[PackedScene]([ExtResource("2_hg1e1"), ExtResource("3_pucdj"), ExtResource("4_xo6j7"), ExtResource("5_cb5hv"), ExtResource("6_4u6wv"), ExtResource("7_2uljq"), ExtResource("8_peaad")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2062593142]
 position = Vector2(0, -78)

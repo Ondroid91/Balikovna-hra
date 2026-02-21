@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://d3ream4h0dg5x"]
+
+[ext_resource type="Script" uid="uid://d2uk82kw2dn6" path="res://scripts/objects/regular_content.gd" id="1_dur4k"]
+[ext_resource type="Texture2D" uid="uid://bbnfw67ef6h2l" path="res://assets/content/predmet_cely_good_1.png" id="2_dmxsd"]
+[ext_resource type="Texture2D" uid="uid://7qj4catvvpk2" path="res://assets/content/predmet_cely_poskodeny_1.png" id="3_b0q3n"]
+
+[node name="item2" type="Node2D" unique_id=184443341 node_paths=PackedStringArray("sprite", "pack")]
+script = ExtResource("1_dur4k")
+content_image = ExtResource("2_dmxsd")
+damaged_content_image = ExtResource("3_b0q3n")
+sprite = NodePath("Sprite2D")
+pack = NodePath("pack")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=584894951]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_dmxsd")
+
+[node name="pack" type="Button" parent="." unique_id=1343461389]
+offset_left = -128.0
+offset_top = -128.0
+offset_right = 128.0
+offset_bottom = 128.0
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="." unique_id=452185681]
+visible = false
+offset_left = -32.0
+offset_right = 32.0
+offset_bottom = 23.0
+text = "content"
