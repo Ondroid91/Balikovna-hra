@@ -13,10 +13,11 @@
 [ext_resource type="PackedScene" uid="uid://d0atlk6lnhtfc" path="res://nodes/items/stamp.tscn" id="8_ant6f"]
 [ext_resource type="Texture2D" uid="uid://dekoyy7nf05n1" path="res://assets/items/kniha.png" id="9_wrf1f"]
 
-[node name="world" type="Node2D" unique_id=536107681 node_paths=PackedStringArray("manual_button", "timer")]
+[node name="world" type="Node2D" unique_id=536107681 node_paths=PackedStringArray("manual_button", "manual_image", "timer")]
 process_mode = 1
 script = ExtResource("1_mxg38")
 manual_button = NodePath("manual2")
+manual_image = NodePath("manual2/Kniha")
 timer = NodePath("Timer")
 
 [node name="Robotasdadasdaapsd" type="Sprite2D" parent="." unique_id=1259921583]

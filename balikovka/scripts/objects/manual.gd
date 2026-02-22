@@ -15,6 +15,13 @@ func _ready() -> void:
 	page_button1.pressed.connect(turn_page.bind(0))
 	page_button2.pressed.connect(turn_page.bind(1))
 	page_button3.pressed.connect(turn_page.bind(2))
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("right_click"):
+		if gl.in_hand == "empty":
+			self.visible = false
+
+
 func turn_page(to_page : int) -> void:
 	match to_page:
 		0:

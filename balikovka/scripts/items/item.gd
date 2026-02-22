@@ -2,17 +2,24 @@ extends Node2D
 
 @export var item_name : String
 @export var object_rotation_on_pick : float
+@export var object_h_flip_on_pick : bool = false
 @export_group("components")
 @export var pick : Button
+@export var item_image : Sprite2D
 
 var origin_pos : Vector2
 var in_area : bool = false
 
 func _ready() -> void:
 	pick.pressed.connect(_on_picked)
+	pick.mouse_entered.connect(func():
+		item_image.modulate = Color(1.3, 1.3, 1.3, 1)
+	)
+
+	pick.mouse_exited.connect(func():
+		item_image.modulate = Color(1, 1, 1, 1)
+	)
 	origin_pos = global_position
-	
-	$Label.text = item_name # delete later
 
 
 func _process(delta: float) -> void:
@@ -26,6 +33,7 @@ func _process(delta: float) -> void:
 
 func put_item_back() -> void:
 	rotation = 0
+	item_image.flip_h = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	gl.in_hand = "empty"
 	var tween := create_tween()
@@ -41,6 +49,7 @@ func put_item_back() -> void:
 
 func _on_picked() -> void:
 	rotation = object_rotation_on_pick
+	item_image.flip_h = object_h_flip_on_pick
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 	gl.in_hand = item_name
 	pick.disabled = true

@@ -3,20 +3,17 @@
 [ext_resource type="Script" uid="uid://ni2un5mqr8hb" path="res://scripts/items/item.gd" id="1_3v3mb"]
 [ext_resource type="Texture2D" uid="uid://c1xvkmqsuy8kk" path="res://assets/items/stamp.png" id="2_cn3r5"]
 
-[node name="stamp" type="Node2D" unique_id=856996457 node_paths=PackedStringArray("pick")]
+[node name="stamp" type="Node2D" unique_id=856996457 node_paths=PackedStringArray("pick", "item_image")]
 script = ExtResource("1_3v3mb")
 item_name = "stamp"
+object_rotation_on_pick = 13.0
 pick = NodePath("Button")
+item_image = NodePath("Stamp")
 
 [node name="Stamp" type="Sprite2D" parent="." unique_id=1489216185]
 position = Vector2(-4.7683716e-07, 3.8146973e-06)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_cn3r5")
-
-[node name="Label" type="Label" parent="." unique_id=1425780119]
-offset_right = 40.0
-offset_bottom = 23.0
-metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="." unique_id=2017221495]
 offset_left = -152.0

@@ -3,24 +3,18 @@
 [ext_resource type="Script" uid="uid://ni2un5mqr8hb" path="res://scripts/items/item.gd" id="1_to20b"]
 [ext_resource type="Texture2D" uid="uid://cnvqauq1qfal4" path="res://assets/items/knife.png" id="2_to20b"]
 
-[node name="knife" type="Node2D" unique_id=2055013009 node_paths=PackedStringArray("pick")]
+[node name="knife" type="Node2D" unique_id=2055013009 node_paths=PackedStringArray("pick", "item_image")]
 script = ExtResource("1_to20b")
 item_name = "knife"
 object_rotation_on_pick = -110.0
 pick = NodePath("Button")
+item_image = NodePath("Knife")
 
 [node name="Knife" type="Sprite2D" parent="." unique_id=956468535]
 position = Vector2(-7.6293945e-06, 1.5258789e-05)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_to20b")
 offset = Vector2(-439.9999, 579.9999)
-
-[node name="Label" type="Label" parent="." unique_id=1774445852]
-offset_left = -88.0
-offset_top = 116.0
-offset_right = -48.0
-offset_bottom = 139.0
-metadata/_edit_use_anchors_ = true
 
 [node name="Button" type="Button" parent="." unique_id=960738001]
 offset_left = -264.0
