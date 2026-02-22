@@ -33,9 +33,9 @@ func set_ending_name(ending : String) -> void:
 	if ending == "Your shift ends":
 		earns.text = str(sum_score())
 	elif ending == "You have been fired":
-		earns.text = "Nothing because you have been fired."
+		earns.text = "0"
 	elif ending == "You died":
-		earns.text = "Nothing because you died."
+		earns.text = "0"
 
 func sum_score() -> float:
 	var sum : float = 0

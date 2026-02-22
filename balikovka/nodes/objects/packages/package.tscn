@@ -84,10 +84,13 @@ collision_mask = 3
 shape = SubResource("RectangleShape2D_td2lr")
 
 [node name="package_number" type="Label" parent="." unique_id=593479868]
+visible = false
 offset_left = 8.0
 offset_top = -72.0
 offset_right = 48.0
 offset_bottom = -49.0
+theme_override_colors/font_color = Color(0.34660473, 0.06631761, 0.010940505, 1)
+text = "sdfas"
 
 [node name="marker" type="Sprite2D" parent="." unique_id=636020272]
 visible = false

@@ -18,22 +18,34 @@ var max_damage : int = 200
 var allowed_radiation_level = 20
 var all_package_numbers : Array[String] = [
 	"",
-	"1321",
-	"4526",
-	"3421",
-	"6741",
+	"S321",
+	"45S6",
+	"D421",
+	"6S41",
 	"7414",
-	"1014"
+	"AAS3",
+	"B2X9",
+	"M5Q1",
+	"Z8L4",
+	"D3W7",
+	"F9R2",
+	"H6T8",
+	"J1P5",
 ]
 
 var allowd_package_numbers : Array[String] = [
-	"1321",
-	"4526",
-	"3421",
-	"6741",
+	"A7K3",
+	"B2X9",
+	"M5Q1",
+	"Z8L4",
+	"D3W7",
+	"F9R2",
+	"H6T8",
+	"J1P5",
 ]
 var packages_to_mark : Array[String] = [
-	"4526",
+	"H6T8",
+	"J1P5",
 ]
 
 var correct_wire_order : Array[String] = [
