@@ -24,6 +24,9 @@ extends Node2D
 @export var bomb_timer : Timer
 @export var display_timer : Label
 
+@export var ticking_snd : AudioStreamPlayer
+
+
 var cut_wires : Array[bool] = [
 	false,
 	false,
@@ -57,6 +60,7 @@ func bomb_triggered() -> void:
 	if not bomb_activated:
 		print("bomb_start cout down")
 		bomb_timer.start()
+		ticking_snd.play()
 	bomb_activated = true
 
 func cut_wire(cutted_wire : Button) -> void:
@@ -105,6 +109,7 @@ func disable_bomb() -> void:
 	print("bomb disabled")
 	stopped_time = bomb_timer.time_left
 	bomb_timer.stop()
+	ticking_snd.stop()
 	display_timer.text = format_time_ss_ms(stopped_time)
 	bomb_activated = false
 	safe_to_destroy = true

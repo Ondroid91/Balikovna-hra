@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://dtuiesahloy16" path="res://assets/content/bomb/drat_2_B.png" id="7_j6xaw"]
 [ext_resource type="Texture2D" uid="uid://cvcytpde7hjfe" path="res://assets/content/bomb/drat_3.png" id="8_1qxy1"]
 [ext_resource type="Texture2D" uid="uid://c32oe3tfo673x" path="res://assets/content/bomb/drat_3_B.png" id="9_xr3ar"]
+[ext_resource type="AudioStream" uid="uid://cdj4g7ng2sn5t" path="res://assets/sounds/PIPANIBOMBY.mp3" id="10_vr861"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3cf6k"]
 atlas = ExtResource("4_x4hdi")
@@ -79,7 +80,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="bomb" type="Node2D" unique_id=184443341 node_paths=PackedStringArray("pack", "wire1", "wire2", "wire3", "red_wire_button", "blue_wire_button", "green_wire_button", "bomb_timer", "display_timer")]
+[node name="bomb" type="Node2D" unique_id=184443341 node_paths=PackedStringArray("pack", "wire1", "wire2", "wire3", "red_wire_button", "blue_wire_button", "green_wire_button", "bomb_timer", "display_timer", "ticking_snd")]
 script = ExtResource("1_bs80y")
 content_image = ExtResource("2_713s2")
 damaged_content_image = ExtResource("2_713s2")
@@ -92,6 +93,7 @@ blue_wire_button = NodePath("blue_wire")
 green_wire_button = NodePath("green_wire")
 bomb_timer = NodePath("Timer")
 display_timer = NodePath("display")
+ticking_snd = NodePath("ticking")
 
 [node name="pack" type="Button" parent="." unique_id=1449984356]
 offset_left = -192.0
@@ -157,3 +159,6 @@ offset_bottom = 37.0
 theme_override_font_sizes/font_size = 12
 text = "10:00"
 metadata/_edit_use_anchors_ = true
+
+[node name="ticking" type="AudioStreamPlayer" parent="." unique_id=617763594]
+stream = ExtResource("10_vr861")

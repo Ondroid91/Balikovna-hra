@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://xd73ya1p5fnl"
+path="res://.godot/imported/položení knihy.mp3-d68ad906c2cbdc92b042f6597983c711.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/položení knihy.mp3"
+dest_files=["res://.godot/imported/položení knihy.mp3-d68ad906c2cbdc92b042f6597983c711.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

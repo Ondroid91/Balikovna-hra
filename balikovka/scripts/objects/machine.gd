@@ -21,6 +21,8 @@ extends Node2D
 @export var button_image : Sprite2D
 
 @export var pas_snd : AudioStreamPlayer
+@export var wrong_snd : AudioStreamPlayer
+@export var scan_snd : AudioStreamPlayer
 
 @export var packages_to_spawn : Array[PackedScene]
 
@@ -117,6 +119,7 @@ func check_package(package : Node2D, send : bool) -> int:
 	if gl.final_damage > (gl.max_damage + danger_value):
 		print("fired")
 		gl.you_are_fired.emit()
+	if danger_value > 0: wrong_snd.play()
 	return danger_value
 
 func _on_next_button() -> void:
@@ -171,6 +174,7 @@ func move_package(pack : Node2D, destination : Marker2D) -> void:
 
 func _on_scener_area_entered(area) -> void:
 	if is_instance_valid(area):
+		scan_snd.play()
 		var package = area.get_parent()
 		var content_image = package.package_content.content_image
 		if package.package_content.damaged:

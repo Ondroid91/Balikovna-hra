@@ -13,13 +13,18 @@
 [ext_resource type="Texture2D" uid="uid://uf553p75g2mh" path="res://assets/items/ink.png" id="7_mxg38"]
 [ext_resource type="PackedScene" uid="uid://d0atlk6lnhtfc" path="res://nodes/items/stamp.tscn" id="8_ant6f"]
 [ext_resource type="Texture2D" uid="uid://dekoyy7nf05n1" path="res://assets/items/kniha.png" id="9_wrf1f"]
+[ext_resource type="AudioStream" uid="uid://wbf420ao12on" path="res://assets/sounds/kniha otevření.mp3" id="10_jfrqh"]
+[ext_resource type="AudioStream" uid="uid://cwo43qk3eytnk" path="res://assets/sounds/Pracoviště 2.mp3" id="15_grwea"]
 
-[node name="world" type="Node2D" unique_id=536107681 node_paths=PackedStringArray("manual_button", "manual_image", "timer")]
+[node name="world" type="Node2D" unique_id=536107681 node_paths=PackedStringArray("manual_button", "manual_image", "timer", "count_down", "open_book_snd", "background_snd")]
 process_mode = 1
 script = ExtResource("1_mxg38")
 manual_button = NodePath("manual2")
 manual_image = NodePath("manual2/Kniha")
 timer = NodePath("Timer")
+count_down = NodePath("cout_down")
+open_book_snd = NodePath("manual2/open_snd")
+background_snd = NodePath("backgroud_snd")
 
 [node name="11" type="Sprite2D" parent="." unique_id=1882126977]
 z_index = -10
@@ -62,6 +67,9 @@ position = Vector2(72, 144)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("9_wrf1f")
 
+[node name="open_snd" type="AudioStreamPlayer" parent="manual2" unique_id=1696882142]
+stream = ExtResource("10_jfrqh")
+
 [node name="items" type="Node2D" parent="." unique_id=1787034250]
 z_index = 4
 
@@ -82,4 +90,17 @@ position = Vector2(1824, 736)
 [node name="Camera2D" type="Camera2D" parent="." unique_id=378877017]
 position = Vector2(960, 540)
 
+[node name="cout_down" type="Label" parent="." unique_id=274140129]
+offset_left = 896.0
+offset_top = 24.0
+offset_right = 936.0
+offset_bottom = 47.0
+theme_override_font_sizes/font_size = 40
+text = "05:00:00"
+
 [node name="Timer" type="Timer" parent="." unique_id=1162801230]
+
+[node name="backgroud_snd" type="AudioStreamPlayer" parent="." unique_id=1670729112]
+stream = ExtResource("15_grwea")
+volume_db = -10.0
+autoplay = true

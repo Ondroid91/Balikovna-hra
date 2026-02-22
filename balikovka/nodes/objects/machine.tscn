@@ -12,6 +12,7 @@
 [ext_resource type="Shader" uid="uid://dvlsrlltar8p5" path="res://shaders/scan_image.gdshader" id="9_nxe33"]
 [ext_resource type="Texture2D" uid="uid://2udh46sg7suj" path="res://assets/enviroment/sken.png" id="9_xm4co"]
 [ext_resource type="AudioStream" uid="uid://cb77m21i0blyx" path="res://assets/sounds/pás 2.mp3" id="12_ios54"]
+[ext_resource type="AudioStream" uid="uid://brb8qahdonjc3" path="res://assets/sounds/Bad desicion.mp3" id="13_rgwgi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mav8p"]
 atlas = ExtResource("5_n5xr3")
@@ -177,7 +178,7 @@ size = Vector2(816, 261)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ps6kg"]
 size = Vector2(704, 360)
 
-[node name="machine" type="Node2D" unique_id=375230722 node_paths=PackedStringArray("spawn_pos", "package_pos", "exit_pos", "next_button", "send_area", "drop_package", "table_drop_area", "to_bin_area", "bin_pos", "scener_area", "scener_photo", "bin_image", "scan_image", "pas_image", "button_image", "pas_snd")]
+[node name="machine" type="Node2D" unique_id=375230722 node_paths=PackedStringArray("spawn_pos", "package_pos", "exit_pos", "next_button", "send_area", "drop_package", "table_drop_area", "to_bin_area", "bin_pos", "scener_area", "scener_photo", "bin_image", "scan_image", "pas_image", "button_image", "pas_snd", "wrong_snd", "scan_snd")]
 script = ExtResource("1_crc7w")
 spawn_pos = NodePath("spawner")
 package_pos = NodePath("drop_area/package_place")
@@ -195,6 +196,8 @@ scan_image = NodePath("scener/scan_image")
 pas_image = NodePath("pas")
 button_image = NodePath("Tlacitko")
 pas_snd = NodePath("pas_snd")
+wrong_snd = NodePath("wrong_snd")
+scan_snd = NodePath("scan_snd")
 packages_to_spawn = Array[PackedScene]([ExtResource("2_ps6kg"), ExtResource("2_ps6kg")])
 
 [node name="11" type="Sprite2D" parent="." unique_id=11463114]
@@ -315,3 +318,8 @@ text = "bin"
 
 [node name="pas_snd" type="AudioStreamPlayer" parent="." unique_id=403427112]
 stream = ExtResource("12_ios54")
+
+[node name="wrong_snd" type="AudioStreamPlayer" parent="." unique_id=1506428634]
+stream = ExtResource("13_rgwgi")
+
+[node name="scan_snd" type="AudioStreamPlayer" parent="." unique_id=673538947]

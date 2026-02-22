@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://brb8qahdonjc3"
+path="res://.godot/imported/Bad desicion.mp3-a41d3be7fe2c05446a2d67d062a606cf.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Bad desicion.mp3"
+dest_files=["res://.godot/imported/Bad desicion.mp3-a41d3be7fe2c05446a2d67d062a606cf.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

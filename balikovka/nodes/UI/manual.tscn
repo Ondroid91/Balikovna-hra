@@ -4,8 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://bmv0q03v6gosg" path="res://assets/items/kniha_1.png" id="2_4mmbl"]
 [ext_resource type="Texture2D" uid="uid://dnu2bllfipn3y" path="res://assets/items/kniha_3.png" id="3_d3xkj"]
 [ext_resource type="Texture2D" uid="uid://uavdvtrqypbo" path="res://assets/items/kniha_5.png" id="4_idk3j"]
+[ext_resource type="AudioStream" uid="uid://xd73ya1p5fnl" path="res://assets/sounds/položení knihy.mp3" id="5_km71e"]
+[ext_resource type="AudioStream" uid="uid://dmes82qhpwpdm" path="res://assets/sounds/listování knihy.mp3" id="6_3hxk5"]
 
-[node name="manual" type="Control" unique_id=1604602573 node_paths=PackedStringArray("back", "page1", "page2", "page3", "page_button1", "page_button2", "page_button3")]
+[node name="manual" type="Control" unique_id=1604602573 node_paths=PackedStringArray("back", "page1", "page2", "page3", "page_button1", "page_button2", "page_button3", "close_book_snd", "turn_page_snd")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,6 +22,8 @@ page3 = NodePath("page3")
 page_button1 = NodePath("page_button")
 page_button2 = NodePath("page_button2")
 page_button3 = NodePath("page_button3")
+close_book_snd = NodePath("close_snd")
+turn_page_snd = NodePath("turn_snd")
 
 [node name="backgroud" type="Panel" parent="." unique_id=1348854123]
 self_modulate = Color(1, 1, 1, 0)
@@ -133,3 +137,9 @@ offset_top = 592.0
 offset_right = 1640.0
 offset_bottom = 648.0
 flat = true
+
+[node name="close_snd" type="AudioStreamPlayer" parent="." unique_id=1941172448]
+stream = ExtResource("5_km71e")
+
+[node name="turn_snd" type="AudioStreamPlayer" parent="." unique_id=704654719]
+stream = ExtResource("6_3hxk5")
