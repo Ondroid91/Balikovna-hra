@@ -30,7 +30,6 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	count_down.text = format_time_ss_ms(timer.time_left)
 
-
 func format_time_ss_ms(time: float) -> String:
 	var total_seconds := maxf(time, 0.0)
 

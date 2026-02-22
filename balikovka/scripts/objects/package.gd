@@ -47,6 +47,7 @@ func _ready() -> void:
 	package_number_label.text = gl.all_package_numbers[ran_num]
 	should_get_mark()
 	print("should", should_be_marked)
+
 func _process(delta: float) -> void:
 	if drag_package:
 		global_position = get_global_mouse_position()
@@ -168,6 +169,7 @@ func _on_pack_package() -> void:
 
 func _on_stamp_mark() -> void:
 	if on_table:
+		drop_snd.play()
 		package_marked = true
 		marker.visible = true
 		print("package marked")
