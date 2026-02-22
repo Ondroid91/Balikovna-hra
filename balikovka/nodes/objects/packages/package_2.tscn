@@ -13,7 +13,11 @@
 [ext_resource type="PackedScene" uid="uid://8rue4cw0cn00" path="res://nodes/objects/content/shoes.tscn" id="9_peaad"]
 [ext_resource type="PackedScene" uid="uid://byd6uaed3t6vy" path="res://nodes/objects/content/needle.tscn" id="10_krv6q"]
 [ext_resource type="Texture2D" uid="uid://p12x5elfdmlw" path="res://assets/RAZITKO.png" id="11_4u6wv"]
+[ext_resource type="PackedScene" uid="uid://t20irdgnqjv3" path="res://nodes/objects/content/bomb_2.tscn" id="11_8bn2w"]
+[ext_resource type="PackedScene" uid="uid://kp7gu377lydc" path="res://nodes/objects/content/balloon.tscn" id="12_3qc8e"]
+[ext_resource type="PackedScene" uid="uid://cjpgqsaanlylu" path="res://nodes/objects/content/pruzina.tscn" id="13_b3ky3"]
 [ext_resource type="AudioStream" uid="uid://dnn3uact4jwsf" path="res://assets/sounds/otevření krabice 2 .mp3" id="14_3pfkh"]
+[ext_resource type="PackedScene" uid="uid://d4hw0argdax3l" path="res://nodes/objects/content/screws.tscn" id="14_ksl7p"]
 [ext_resource type="AudioStream" uid="uid://0dbo3igbbpfk" path="res://assets/sounds/lepící páska.mp3" id="15_o8t16"]
 [ext_resource type="AudioStream" uid="uid://ixbmjtjhoe1k" path="res://assets/sounds/Položení krabice.mp3" id="16_o8t16"]
 
@@ -53,7 +57,7 @@ marker = NodePath("marker")
 open_snd = NodePath("open")
 close_snd = NodePath("close")
 drop_snd = NodePath("drop")
-items_list = Array[PackedScene]([ExtResource("2_hg1e1"), ExtResource("3_pucdj"), ExtResource("4_xo6j7"), ExtResource("5_cb5hv"), ExtResource("6_4u6wv"), ExtResource("7_2uljq"), ExtResource("8_peaad"), ExtResource("9_peaad"), ExtResource("10_krv6q")])
+items_list = Array[PackedScene]([ExtResource("2_hg1e1"), ExtResource("3_pucdj"), ExtResource("4_xo6j7"), ExtResource("5_cb5hv"), ExtResource("6_4u6wv"), ExtResource("7_2uljq"), ExtResource("8_peaad"), ExtResource("9_peaad"), ExtResource("10_krv6q"), ExtResource("11_8bn2w"), ExtResource("12_3qc8e"), ExtResource("13_b3ky3"), ExtResource("14_ksl7p")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2062593142]
 position = Vector2(144, 48)

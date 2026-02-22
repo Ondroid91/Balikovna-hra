@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://d4hw0argdax3l"]
+
+[ext_resource type="Script" uid="uid://d2uk82kw2dn6" path="res://scripts/objects/regular_content.gd" id="1_eqddf"]
+[ext_resource type="Texture2D" uid="uid://soi5jrigahtj" path="res://assets/content/screws_always_bad.png" id="2_aivpx"]
+
+[node name="screws" type="Node2D" unique_id=184443341 node_paths=PackedStringArray("sprite", "pack")]
+script = ExtResource("1_eqddf")
+content_image = ExtResource("2_aivpx")
+damaged_content_image = ExtResource("2_aivpx")
+sprite = NodePath("Sprite2D")
+pack = NodePath("pack")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=584894951]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_aivpx")
+
+[node name="pack" type="Button" parent="." unique_id=1343461389]
+offset_left = -192.0
+offset_top = -192.0
+offset_right = 192.0
+offset_bottom = 192.0
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="." unique_id=452185681]
+visible = false
+offset_left = -32.0
+offset_right = 32.0
+offset_bottom = 23.0
+text = "content"

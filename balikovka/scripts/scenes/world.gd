@@ -14,7 +14,7 @@ extends Node2D
 func _ready() -> void:
 	manual_button.pressed.connect(func(): 
 		if gl.in_hand == "empty":
-			main_scene.manual_book.visible = true
+			main_scene.move_manual_book_up()
 			open_book_snd.play()
 			)
 	manual_button.mouse_entered.connect(func():

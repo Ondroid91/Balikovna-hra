@@ -7,7 +7,7 @@ extends Control
 @export var correct_packages : Label
 @export var correcty_removed : Label
 @export var incorrecty_removed : Label
-
+@export var earns : Label
 
 @export var back_to_main : Button
 @export var conntinue : Button
@@ -30,3 +30,17 @@ func show_score() -> void:
 
 func set_ending_name(ending : String) -> void:
 	ending_name.text = ending
+	if ending == "Your shift ends":
+		earns.text = str(sum_score())
+	elif ending == "You have been fired":
+		earns.text = "Nothing because you have been fired."
+	elif ending == "You died":
+		earns.text = "Nothing because you died."
+
+func sum_score() -> float:
+	var sum : float = 0
+	sum += gl.sended_packages * 0.1
+	sum += gl.correct_packages * 0.1
+	sum += gl.correctly_removed_packages * 0.1
+	sum -= gl.final_damage * 0.05
+	return sum

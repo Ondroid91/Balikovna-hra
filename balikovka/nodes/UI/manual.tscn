@@ -2,12 +2,13 @@
 
 [ext_resource type="Script" uid="uid://b1yffxa1bc3vm" path="res://scripts/objects/manual.gd" id="1_ew4od"]
 [ext_resource type="Texture2D" uid="uid://bmv0q03v6gosg" path="res://assets/items/kniha_1.png" id="2_4mmbl"]
-[ext_resource type="Texture2D" uid="uid://dnu2bllfipn3y" path="res://assets/items/kniha_3.png" id="3_d3xkj"]
-[ext_resource type="Texture2D" uid="uid://uavdvtrqypbo" path="res://assets/items/kniha_5.png" id="4_idk3j"]
+[ext_resource type="Texture2D" uid="uid://bhwuglhddwl1r" path="res://assets/items/2.png" id="3_3hxk5"]
+[ext_resource type="Texture2D" uid="uid://wfd1nac8r37v" path="res://assets/items/3.png" id="4_iwhtp"]
+[ext_resource type="Texture2D" uid="uid://bcyv7nqhgmoea" path="res://assets/items/4.png" id="5_kh4bd"]
 [ext_resource type="AudioStream" uid="uid://xd73ya1p5fnl" path="res://assets/sounds/položení knihy.mp3" id="5_km71e"]
 [ext_resource type="AudioStream" uid="uid://dmes82qhpwpdm" path="res://assets/sounds/listování knihy.mp3" id="6_3hxk5"]
 
-[node name="manual" type="Control" unique_id=1604602573 node_paths=PackedStringArray("back", "page1", "page2", "page3", "page_button1", "page_button2", "page_button3", "close_book_snd", "turn_page_snd")]
+[node name="manual" type="Control" unique_id=1604602573 node_paths=PackedStringArray("back", "page1", "page2", "page3", "page4", "page5", "page_button1", "page_button2", "page_button3", "page_button4", "page_button5", "close_book_snd", "turn_page_snd")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,9 +20,13 @@ back = NodePath("back")
 page1 = NodePath("page")
 page2 = NodePath("page2")
 page3 = NodePath("page3")
+page4 = NodePath("page4")
+page5 = NodePath("page5")
 page_button1 = NodePath("page_button")
 page_button2 = NodePath("page_button2")
 page_button3 = NodePath("page_button3")
+page_button4 = NodePath("page_button4")
+page_button5 = NodePath("page_button5")
 close_book_snd = NodePath("close_snd")
 turn_page_snd = NodePath("turn_snd")
 
@@ -29,20 +34,11 @@ turn_page_snd = NodePath("turn_snd")
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.020833334
-anchor_top = -0.05185185
-anchor_right = 1.0458333
-anchor_bottom = 1.0666667
+anchor_left = -0.025
+anchor_top = -0.02962963
+anchor_right = 1.0416666
+anchor_bottom = 1.0888889
 metadata/_edit_use_anchors_ = true
-
-[node name="back" type="Button" parent="." unique_id=423738151]
-layout_mode = 0
-offset_left = 1520.0
-offset_top = 72.0
-offset_right = 1600.0
-offset_bottom = 152.0
-theme_override_font_sizes/font_size = 40
-text = "×"
 
 [node name="page" type="Panel" parent="." unique_id=1854652530]
 self_modulate = Color(1, 1, 1, 0)
@@ -56,23 +52,7 @@ offset_bottom = 1024.0
 position = Vector2(376, 488)
 texture = ExtResource("2_4mmbl")
 
-[node name="Label" type="Label" parent="page" unique_id=150347692]
-layout_mode = 0
-offset_left = -152.0
-offset_top = 216.0
-offset_right = 304.0
-offset_bottom = 856.0
-theme_override_font_sizes/font_size = 25
-text = "allowd_package_numbers :
-	\"1321\",
-	\"4526\",
-	\"3421\",
-	\"6741\",
-
-packages_to_mark :
-	\"4526\""
-
-[node name="page2" type="Panel" parent="." unique_id=1196601325]
+[node name="page2" type="Panel" parent="." unique_id=479233419]
 visible = false
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
@@ -81,19 +61,11 @@ offset_top = 64.0
 offset_right = 1344.0
 offset_bottom = 1024.0
 
-[node name="Kniha1" type="Sprite2D" parent="page2" unique_id=136718895]
+[node name="Kniha1" type="Sprite2D" parent="page2" unique_id=1938999964]
 position = Vector2(376, 488)
-texture = ExtResource("3_d3xkj")
+texture = ExtResource("3_3hxk5")
 
-[node name="Label" type="Label" parent="page2" unique_id=955983452]
-layout_mode = 0
-offset_left = -152.0
-offset_top = 216.0
-offset_right = 264.0
-offset_bottom = 824.0
-theme_override_font_sizes/font_size = 25
-
-[node name="page3" type="Panel" parent="." unique_id=655250018]
+[node name="page3" type="Panel" parent="." unique_id=1676163081]
 visible = false
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
@@ -102,40 +74,86 @@ offset_top = 64.0
 offset_right = 1344.0
 offset_bottom = 1024.0
 
-[node name="Kniha1" type="Sprite2D" parent="page3" unique_id=971865807]
+[node name="Kniha1" type="Sprite2D" parent="page3" unique_id=2068924966]
 position = Vector2(376, 488)
-texture = ExtResource("4_idk3j")
+texture = ExtResource("4_iwhtp")
 
-[node name="Label" type="Label" parent="page3" unique_id=976174269]
+[node name="page4" type="Panel" parent="." unique_id=229134243]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = -152.0
-offset_top = 216.0
-offset_right = 280.0
-offset_bottom = 816.0
-theme_override_font_sizes/font_size = 25
+offset_left = 576.0
+offset_top = 64.0
+offset_right = 1344.0
+offset_bottom = 1024.0
+
+[node name="Kniha1" type="Sprite2D" parent="page4" unique_id=1589260397]
+position = Vector2(376, 488)
+texture = ExtResource("5_kh4bd")
+
+[node name="page5" type="Panel" parent="." unique_id=1221930772]
+visible = false
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 576.0
+offset_top = 64.0
+offset_right = 1344.0
+offset_bottom = 1024.0
+
+[node name="Kniha1" type="Sprite2D" parent="page5" unique_id=271532885]
+visible = false
+position = Vector2(376, 488)
+texture = ExtResource("2_4mmbl")
 
 [node name="page_button" type="Button" parent="." unique_id=1089812647]
 layout_mode = 0
-offset_left = 1464.0
-offset_top = 384.0
-offset_right = 1640.0
-offset_bottom = 440.0
+offset_left = 1296.0
+offset_top = 440.0
+offset_right = 1376.0
+offset_bottom = 472.0
 flat = true
 
 [node name="page_button2" type="Button" parent="." unique_id=215092386]
 layout_mode = 0
-offset_left = 1464.0
-offset_top = 488.0
-offset_right = 1640.0
-offset_bottom = 544.0
+offset_left = 1296.0
+offset_top = 480.0
+offset_right = 1384.0
+offset_bottom = 504.0
 flat = true
 
 [node name="page_button3" type="Button" parent="." unique_id=1691528500]
 layout_mode = 0
-offset_left = 1464.0
-offset_top = 592.0
-offset_right = 1640.0
-offset_bottom = 648.0
+offset_left = 1296.0
+offset_top = 512.0
+offset_right = 1376.0
+offset_bottom = 536.0
+flat = true
+
+[node name="page_button4" type="Button" parent="." unique_id=1050915808]
+layout_mode = 0
+offset_left = 1296.0
+offset_top = 544.0
+offset_right = 1368.0
+offset_bottom = 576.0
+flat = true
+
+[node name="page_button5" type="Button" parent="." unique_id=510542292]
+layout_mode = 0
+offset_left = 1288.0
+offset_top = 576.0
+offset_right = 1360.0
+offset_bottom = 608.0
+disabled = true
+flat = true
+
+[node name="back" type="Button" parent="." unique_id=423738151]
+layout_mode = 0
+offset_left = 1312.0
+offset_top = 216.0
+offset_right = 1408.0
+offset_bottom = 296.0
+theme_override_font_sizes/font_size = 40
+text = "×"
 flat = true
 
 [node name="close_snd" type="AudioStreamPlayer" parent="." unique_id=1941172448]

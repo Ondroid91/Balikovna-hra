@@ -36,17 +36,15 @@ var packages_to_mark : Array[String] = [
 	"4526",
 ]
 
-
-
 var correct_wire_order : Array[String] = [
 	"red",
-	"blue",
 	"green",
+	"blue",
 ]
 var correct_wire_order2 : Array[String] = [
-	"green",
-	"red",
 	"blue",
+	"red",
+	"green",
 ]
 
 # chances

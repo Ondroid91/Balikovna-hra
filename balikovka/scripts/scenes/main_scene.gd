@@ -11,9 +11,13 @@ extends Node
 @export var score_board : Control
 
 @export var explosion_snd : AudioStreamPlayer
+@export var happy_snd : AudioStreamPlayer
+@export var fired_snd : AudioStreamPlayer
 
 @export var main_menu_scene : PackedScene
 @export var game_scene : PackedScene
+
+
 
 func _ready() -> void:
 	set_scene(start_scene)
@@ -33,10 +37,6 @@ func _process(delta: float) -> void:
 		"incorrect removed : " + str(gl.incorrectly_removed_packages)
 	)
 
-	if Input.is_action_just_pressed("test"):
-		make_score_background_dark(2.0)
-		await get_tree().create_timer(1.0).timeout
-		move_score_board()
 
 func diable_screen() -> void:
 	make_score_background_light(3.0)
@@ -57,6 +57,7 @@ func you_died_screen() -> void:
 func you_are_fired_screen() -> void:
 	if currrent_scene:
 		currrent_scene.background_snd.stop()
+	fired_snd.play()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().paused = true
 	make_score_background_dark(2.0)
@@ -67,12 +68,23 @@ func you_are_fired_screen() -> void:
 	
 func shift_ends_screen() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	happy_snd.play()
 	get_tree().paused = true
 	make_score_background_dark(2.0)
 	await get_tree().create_timer(1.0).timeout
 	move_score_board()
 	score_board.set_ending_name("Your shift ends")
 	score_board.show_score()
+
+func move_manual_book_up() -> void:
+	manual_book.visible = true
+	var tween := create_tween()
+	tween.tween_property(
+		self.manual_book,
+		"global_position",
+		Vector2(10, -20),
+		0.5
+	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
 func move_score_board() -> void:
 	score_board.visible = true
