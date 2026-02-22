@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://7jmch4i8jvsm" path="res://assets/enviroment/tlacitko.png" id="6_o5kmq"]
 [ext_resource type="Texture2D" uid="uid://bouwf7km7nutg" path="res://assets/enviroment/obrazovka.png" id="7_ti7f6"]
 [ext_resource type="Shader" uid="uid://bbctkyrm6xyfc" path="res://shaders/crt_filter.gdshader" id="8_ti7f6"]
+[ext_resource type="Shader" uid="uid://dvlsrlltar8p5" path="res://shaders/scan_image.gdshader" id="9_nxe33"]
 [ext_resource type="Texture2D" uid="uid://2udh46sg7suj" path="res://assets/enviroment/sken.png" id="9_xm4co"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mav8p"]
@@ -137,6 +138,10 @@ size = Vector2(704, 408)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crc7w"]
 size = Vector2(24, 186)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ios54"]
+shader = ExtResource("9_nxe33")
+shader_parameter/silhouette_color = Color(0.006882478, 0.11708569, 0.0051655606, 1)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xm4co"]
 shader = ExtResource("8_ti7f6")
 shader_parameter/brightness = 1.02
@@ -163,7 +168,7 @@ shader_parameter/glow_strength = 0.25
 shader_parameter/glow_threshold = 0.65
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rn8yu"]
-size = Vector2(40, 359)
+size = Vector2(40, 457)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n5xr3"]
 size = Vector2(816, 261)
@@ -255,8 +260,7 @@ scale = Vector2(1.0545022, 1.0545022)
 texture = ExtResource("7_ti7f6")
 
 [node name="scan_image" type="Sprite2D" parent="scener" unique_id=763812505]
-modulate = Color(0, 0, 0, 1)
-z_index = -2
+material = SubResource("ShaderMaterial_ios54")
 position = Vector2(71.99999, -392)
 scale = Vector2(0.2, 0.2)
 
@@ -267,11 +271,11 @@ position = Vector2(75.50001, -385)
 scale = Vector2(0.99000007, 0.9857821)
 texture = ExtResource("7_ti7f6")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="scener" unique_id=1411116712]
-position = Vector2(0, -107.5)
-shape = SubResource("RectangleShape2D_rn8yu")
-
 [node name="photo" type="Sprite2D" parent="scener" unique_id=1872450593]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scener" unique_id=1411116712]
+position = Vector2(0, -103.5)
+shape = SubResource("RectangleShape2D_rn8yu")
 
 [node name="bin_area" type="Area2D" parent="." unique_id=1889903627]
 position = Vector2(1832, -32)
