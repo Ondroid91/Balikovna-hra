@@ -21,8 +21,8 @@ func _process(delta: float) -> void:
 	self.global_position = get_global_mouse_position()
 	if Input.is_action_just_pressed("right_click"):
 		put_item_back()
-	if Input.is_action_just_pressed("left_click") and gl.in_hand != "empty" and ((global_position - origin_pos).length() < 100):
-		put_item_back()
+	#if Input.is_action_just_pressed("left_click") and gl.in_hand != "empty" and ((global_position - origin_pos).length() < 100):
+	#	put_item_back()
 
 func put_item_back() -> void:
 	rotation = 0

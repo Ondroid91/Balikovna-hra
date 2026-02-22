@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dnu2bllfipn3y" path="res://assets/items/kniha_3.png" id="3_d3xkj"]
 [ext_resource type="Texture2D" uid="uid://uavdvtrqypbo" path="res://assets/items/kniha_5.png" id="4_idk3j"]
 
-[node name="manual" type="Control" unique_id=1604602573 node_paths=PackedStringArray("back")]
+[node name="manual" type="Control" unique_id=1604602573 node_paths=PackedStringArray("back", "page1", "page2", "page3", "page_button1", "page_button2", "page_button3")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,13 +14,20 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ew4od")
 back = NodePath("back")
+page1 = NodePath("page")
+page2 = NodePath("page2")
+page3 = NodePath("page3")
+page_button1 = NodePath("page_button")
+page_button2 = NodePath("page_button2")
+page_button3 = NodePath("page_button3")
 
 [node name="backgroud" type="Panel" parent="." unique_id=1348854123]
 self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-anchor_left = -0.033333335
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.020833334
 anchor_top = -0.05185185
-anchor_right = 1.0333333
+anchor_right = 1.0458333
 anchor_bottom = 1.0666667
 metadata/_edit_use_anchors_ = true
 
@@ -102,3 +109,27 @@ offset_top = 216.0
 offset_right = 280.0
 offset_bottom = 816.0
 theme_override_font_sizes/font_size = 25
+
+[node name="page_button" type="Button" parent="." unique_id=1089812647]
+layout_mode = 0
+offset_left = 1464.0
+offset_top = 384.0
+offset_right = 1640.0
+offset_bottom = 440.0
+flat = true
+
+[node name="page_button2" type="Button" parent="." unique_id=215092386]
+layout_mode = 0
+offset_left = 1464.0
+offset_top = 488.0
+offset_right = 1640.0
+offset_bottom = 544.0
+flat = true
+
+[node name="page_button3" type="Button" parent="." unique_id=1691528500]
+layout_mode = 0
+offset_left = 1464.0
+offset_top = 592.0
+offset_right = 1640.0
+offset_bottom = 648.0
+flat = true

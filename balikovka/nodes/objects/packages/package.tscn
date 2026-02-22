@@ -56,10 +56,10 @@ sprite_frames = SubResource("SpriteFrames_5q1qn")
 pacakge = NodePath("..")
 
 [node name="Button" type="Button" parent="." unique_id=1137004351]
-offset_left = -141.99998
-offset_top = -182.0
-offset_right = 138.00002
-offset_bottom = 26.0
+offset_left = -160.0
+offset_top = -184.0
+offset_right = 140.0
+offset_bottom = 36.0
 flat = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1271142744]

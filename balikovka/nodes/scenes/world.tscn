@@ -3,7 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://dw2eqo2q0nl5y" path="res://nodes/objects/packages/package.tscn" id="1_c64on"]
 [ext_resource type="Script" uid="uid://conds5lssbydv" path="res://scripts/scenes/world.gd" id="1_mxg38"]
 [ext_resource type="Texture2D" uid="uid://247xh00ae7de" path="res://assets/enviroment/11.png" id="2_ant6f"]
-[ext_resource type="Texture2D" uid="uid://bhxrwinq87ld7" path="res://icon.svg" id="2_eml1y"]
 [ext_resource type="PackedScene" uid="uid://cjwgm70gk5hpi" path="res://nodes/objects/machine.tscn" id="2_yecwc"]
 [ext_resource type="Texture2D" uid="uid://37svekf253xq" path="res://assets/enviroment/POZADIFINAL.png" id="3_wrf1f"]
 [ext_resource type="PackedScene" uid="uid://ih32b5u7cyge" path="res://nodes/items/knife.tscn" id="4_j21y6"]
@@ -34,13 +33,6 @@ z_index = 1
 position = Vector2(960, 540)
 texture = ExtResource("4_wrf1f")
 
-[node name="Icon" type="Sprite2D" parent="." unique_id=2039203491]
-visible = false
-self_modulate = Color(0.12591085, 0.12591085, 0.12591082, 1)
-position = Vector2(944, 944)
-scale = Vector2(5, 1.09375)
-texture = ExtResource("2_eml1y")
-
 [node name="machine" parent="." unique_id=375230722 node_paths=PackedStringArray("table_pos") instance=ExtResource("2_yecwc")]
 position = Vector2(0, 464)
 table_pos = NodePath("../table_pos")
@@ -66,18 +58,18 @@ texture = ExtResource("9_wrf1f")
 z_index = 4
 
 [node name="Ink" type="Sprite2D" parent="items" unique_id=1080760613]
-position = Vector2(132, 932)
+position = Vector2(1783.9999, 792)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("7_mxg38")
 
 [node name="tape" parent="items" unique_id=869200505 instance=ExtResource("5_k05xx")]
-position = Vector2(1773, 906)
+position = Vector2(1528, 976)
 
 [node name="knife" parent="items" unique_id=2055013009 instance=ExtResource("4_j21y6")]
-position = Vector2(525, 826)
+position = Vector2(528, 768)
 
 [node name="stamp" parent="items" unique_id=856996457 instance=ExtResource("8_ant6f")]
-position = Vector2(143, 902)
+position = Vector2(1808, 776)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=378877017]
 position = Vector2(960, 540)

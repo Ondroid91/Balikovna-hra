@@ -129,7 +129,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mav8p"]
-size = Vector2(704, 312)
+size = Vector2(704, 408)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crc7w"]
 size = Vector2(24, 186)
@@ -141,7 +141,7 @@ size = Vector2(40, 359)
 size = Vector2(816, 261)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ps6kg"]
-size = Vector2(704, 304)
+size = Vector2(704, 360)
 
 [node name="machine" type="Node2D" unique_id=375230722 node_paths=PackedStringArray("spawn_pos", "package_pos", "exit_pos", "next_button", "send_area", "drop_package", "table_drop_area", "to_bin_area", "bin_pos", "scener_area", "scener_photo", "bin_image", "scan_image", "pas_image")]
 script = ExtResource("1_crc7w")
@@ -190,17 +190,17 @@ position = Vector2(959, 87)
 texture = ExtResource("6_o5kmq")
 
 [node name="next" type="Button" parent="." unique_id=558975007]
-offset_left = 1782.0
-offset_top = -307.0
-offset_right = 1866.0
-offset_bottom = -196.0
+offset_left = 1760.0
+offset_top = -320.0
+offset_right = 1880.0
+offset_bottom = -184.0
 flat = true
 
 [node name="drop_area" type="Area2D" parent="." unique_id=575317656]
 position = Vector2(960, 200)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="drop_area" unique_id=1827027848]
-position = Vector2(32, -108)
+position = Vector2(32, -188)
 shape = SubResource("RectangleShape2D_mav8p")
 
 [node name="package_place" type="Marker2D" parent="drop_area" unique_id=1145435210]
@@ -240,7 +240,7 @@ shape = SubResource("RectangleShape2D_n5xr3")
 position = Vector2(960, 592)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="table_area" unique_id=302521123]
-position = Vector2(32, -56)
+position = Vector2(32, -84)
 shape = SubResource("RectangleShape2D_ps6kg")
 
 [node name="bin" type="Sprite2D" parent="." unique_id=2132948435]
