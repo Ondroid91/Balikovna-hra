@@ -43,6 +43,7 @@ func diable_screen() -> void:
 	score_board.visible = false
 
 func you_died_screen() -> void:
+	manual_book.move_manual_book_down()
 	if currrent_scene:
 		currrent_scene.background_snd.stop()
 	explosion_snd.play()
@@ -55,6 +56,7 @@ func you_died_screen() -> void:
 	score_board.show_score()
 
 func you_are_fired_screen() -> void:
+	manual_book.move_manual_book_down()
 	if currrent_scene:
 		currrent_scene.background_snd.stop()
 	fired_snd.play()
@@ -67,6 +69,7 @@ func you_are_fired_screen() -> void:
 	score_board.show_score()
 	
 func shift_ends_screen() -> void:
+	manual_book.move_manual_book_down()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	happy_snd.play()
 	get_tree().paused = true
@@ -134,6 +137,7 @@ func set_scene(scene : String) -> void:
 			load_new_scene(main_menu_scene)
 
 func load_new_scene(scene_to_load : PackedScene) -> void:
+	manual_book.move_manual_book_down()
 	if currrent_scene:
 		currrent_scene.queue_free()
 	var new_scene = scene_to_load.instantiate()

@@ -5,6 +5,7 @@
 
 [node name="pruzina" type="Node2D" unique_id=184443341 node_paths=PackedStringArray("sprite", "pack")]
 script = ExtResource("1_kg1vy")
+forbbiten = true
 content_image = ExtResource("2_4vi3r")
 damaged_content_image = ExtResource("2_4vi3r")
 sprite = NodePath("Sprite2D")

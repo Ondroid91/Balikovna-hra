@@ -43,10 +43,11 @@ metadata/_edit_use_anchors_ = true
 [node name="page" type="Panel" parent="." unique_id=1854652530]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 576.0
-offset_top = 64.0
-offset_right = 1344.0
-offset_bottom = 1024.0
+offset_left = 400.0
+offset_top = -200.0
+offset_right = 1168.0
+offset_bottom = 760.0
+scale = Vector2(1.5, 1.5)
 
 [node name="Kniha1" type="Sprite2D" parent="page" unique_id=2089131129]
 position = Vector2(376, 488)
@@ -56,10 +57,11 @@ texture = ExtResource("2_4mmbl")
 visible = false
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 576.0
-offset_top = 64.0
-offset_right = 1344.0
-offset_bottom = 1024.0
+offset_left = 400.0
+offset_top = -200.0
+offset_right = 1168.0
+offset_bottom = 760.0
+scale = Vector2(1.5, 1.5)
 
 [node name="Kniha1" type="Sprite2D" parent="page2" unique_id=1938999964]
 position = Vector2(376, 488)
@@ -69,10 +71,11 @@ texture = ExtResource("3_3hxk5")
 visible = false
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 576.0
-offset_top = 64.0
-offset_right = 1344.0
-offset_bottom = 1024.0
+offset_left = 400.0
+offset_top = -200.0
+offset_right = 1168.0
+offset_bottom = 760.0
+scale = Vector2(1.5, 1.5)
 
 [node name="Kniha1" type="Sprite2D" parent="page3" unique_id=2068924966]
 position = Vector2(376, 488)
@@ -82,10 +85,11 @@ texture = ExtResource("4_iwhtp")
 visible = false
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 576.0
-offset_top = 64.0
-offset_right = 1344.0
-offset_bottom = 1024.0
+offset_left = 400.0
+offset_top = -200.0
+offset_right = 1168.0
+offset_bottom = 760.0
+scale = Vector2(1.5, 1.5)
 
 [node name="Kniha1" type="Sprite2D" parent="page4" unique_id=1589260397]
 position = Vector2(376, 488)
@@ -148,10 +152,10 @@ flat = true
 
 [node name="back" type="Button" parent="." unique_id=423738151]
 layout_mode = 0
-offset_left = 1312.0
-offset_top = 216.0
-offset_right = 1408.0
-offset_bottom = 296.0
+offset_left = 1472.0
+offset_top = 80.0
+offset_right = 1568.0
+offset_bottom = 160.0
 theme_override_font_sizes/font_size = 40
 text = "×"
 flat = true

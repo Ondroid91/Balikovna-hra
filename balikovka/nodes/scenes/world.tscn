@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://247xh00ae7de" path="res://assets/enviroment/11.png" id="2_ant6f"]
 [ext_resource type="PackedScene" uid="uid://cjwgm70gk5hpi" path="res://nodes/objects/machine.tscn" id="2_yecwc"]
 [ext_resource type="Texture2D" uid="uid://c0vuvlyd2xeiq" path="res://assets/enviroment/stul.png" id="3_cqxn8"]
+[ext_resource type="Texture2D" uid="uid://d4b03ckhcus3c" path="res://assets/trubky.png" id="3_jfrqh"]
 [ext_resource type="Texture2D" uid="uid://37svekf253xq" path="res://assets/enviroment/POZADIFINAL.png" id="3_wrf1f"]
 [ext_resource type="PackedScene" uid="uid://ih32b5u7cyge" path="res://nodes/items/knife.tscn" id="4_j21y6"]
 [ext_resource type="PackedScene" uid="uid://bp7vclxy0ga01" path="res://nodes/items/tape.tscn" id="5_k05xx"]
@@ -30,6 +31,10 @@ background_snd = NodePath("backgroud_snd")
 z_index = -10
 position = Vector2(960, 540)
 texture = ExtResource("2_ant6f")
+
+[node name="Trubky" type="Sprite2D" parent="." unique_id=521920853]
+position = Vector2(768, 272)
+texture = ExtResource("3_jfrqh")
 
 [node name="Pozadiiii" type="Sprite2D" parent="." unique_id=426563966]
 z_index = -1

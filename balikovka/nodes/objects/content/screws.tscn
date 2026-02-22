@@ -5,6 +5,7 @@
 
 [node name="screws" type="Node2D" unique_id=184443341 node_paths=PackedStringArray("sprite", "pack")]
 script = ExtResource("1_eqddf")
+forbbiten = true
 content_image = ExtResource("2_aivpx")
 damaged_content_image = ExtResource("2_aivpx")
 sprite = NodePath("Sprite2D")

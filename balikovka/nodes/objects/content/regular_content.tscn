@@ -6,6 +6,7 @@
 
 [node name="regular_content" type="Node2D" unique_id=184443341 node_paths=PackedStringArray("sprite", "pack")]
 script = ExtResource("1_rusd2")
+forbbiten = true
 content_image = ExtResource("2_jlexp")
 damaged_content_image = ExtResource("3_ulueq")
 sprite = NodePath("Sprite2D")

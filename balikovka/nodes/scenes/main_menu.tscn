@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cpygnedh6b6sm"]
 
 [ext_resource type="Script" uid="uid://tlgrnt5jlscp" path="res://scripts/scenes/main_menu.gd" id="1_1yc21"]
-[ext_resource type="Texture2D" uid="uid://bd6b3gnl08k56" path="res://assets/MENUBEZ.png" id="2_38xyl"]
+[ext_resource type="Texture2D" uid="uid://birvdj4q736f4" path="res://assets/MENU.png" id="2_aiboj"]
 [ext_resource type="Texture2D" uid="uid://dsy71smdsigcd" path="res://assets/MENUPLAY.png" id="3_aiboj"]
 [ext_resource type="Texture2D" uid="uid://cdcnl7qxm7cu5" path="res://assets/MENU_END.png" id="4_a5ey8"]
 
@@ -12,9 +12,9 @@ quit = NodePath("Panel/quit")
 play_image = NodePath("Menuplay")
 quit_image = NodePath("MenuEnd")
 
-[node name="Menuuuig" type="Sprite2D" parent="." unique_id=2144029046]
+[node name="Menu" type="Sprite2D" parent="." unique_id=1527999331]
 position = Vector2(960, 540)
-texture = ExtResource("2_38xyl")
+texture = ExtResource("2_aiboj")
 
 [node name="Menuplay" type="Sprite2D" parent="." unique_id=424900078]
 position = Vector2(960, 540)
