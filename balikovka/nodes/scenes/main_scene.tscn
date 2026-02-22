@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c001j2craaa5w" path="res://nodes/UI/manual.tscn" id="3_ksbhw"]
 [ext_resource type="PackedScene" uid="uid://bjepxkk1gwtg3" path="res://nodes/UI/score_board.tscn" id="5_xgvid"]
 [ext_resource type="PackedScene" uid="uid://caeeer8ah45rb" path="res://nodes/UI/pause.tscn" id="6_h0xnh"]
+[ext_resource type="AudioStream" uid="uid://b67dy2u0o42dg" path="res://assets/sounds/exploze 3.mp3" id="7_47vfv"]
 
 [sub_resource type="Gradient" id="Gradient_exqo6"]
 offsets = PackedFloat32Array(0.4186508)
@@ -16,7 +17,7 @@ gradient = SubResource("Gradient_exqo6")
 fill_from = Vector2(0.5, 0.5)
 metadata/_snap_enabled = true
 
-[node name="main_scene" type="Node" unique_id=692884037 node_paths=PackedStringArray("currrent_scene", "manual_book", "viewport", "parameters", "score_background", "score_board")]
+[node name="main_scene" type="Node" unique_id=692884037 node_paths=PackedStringArray("currrent_scene", "manual_book", "viewport", "parameters", "score_background", "score_board", "explosion_snd")]
 process_mode = 3
 script = ExtResource("1_nnkd3")
 start_scene = "main_menu"
@@ -26,6 +27,7 @@ viewport = NodePath("SubViewportContainer/SubViewport")
 parameters = NodePath("parameters")
 score_background = NodePath("score_background")
 score_board = NodePath("score_board")
+explosion_snd = NodePath("explosion")
 main_menu_scene = ExtResource("2_exqo6")
 game_scene = ExtResource("2_genem")
 
@@ -75,3 +77,6 @@ score_board = NodePath("../score_board")
 offset_right = 536.0
 offset_bottom = 256.0
 theme_override_font_sizes/font_size = 30
+
+[node name="explosion" type="AudioStreamPlayer" parent="." unique_id=1984221742]
+stream = ExtResource("7_47vfv")

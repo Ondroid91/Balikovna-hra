@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dnn3uact4jwsf"
+path="res://.godot/imported/otevření krabice 2 .mp3-d751eeebea66e4100f8e281676a20d36.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/otevření krabice 2 .mp3"
+dest_files=["res://.godot/imported/otevření krabice 2 .mp3-d751eeebea66e4100f8e281676a20d36.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

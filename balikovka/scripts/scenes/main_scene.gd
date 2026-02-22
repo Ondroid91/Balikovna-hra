@@ -10,6 +10,8 @@ extends Node
 @export var score_background : Sprite2D
 @export var score_board : Control
 
+@export var explosion_snd : AudioStreamPlayer
+
 @export var main_menu_scene : PackedScene
 @export var game_scene : PackedScene
 
@@ -41,6 +43,7 @@ func diable_screen() -> void:
 	score_board.visible = false
 
 func you_died_screen() -> void:
+	explosion_snd.play()
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().paused = true
 	make_score_background_dark(0.1)

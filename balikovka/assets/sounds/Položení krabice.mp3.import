@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ixbmjtjhoe1k"
+path="res://.godot/imported/Položení krabice.mp3-70c3fe6067e1108de4c60de67c230d7e.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Položení krabice.mp3"
+dest_files=["res://.godot/imported/Položení krabice.mp3-70c3fe6067e1108de4c60de67c230d7e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

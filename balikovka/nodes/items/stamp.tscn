@@ -12,7 +12,7 @@ item_image = NodePath("Stamp")
 
 [node name="Stamp" type="Sprite2D" parent="." unique_id=1489216185]
 position = Vector2(-4.7683716e-07, 3.8146973e-06)
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_cn3r5")
 
 [node name="Button" type="Button" parent="." unique_id=2017221495]

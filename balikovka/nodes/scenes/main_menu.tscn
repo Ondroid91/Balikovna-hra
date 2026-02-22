@@ -25,6 +25,7 @@ position = Vector2(960, 540)
 texture = ExtResource("4_a5ey8")
 
 [node name="Panel" type="Panel" parent="." unique_id=1580746610]
+self_modulate = Color(1, 1, 1, 0)
 offset_left = -64.0
 offset_top = -64.0
 offset_right = 1984.0

@@ -51,33 +51,33 @@ position = Vector2(960, 896)
 
 [node name="manual2" type="Button" parent="." unique_id=810283082]
 z_index = 3
-offset_left = 112.0
-offset_top = 584.0
-offset_right = 280.0
+offset_left = 72.0
+offset_top = 552.0
+offset_right = 296.0
 offset_bottom = 784.0
 flat = true
 
 [node name="Kniha" type="Sprite2D" parent="manual2" unique_id=732519228]
-position = Vector2(80, 96)
-scale = Vector2(0.3, 0.3)
+position = Vector2(72, 144)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("9_wrf1f")
 
 [node name="items" type="Node2D" parent="." unique_id=1787034250]
 z_index = 4
 
 [node name="Ink" type="Sprite2D" parent="items" unique_id=1080760613]
-position = Vector2(1783.9999, 792)
-scale = Vector2(0.3, 0.3)
+position = Vector2(1784.0001, 808)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("7_mxg38")
 
 [node name="tape" parent="items" unique_id=869200505 instance=ExtResource("5_k05xx")]
-position = Vector2(1528, 976)
+position = Vector2(1544, 952)
 
 [node name="knife" parent="items" unique_id=2055013009 instance=ExtResource("4_j21y6")]
-position = Vector2(512, 880)
+position = Vector2(488, 816)
 
 [node name="stamp" parent="items" unique_id=856996457 instance=ExtResource("8_ant6f")]
-position = Vector2(1821, 760)
+position = Vector2(1824, 736)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=378877017]
 position = Vector2(960, 540)

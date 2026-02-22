@@ -18,6 +18,9 @@ extends Node2D
 @export var bin_image : Sprite2D
 @export var scan_image : Sprite2D
 @export var pas_image : AnimatedSprite2D
+@export var button_image : Sprite2D
+
+@export var pas_snd : AudioStreamPlayer
 
 @export var packages_to_spawn : Array[PackedScene]
 
@@ -44,6 +47,17 @@ func _ready() -> void:
 
 	origin_bin_pos = bin_image.global_position
 	
+
+
+
+
+	next_button.mouse_entered.connect(func():
+		button_image.modulate = Color(1.3, 1.3, 1.3, 1)
+	)
+
+	next_button.mouse_exited.connect(func():
+		button_image.modulate = Color(1, 1, 1, 1)
+	)
 
 
 func _on_destroy_area_entered(area: Area2D) -> void:
@@ -113,13 +127,16 @@ func _on_next_button() -> void:
 	
 	next_allowed = false
 	next_button.disabled = true
+	pas_image.play()
+	pas_snd.play()
 
 	if is_instance_valid(package_on_table):
 		await move_package(package_on_table, exit_pos)
 		middle_occupied = false
-
+	
 	await spawn_object()
-
+	pas_image.stop()
+	pas_snd.stop()
 	next_button.disabled = false
 	next_allowed = true
 
@@ -142,7 +159,6 @@ func spawn_object() -> void:
 func move_package(pack : Node2D, destination : Marker2D) -> void:
 	if not is_instance_valid(pack):
 		return
-	pas_image.play()
 	var tween := create_tween()
 	tween.tween_property(
 		pack,
@@ -152,8 +168,7 @@ func move_package(pack : Node2D, destination : Marker2D) -> void:
 	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
 
 	await tween.finished
-	pas_image.stop()
-	
+
 func _on_scener_area_entered(area) -> void:
 	if is_instance_valid(area):
 		var package = area.get_parent()

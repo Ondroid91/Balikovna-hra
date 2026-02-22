@@ -13,6 +13,9 @@
 [ext_resource type="PackedScene" uid="uid://byd6uaed3t6vy" path="res://nodes/objects/content/needle.tscn" id="9_onf1p"]
 [ext_resource type="PackedScene" uid="uid://8rue4cw0cn00" path="res://nodes/objects/content/shoes.tscn" id="10_p8dty"]
 [ext_resource type="Texture2D" uid="uid://p12x5elfdmlw" path="res://assets/RAZITKO.png" id="11_wir1l"]
+[ext_resource type="AudioStream" uid="uid://dnn3uact4jwsf" path="res://assets/sounds/otevření krabice 2 .mp3" id="14_p8dty"]
+[ext_resource type="AudioStream" uid="uid://0dbo3igbbpfk" path="res://assets/sounds/lepící páska.mp3" id="15_1fn0y"]
+[ext_resource type="AudioStream" uid="uid://ixbmjtjhoe1k" path="res://assets/sounds/Položení krabice.mp3" id="16_b1so8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n1vgp"]
 atlas = ExtResource("2_hkf07")
@@ -39,7 +42,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_td2lr"]
 size = Vector2(104, 104)
 
-[node name="package" type="Node2D" unique_id=897910164 node_paths=PackedStringArray("package_content", "package_image", "package_button", "package_area", "package_number_label", "marker")]
+[node name="package" type="Node2D" unique_id=897910164 node_paths=PackedStringArray("package_content", "package_image", "package_button", "package_area", "package_number_label", "marker", "open_snd", "close_snd", "drop_snd")]
 script = ExtResource("1_lxfn3")
 package_content = NodePath("regular_content")
 package_image = NodePath("AnimatedSprite2D")
@@ -47,6 +50,9 @@ package_button = NodePath("Button")
 package_area = NodePath("Area2D")
 package_number_label = NodePath("package_number")
 marker = NodePath("marker")
+open_snd = NodePath("open")
+close_snd = NodePath("close")
+drop_snd = NodePath("drop")
 items_list = Array[PackedScene]([ExtResource("2_gjo1c"), ExtResource("4_hnhxo"), ExtResource("4_8huq6"), ExtResource("5_7w8eq"), ExtResource("6_wir1l"), ExtResource("7_g75bu"), ExtResource("8_onf1p"), ExtResource("9_onf1p"), ExtResource("10_p8dty")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2062593142]
@@ -84,3 +90,12 @@ position = Vector2(-32, -80)
 rotation = 0.34906584
 scale = Vector2(0.06, 0.06)
 texture = ExtResource("11_wir1l")
+
+[node name="open" type="AudioStreamPlayer" parent="." unique_id=2055426239]
+stream = ExtResource("14_p8dty")
+
+[node name="close" type="AudioStreamPlayer" parent="." unique_id=1774352229]
+stream = ExtResource("15_1fn0y")
+
+[node name="drop" type="AudioStreamPlayer" parent="." unique_id=1486016992]
+stream = ExtResource("16_b1so8")

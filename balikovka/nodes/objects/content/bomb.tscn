@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bang5m5lddygi"]
 
 [ext_resource type="Script" uid="uid://iojh0ve2shwj" path="res://scripts/objects/bomb.gd" id="1_bs80y"]
+[ext_resource type="Texture2D" uid="uid://cltjepwu455lk" path="res://assets/content/bomb/bomba_full.png" id="2_713s2"]
 [ext_resource type="Texture2D" uid="uid://c1ff2qt8uvt13" path="res://assets/content/bomb/bomba.png" id="3_r6ixo"]
 [ext_resource type="Texture2D" uid="uid://dj7giigtf5yjg" path="res://assets/content/bomb/drat_1.png" id="4_x4hdi"]
 [ext_resource type="Texture2D" uid="uid://j8why1aaict1" path="res://assets/content/bomb/drat_1_B.png" id="5_6ex1b"]
@@ -80,8 +81,8 @@ animations = [{
 
 [node name="bomb" type="Node2D" unique_id=184443341 node_paths=PackedStringArray("pack", "wire1", "wire2", "wire3", "red_wire_button", "blue_wire_button", "green_wire_button", "bomb_timer", "display_timer")]
 script = ExtResource("1_bs80y")
-content_image = ExtResource("3_r6ixo")
-damaged_content_image = ExtResource("3_r6ixo")
+content_image = ExtResource("2_713s2")
+damaged_content_image = ExtResource("2_713s2")
 pack = NodePath("pack")
 wire1 = NodePath("wire1")
 wire2 = NodePath("wire2")
@@ -101,25 +102,25 @@ flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="red_wire" type="Button" parent="." unique_id=501055227]
-offset_left = -44.0
-offset_top = -59.0
-offset_right = 28.0
-offset_bottom = -45.0
+offset_left = -29.0
+offset_top = -38.0
+offset_right = 43.0
+offset_bottom = -23.0
 flat = true
 
 [node name="blue_wire" type="Button" parent="." unique_id=465145628]
-offset_left = -41.0
-offset_top = -39.0
-offset_right = 31.0
-offset_bottom = -27.0
+offset_left = -29.0
+offset_top = -24.0
+offset_right = 43.0
+offset_bottom = -12.0
 flat = true
 metadata/_edit_use_anchors_ = true
 
 [node name="green_wire" type="Button" parent="." unique_id=1990390157]
-offset_left = -41.0
-offset_top = -20.0
-offset_right = 32.0
-offset_bottom = -3.0
+offset_left = -27.0
+offset_top = -11.0
+offset_right = 46.0
+offset_bottom = 6.0
 flat = true
 
 [node name="Timer" type="Timer" parent="." unique_id=343352790]
@@ -134,24 +135,25 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_r6ixo")
 
 [node name="wire1" type="AnimatedSprite2D" parent="." unique_id=905627344]
-position = Vector2(7.9999995, 15.999999)
-scale = Vector2(0.2, 0.2)
+position = Vector2(62, 91)
+scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_vka8k")
 
 [node name="wire2" type="AnimatedSprite2D" parent="." unique_id=316624240]
-position = Vector2(7.9999995, 15.999999)
-scale = Vector2(0.2, 0.2)
+position = Vector2(58, 88)
+scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_uonrw")
 
 [node name="wire3" type="AnimatedSprite2D" parent="." unique_id=693927480]
-position = Vector2(8, 16)
-scale = Vector2(0.2, 0.2)
+position = Vector2(64, 84)
+scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_ge5nm")
 
 [node name="display" type="Label" parent="." unique_id=452185681]
-offset_left = -40.0
-offset_top = 8.0
-offset_right = 24.0
-offset_bottom = 31.0
+offset_left = -14.0
+offset_top = 14.0
+offset_right = 50.0
+offset_bottom = 37.0
+theme_override_font_sizes/font_size = 12
 text = "10:00"
 metadata/_edit_use_anchors_ = true

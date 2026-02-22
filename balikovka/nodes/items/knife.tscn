@@ -11,7 +11,7 @@ pick = NodePath("Button")
 item_image = NodePath("Knife")
 
 [node name="Knife" type="Sprite2D" parent="." unique_id=956468535]
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_to20b")
 offset = Vector2(-226.66661, 286.66663)
 

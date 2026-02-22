@@ -12,7 +12,7 @@ item_image = NodePath("Tape")
 
 [node name="Tape" type="Sprite2D" parent="." unique_id=1500062030]
 position = Vector2(4.7683716e-07, 7.6293945e-06)
-scale = Vector2(0.3, 0.3)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_28vka")
 
 [node name="Button" type="Button" parent="." unique_id=2076864718]

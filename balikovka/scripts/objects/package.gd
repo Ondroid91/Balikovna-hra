@@ -24,6 +24,13 @@ var drag_package : bool = false
 @export var package_number_label : Label
 @export var marker : Sprite2D
 
+
+@export var open_snd : AudioStreamPlayer
+@export var close_snd : AudioStreamPlayer
+@export var drop_snd : AudioStreamPlayer
+
+
+
 var in_table_area : bool = false
 
 @export var items_list : Array[PackedScene]
@@ -64,6 +71,8 @@ func _on_drag_package() -> void:
 
 var previos_pos : Marker2D
 func _on_drop_package() -> void:
+	if gl.in_hand == "empty":
+		drop_snd.play()
 	drag_package = false
 	print("drop ", machine.in_drop_area)
 	
@@ -133,6 +142,7 @@ func _on_open_package() -> void:
 	if on_table:
 		if package_content.item_name == "bomb":
 			package_content.bomb_triggered()
+		open_snd.play()
 		package_image.frame = 1
 		package_number_label.visible = false
 		if package_marked:
@@ -145,6 +155,7 @@ func _on_open_package() -> void:
 
 func _on_pack_package() -> void:
 	if on_table:
+		close_snd.play()
 		package_image.frame = 0
 		package_content.visible = false
 		package_number_label.visible = true
