@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://dns0uqr18dkxu" path="res://nodes/objects/content/cup.tscn" id="6_4u6wv"]
 [ext_resource type="PackedScene" uid="uid://d3ream4h0dg5x" path="res://nodes/objects/content/item_2.tscn" id="7_2uljq"]
 [ext_resource type="PackedScene" uid="uid://dbp35266cnio2" path="res://nodes/objects/content/tooths.tscn" id="8_peaad"]
+[ext_resource type="PackedScene" uid="uid://8rue4cw0cn00" path="res://nodes/objects/content/shoes.tscn" id="9_peaad"]
+[ext_resource type="PackedScene" uid="uid://byd6uaed3t6vy" path="res://nodes/objects/content/needle.tscn" id="10_krv6q"]
 [ext_resource type="Texture2D" uid="uid://p12x5elfdmlw" path="res://assets/RAZITKO.png" id="11_4u6wv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jjc2n"]
@@ -45,7 +47,7 @@ package_button = NodePath("Button")
 package_area = NodePath("Area2D")
 package_number_label = NodePath("package_number")
 marker = NodePath("marker")
-items_list = Array[PackedScene]([ExtResource("2_hg1e1"), ExtResource("3_pucdj"), ExtResource("4_xo6j7"), ExtResource("5_cb5hv"), ExtResource("6_4u6wv"), ExtResource("7_2uljq"), ExtResource("8_peaad")])
+items_list = Array[PackedScene]([ExtResource("2_hg1e1"), ExtResource("3_pucdj"), ExtResource("4_xo6j7"), ExtResource("5_cb5hv"), ExtResource("6_4u6wv"), ExtResource("7_2uljq"), ExtResource("8_peaad"), ExtResource("9_peaad"), ExtResource("10_krv6q")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2062593142]
 position = Vector2(96, 32)

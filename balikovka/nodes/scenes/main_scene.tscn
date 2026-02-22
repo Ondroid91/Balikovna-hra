@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bn7l5ehykng4a" path="res://nodes/scenes/world.tscn" id="2_genem"]
 [ext_resource type="PackedScene" uid="uid://c001j2craaa5w" path="res://nodes/UI/manual.tscn" id="3_ksbhw"]
 [ext_resource type="PackedScene" uid="uid://bjepxkk1gwtg3" path="res://nodes/UI/score_board.tscn" id="5_xgvid"]
+[ext_resource type="PackedScene" uid="uid://caeeer8ah45rb" path="res://nodes/UI/pause.tscn" id="6_h0xnh"]
 
 [sub_resource type="Gradient" id="Gradient_exqo6"]
 offsets = PackedFloat32Array(0.4186508)
@@ -18,6 +19,7 @@ metadata/_snap_enabled = true
 [node name="main_scene" type="Node" unique_id=692884037 node_paths=PackedStringArray("currrent_scene", "manual_book", "viewport", "parameters", "score_background", "score_board")]
 process_mode = 3
 script = ExtResource("1_nnkd3")
+start_scene = "main_menu"
 currrent_scene = NodePath("SubViewportContainer/SubViewport/world")
 manual_book = NodePath("manual")
 viewport = NodePath("SubViewportContainer/SubViewport")
@@ -52,11 +54,6 @@ main_scene = NodePath("../../..")
 [node name="manual" parent="." unique_id=1604602573 instance=ExtResource("3_ksbhw")]
 visible = false
 
-[node name="parameters" type="Label" parent="." unique_id=456466516]
-offset_right = 536.0
-offset_bottom = 256.0
-theme_override_font_sizes/font_size = 30
-
 [node name="score_background" type="Sprite2D" parent="." unique_id=592010302]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(960.00006, 544)
@@ -65,4 +62,16 @@ texture = SubResource("GradientTexture2D_xgvid")
 
 [node name="score_board" parent="." unique_id=113089331 node_paths=PackedStringArray("main_scene") instance=ExtResource("5_xgvid")]
 visible = false
+offset_top = 1120.0
+offset_bottom = 1120.0
 main_scene = NodePath("..")
+
+[node name="Pause" parent="." unique_id=792388850 node_paths=PackedStringArray("main_scene", "score_board") instance=ExtResource("6_h0xnh")]
+visible = false
+main_scene = NodePath("..")
+score_board = NodePath("../score_board")
+
+[node name="parameters" type="Label" parent="." unique_id=456466516]
+offset_right = 536.0
+offset_bottom = 256.0
+theme_override_font_sizes/font_size = 30

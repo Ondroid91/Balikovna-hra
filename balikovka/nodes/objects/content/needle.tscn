@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://byd6uaed3t6vy"]
+
+[ext_resource type="Script" uid="uid://d2uk82kw2dn6" path="res://scripts/objects/regular_content.gd" id="1_hpcpy"]
+[ext_resource type="Texture2D" uid="uid://dtig124eb5wha" path="res://assets/content/needle_good.png" id="2_tmn8m"]
+[ext_resource type="Texture2D" uid="uid://xvsnjamj17uq" path="res://assets/content/needle_broken.png" id="3_8b5yk"]
+
+[node name="needle" type="Node2D" unique_id=184443341 node_paths=PackedStringArray("sprite", "pack")]
+script = ExtResource("1_hpcpy")
+content_image = ExtResource("2_tmn8m")
+damaged_content_image = ExtResource("3_8b5yk")
+sprite = NodePath("Sprite2D")
+pack = NodePath("pack")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=584894951]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_tmn8m")
+
+[node name="pack" type="Button" parent="." unique_id=1343461389]
+offset_left = -192.0
+offset_top = -192.0
+offset_right = 192.0
+offset_bottom = 192.0
+flat = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="." unique_id=452185681]
+visible = false
+offset_left = -32.0
+offset_right = 32.0
+offset_bottom = 23.0
+text = "content"

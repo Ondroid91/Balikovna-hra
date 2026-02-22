@@ -31,6 +31,11 @@ func _process(delta: float) -> void:
 		"incorrect removed : " + str(gl.incorrectly_removed_packages)
 	)
 
+	if Input.is_action_just_pressed("test"):
+		make_score_background_dark(2.0)
+		await get_tree().create_timer(1.0).timeout
+		move_score_board()
+
 func diable_screen() -> void:
 	make_score_background_light(3.0)
 	score_board.visible = false
@@ -39,7 +44,8 @@ func you_died_screen() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().paused = true
 	make_score_background_dark(0.1)
-	score_board.visible = true
+	await get_tree().create_timer(1.0).timeout
+	move_score_board()
 	score_board.set_ending_name("You died")
 	score_board.show_score()
 
@@ -47,7 +53,8 @@ func you_are_fired_screen() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().paused = true
 	make_score_background_dark(2.0)
-	score_board.visible = true
+	await get_tree().create_timer(1.0).timeout
+	move_score_board()
 	score_board.set_ending_name("You have been fired")
 	score_board.show_score()
 	
@@ -55,18 +62,27 @@ func shift_ends_screen() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().paused = true
 	make_score_background_dark(2.0)
-	score_board.visible = true
+	await get_tree().create_timer(1.0).timeout
+	move_score_board()
 	score_board.set_ending_name("Your shift ends")
 	score_board.show_score()
 
 func move_score_board() -> void:
+	score_board.visible = true
 	var tween := create_tween()
 	tween.tween_property(
-		self,
+		self.score_board,
 		"global_position",
-		Vector2(960, 540),
-		0.25
-		).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+		Vector2(10, -20),
+		0.75
+	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+	tween.parallel().tween_property(
+		self.score_board,
+		"rotation",
+		deg_to_rad(1),
+		0.75
+	).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
 
 func make_score_background_light(speed : float) -> void:
 	score_background.modulate.a = 1.0

@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://caeeer8ah45rb"]
+
+[ext_resource type="Script" uid="uid://cwxox6qy235j2" path="res://scripts/scenes/pause.gd" id="1_k4cp1"]
+
+[node name="Pause" type="Control" unique_id=792388850 node_paths=PackedStringArray("conntinue", "back_to_main", "quit")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_k4cp1")
+conntinue = NodePath("Panel/conntinue")
+back_to_main = NodePath("Panel/back_to_main")
+quit = NodePath("Panel/quit")
+
+[node name="Panel" type="Panel" parent="." unique_id=298020960]
+layout_mode = 0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 1992.0
+offset_bottom = 1160.0
+
+[node name="Label" type="Label" parent="Panel" unique_id=735489530]
+layout_mode = 0
+offset_left = 808.0
+offset_top = 176.0
+offset_right = 1242.0
+offset_bottom = 381.0
+theme_override_font_sizes/font_size = 150
+text = "Pause"
+horizontal_alignment = 1
+
+[node name="conntinue" type="Button" parent="Panel" unique_id=1834301135]
+layout_mode = 0
+offset_left = 920.0
+offset_top = 512.0
+offset_right = 1129.0
+offset_bottom = 575.0
+theme_override_font_sizes/font_size = 40
+text = "Continnue"
+flat = true
+
+[node name="back_to_main" type="Button" parent="Panel" unique_id=41243210]
+layout_mode = 0
+offset_left = 872.0
+offset_top = 640.0
+offset_right = 1179.0
+offset_bottom = 703.0
+theme_override_font_sizes/font_size = 40
+text = "Back to main"
+flat = true
+
+[node name="quit" type="Button" parent="Panel" unique_id=227971808]
+layout_mode = 0
+offset_left = 920.0
+offset_top = 768.0
+offset_right = 1129.0
+offset_bottom = 831.0
+theme_override_font_sizes/font_size = 40
+text = "Quit"
+flat = true
