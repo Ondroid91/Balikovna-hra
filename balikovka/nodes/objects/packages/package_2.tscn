@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dns0uqr18dkxu" path="res://nodes/objects/content/cup.tscn" id="6_4u6wv"]
 [ext_resource type="PackedScene" uid="uid://d3ream4h0dg5x" path="res://nodes/objects/content/item_2.tscn" id="7_2uljq"]
 [ext_resource type="PackedScene" uid="uid://dbp35266cnio2" path="res://nodes/objects/content/tooths.tscn" id="8_peaad"]
-[ext_resource type="Texture2D" uid="uid://bhxrwinq87ld7" path="res://icon.svg" id="11_4u6wv"]
+[ext_resource type="Texture2D" uid="uid://p12x5elfdmlw" path="res://assets/RAZITKO.png" id="11_4u6wv"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jjc2n"]
 atlas = ExtResource("2_xo6j7")
@@ -81,7 +81,7 @@ metadata/_edit_use_anchors_ = true
 [node name="marker" type="Sprite2D" parent="." unique_id=1687077137]
 visible = false
 modulate = Color(1, 0, 0, 1)
-position = Vector2(-80.00001, -80)
-rotation = -0.29028457
-scale = Vector2(0.4375, 0.4375)
+position = Vector2(-24.000011, -96.00001)
+rotation = 0.34906584
+scale = Vector2(0.06, 0.06)
 texture = ExtResource("11_4u6wv")

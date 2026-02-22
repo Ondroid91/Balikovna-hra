@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://conds5lssbydv" path="res://scripts/scenes/world.gd" id="1_mxg38"]
 [ext_resource type="Texture2D" uid="uid://247xh00ae7de" path="res://assets/enviroment/11.png" id="2_ant6f"]
 [ext_resource type="PackedScene" uid="uid://cjwgm70gk5hpi" path="res://nodes/objects/machine.tscn" id="2_yecwc"]
+[ext_resource type="Texture2D" uid="uid://c0vuvlyd2xeiq" path="res://assets/enviroment/stul.png" id="3_cqxn8"]
 [ext_resource type="Texture2D" uid="uid://37svekf253xq" path="res://assets/enviroment/POZADIFINAL.png" id="3_wrf1f"]
 [ext_resource type="PackedScene" uid="uid://ih32b5u7cyge" path="res://nodes/items/knife.tscn" id="4_j21y6"]
 [ext_resource type="Texture2D" uid="uid://2udh46sg7suj" path="res://assets/enviroment/sken.png" id="4_wrf1f"]
@@ -20,7 +21,8 @@ manual_button = NodePath("manual2")
 manual_image = NodePath("manual2/Kniha")
 timer = NodePath("Timer")
 
-[node name="Robotasdadasdaapsd" type="Sprite2D" parent="." unique_id=1259921583]
+[node name="11" type="Sprite2D" parent="." unique_id=1882126977]
+z_index = -10
 position = Vector2(960, 540)
 texture = ExtResource("2_ant6f")
 
@@ -29,7 +31,12 @@ z_index = -1
 position = Vector2(960, 540)
 texture = ExtResource("3_wrf1f")
 
+[node name="Stul" type="Sprite2D" parent="." unique_id=2124639565]
+position = Vector2(960, 540)
+texture = ExtResource("3_cqxn8")
+
 [node name="Sken" type="Sprite2D" parent="." unique_id=1804704742]
+visible = false
 z_index = 1
 position = Vector2(960, 540)
 texture = ExtResource("4_wrf1f")
@@ -43,7 +50,7 @@ packages_to_spawn = Array[PackedScene]([ExtResource("1_c64on"), ExtResource("6_a
 position = Vector2(960, 960)
 
 [node name="manual2" type="Button" parent="." unique_id=810283082]
-z_index = 1
+z_index = 3
 offset_left = 112.0
 offset_top = 584.0
 offset_right = 280.0
@@ -52,7 +59,7 @@ flat = true
 
 [node name="Kniha" type="Sprite2D" parent="manual2" unique_id=732519228]
 position = Vector2(80, 96)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("9_wrf1f")
 
 [node name="items" type="Node2D" parent="." unique_id=1787034250]
@@ -60,17 +67,17 @@ z_index = 4
 
 [node name="Ink" type="Sprite2D" parent="items" unique_id=1080760613]
 position = Vector2(1783.9999, 792)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("7_mxg38")
 
 [node name="tape" parent="items" unique_id=869200505 instance=ExtResource("5_k05xx")]
 position = Vector2(1528, 976)
 
 [node name="knife" parent="items" unique_id=2055013009 instance=ExtResource("4_j21y6")]
-position = Vector2(528, 768)
+position = Vector2(512, 880)
 
 [node name="stamp" parent="items" unique_id=856996457 instance=ExtResource("8_ant6f")]
-position = Vector2(1808, 776)
+position = Vector2(1821, 760)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=378877017]
 position = Vector2(960, 540)

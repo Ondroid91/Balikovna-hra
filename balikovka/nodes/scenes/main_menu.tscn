@@ -1,11 +1,16 @@
 [gd_scene format=3 uid="uid://cpygnedh6b6sm"]
 
 [ext_resource type="Script" uid="uid://tlgrnt5jlscp" path="res://scripts/scenes/main_menu.gd" id="1_1yc21"]
+[ext_resource type="Texture2D" uid="uid://df2na35ad33lq" path="res://assets/menuuuig.png" id="2_ythhp"]
 
 [node name="main_menu" type="Node2D" unique_id=1543109013 node_paths=PackedStringArray("play", "quit")]
 script = ExtResource("1_1yc21")
 play = NodePath("Panel/play")
 quit = NodePath("Panel/quit")
+
+[node name="Menuuuig" type="Sprite2D" parent="." unique_id=2144029046]
+position = Vector2(960, 540)
+texture = ExtResource("2_ythhp")
 
 [node name="Panel" type="Panel" parent="." unique_id=1580746610]
 offset_left = -64.0

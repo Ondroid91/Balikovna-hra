@@ -36,6 +36,7 @@ func diable_screen() -> void:
 	score_board.visible = false
 
 func you_died_screen() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().paused = true
 	make_score_background_dark(0.1)
 	score_board.visible = true
@@ -43,6 +44,7 @@ func you_died_screen() -> void:
 	score_board.show_score()
 
 func you_are_fired_screen() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().paused = true
 	make_score_background_dark(2.0)
 	score_board.visible = true
@@ -50,6 +52,7 @@ func you_are_fired_screen() -> void:
 	score_board.show_score()
 	
 func shift_ends_screen() -> void:
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	get_tree().paused = true
 	make_score_background_dark(2.0)
 	score_board.visible = true

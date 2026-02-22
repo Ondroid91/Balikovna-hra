@@ -3,10 +3,13 @@
 [ext_resource type="Script" uid="uid://cugtneu6y8n87" path="res://scripts/objects/machine.gd" id="1_crc7w"]
 [ext_resource type="PackedScene" uid="uid://yeqjjinsyv4" path="res://nodes/objects/packages/package_2.tscn" id="2_ps6kg"]
 [ext_resource type="Texture2D" uid="uid://bhxrwinq87ld7" path="res://icon.svg" id="2_rn8yu"]
-[ext_resource type="Texture2D" uid="uid://cs36p86a0p1ro" path="res://assets/enviroment/robotasdadasdaapsd.png" id="3_ps6kg"]
+[ext_resource type="Texture2D" uid="uid://247xh00ae7de" path="res://assets/enviroment/11.png" id="3_5273i"]
 [ext_resource type="Texture2D" uid="uid://criuyym7ijw82" path="res://assets/enviroment/pas_animation_sheet_16_frames.png" id="5_n5xr3"]
 [ext_resource type="Texture2D" uid="uid://bcssofk04c15a" path="res://assets/enviroment/ODPAD.png" id="6_mav8p"]
 [ext_resource type="Texture2D" uid="uid://7jmch4i8jvsm" path="res://assets/enviroment/tlacitko.png" id="6_o5kmq"]
+[ext_resource type="Texture2D" uid="uid://bouwf7km7nutg" path="res://assets/enviroment/obrazovka.png" id="7_ti7f6"]
+[ext_resource type="Shader" uid="uid://bbctkyrm6xyfc" path="res://shaders/crt_filter.gdshader" id="8_ti7f6"]
+[ext_resource type="Texture2D" uid="uid://2udh46sg7suj" path="res://assets/enviroment/sken.png" id="9_xm4co"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mav8p"]
 atlas = ExtResource("5_n5xr3")
@@ -134,6 +137,31 @@ size = Vector2(704, 408)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_crc7w"]
 size = Vector2(24, 186)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xm4co"]
+shader = ExtResource("8_ti7f6")
+shader_parameter/brightness = 1.02
+shader_parameter/contrast = 1.08
+shader_parameter/saturation = 1.1
+shader_parameter/gamma = 1.05
+shader_parameter/curvature = 0.050000002375
+shader_parameter/corner_soften = 0.06
+shader_parameter/vignette = 0.38
+shader_parameter/scanline_strength = 0.800000038
+shader_parameter/scanline_density = 0.5
+shader_parameter/interlace_strength = 0.2
+shader_parameter/mask_strength = 0.22
+shader_parameter/mask_scale = 1.0
+shader_parameter/chroma_offset_px = 0.0
+shader_parameter/luma_smear_px = 0.0
+shader_parameter/jitter_px = 0.800000038
+shader_parameter/wobble_px = 0.2000000095
+shader_parameter/tape_noise = 0.22
+shader_parameter/tape_lines = 0.400000019
+shader_parameter/roll_speed = 0.30000001425
+shader_parameter/roll_strength = 0.400000019
+shader_parameter/glow_strength = 0.25
+shader_parameter/glow_threshold = 0.65
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rn8yu"]
 size = Vector2(40, 359)
 
@@ -161,10 +189,10 @@ scan_image = NodePath("scener/scan_image")
 pas_image = NodePath("pas")
 packages_to_spawn = Array[PackedScene]([ExtResource("2_ps6kg"), ExtResource("2_ps6kg")])
 
-[node name="Robotasdadasdaapsd" type="Sprite2D" parent="." unique_id=43604159]
+[node name="11" type="Sprite2D" parent="." unique_id=11463114]
 visible = false
-position = Vector2(936, 88)
-texture = ExtResource("3_ps6kg")
+position = Vector2(960, 70)
+texture = ExtResource("3_5273i")
 
 [node name="spawner" type="Marker2D" parent="." unique_id=1128785729]
 position = Vector2(-640, 192)
@@ -215,11 +243,29 @@ shape = SubResource("RectangleShape2D_crc7w")
 [node name="scener" type="Area2D" parent="." unique_id=1885535041]
 position = Vector2(304, 200)
 
-[node name="scan_image" type="Sprite2D" parent="scener" unique_id=763812505]
-self_modulate = Color(0, 0, 0, 1)
+[node name="Sken" type="Sprite2D" parent="scener" unique_id=1629300239]
 z_index = 2
+y_sort_enabled = true
+position = Vector2(650, -129)
+texture = ExtResource("9_xm4co")
+
+[node name="Obrazovka" type="Sprite2D" parent="scener" unique_id=673330750]
+position = Vector2(73, -381)
+scale = Vector2(1.0545022, 1.0545022)
+texture = ExtResource("7_ti7f6")
+
+[node name="scan_image" type="Sprite2D" parent="scener" unique_id=763812505]
+modulate = Color(0, 0, 0, 1)
+z_index = -2
 position = Vector2(71.99999, -392)
 scale = Vector2(0.2, 0.2)
+
+[node name="crt_filter" type="Sprite2D" parent="scener" unique_id=1492637620]
+z_index = 1
+material = SubResource("ShaderMaterial_xm4co")
+position = Vector2(75.50001, -385)
+scale = Vector2(0.99000007, 0.9857821)
+texture = ExtResource("7_ti7f6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scener" unique_id=1411116712]
 position = Vector2(0, -107.5)

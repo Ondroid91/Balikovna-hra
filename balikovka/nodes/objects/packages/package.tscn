@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dns0uqr18dkxu" path="res://nodes/objects/content/cup.tscn" id="6_wir1l"]
 [ext_resource type="PackedScene" uid="uid://4q7sfscgyqxx" path="res://nodes/objects/content/books.tscn" id="7_g75bu"]
 [ext_resource type="PackedScene" uid="uid://dbp35266cnio2" path="res://nodes/objects/content/tooths.tscn" id="8_onf1p"]
-[ext_resource type="Texture2D" uid="uid://bhxrwinq87ld7" path="res://icon.svg" id="11_wir1l"]
+[ext_resource type="Texture2D" uid="uid://p12x5elfdmlw" path="res://assets/RAZITKO.png" id="11_wir1l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n1vgp"]
 atlas = ExtResource("2_hkf07")
@@ -53,6 +53,7 @@ scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_5q1qn")
 
 [node name="regular_content" parent="." unique_id=184443341 node_paths=PackedStringArray("pacakge") instance=ExtResource("4_hnhxo")]
+visible = false
 pacakge = NodePath("..")
 
 [node name="Button" type="Button" parent="." unique_id=1137004351]
@@ -78,8 +79,7 @@ offset_bottom = -81.0
 
 [node name="marker" type="Sprite2D" parent="." unique_id=636020272]
 visible = false
-modulate = Color(1, 0, 0, 1)
-position = Vector2(-80.00001, -80)
-rotation = -0.29028457
-scale = Vector2(0.4375, 0.4375)
+position = Vector2(-32, -80)
+rotation = 0.34906584
+scale = Vector2(0.06, 0.06)
 texture = ExtResource("11_wir1l")

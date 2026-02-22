@@ -11,15 +11,14 @@ pick = NodePath("Button")
 item_image = NodePath("Knife")
 
 [node name="Knife" type="Sprite2D" parent="." unique_id=956468535]
-position = Vector2(-7.6293945e-06, 1.5258789e-05)
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_to20b")
-offset = Vector2(-439.9999, 579.9999)
+offset = Vector2(-226.66661, 286.66663)
 
 [node name="Button" type="Button" parent="." unique_id=960738001]
-offset_left = -264.0
-offset_top = -32.0
-offset_right = 96.0
-offset_bottom = 264.0
+offset_left = -232.0
+offset_top = -64.0
+offset_right = 128.0
+offset_bottom = 232.0
 action_mode = 0
 flat = true
