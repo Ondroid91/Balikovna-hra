@@ -47,7 +47,7 @@ table_pos = NodePath("../table_pos")
 packages_to_spawn = Array[PackedScene]([ExtResource("1_c64on"), ExtResource("6_ant6f")])
 
 [node name="table_pos" type="Marker2D" parent="." unique_id=273368610]
-position = Vector2(960, 960)
+position = Vector2(960, 896)
 
 [node name="manual2" type="Button" parent="." unique_id=810283082]
 z_index = 3

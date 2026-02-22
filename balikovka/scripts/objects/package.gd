@@ -103,7 +103,7 @@ func spawn_item_in_package() -> void:
 	var new_item = items_list[ran_item].instantiate()
 	new_item.visible = false
 	new_item.pacakge = self
-	new_item.global_position -= Vector2(0, 80)
+	#new_item.global_position -= Vector2(0, 80)
 	package_content = new_item
 	add_child(new_item)
 
@@ -134,6 +134,9 @@ func _on_open_package() -> void:
 		if package_content.item_name == "bomb":
 			package_content.bomb_triggered()
 		package_image.frame = 1
+		package_number_label.visible = false
+		if package_marked:
+			marker.visible = false
 		package_content.visible = true
 		package_opend = true
 		package_button.disabled = true
@@ -144,6 +147,9 @@ func _on_pack_package() -> void:
 	if on_table:
 		package_image.frame = 0
 		package_content.visible = false
+		package_number_label.visible = true
+		if package_marked:
+			marker.visible = true
 		package_opend = false
 		package_button.disabled = false
 		package_button.mouse_filter = Control.MOUSE_FILTER_STOP

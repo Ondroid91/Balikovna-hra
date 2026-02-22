@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://pskyuno2h3sm" path="res://scripts/objects/package.gd" id="1_8ytkg"]
 [ext_resource type="PackedScene" uid="uid://cwlouw0eosvwu" path="res://nodes/objects/content/bottle.tscn" id="2_hg1e1"]
-[ext_resource type="Texture2D" uid="uid://bw87nd76qx878" path="res://assets/krabice.png" id="2_xo6j7"]
-[ext_resource type="Texture2D" uid="uid://cps32f7f6hlkt" path="res://assets/krabice_ptevrena_.png" id="3_mitpy"]
+[ext_resource type="Texture2D" uid="uid://2c2dkpo05vrk" path="res://assets/krabice.png" id="2_xo6j7"]
+[ext_resource type="Texture2D" uid="uid://csvfofbq0er82" path="res://assets/krabice_ptevrena_.png" id="3_mitpy"]
 [ext_resource type="PackedScene" uid="uid://ck5y32o78tc8r" path="res://nodes/objects/content/regular_content.tscn" id="3_pucdj"]
 [ext_resource type="PackedScene" uid="uid://bang5m5lddygi" path="res://nodes/objects/content/bomb.tscn" id="4_xo6j7"]
 [ext_resource type="PackedScene" uid="uid://4q7sfscgyqxx" path="res://nodes/objects/content/books.tscn" id="5_cb5hv"]
@@ -48,7 +48,7 @@ marker = NodePath("marker")
 items_list = Array[PackedScene]([ExtResource("2_hg1e1"), ExtResource("3_pucdj"), ExtResource("4_xo6j7"), ExtResource("5_cb5hv"), ExtResource("6_4u6wv"), ExtResource("7_2uljq"), ExtResource("8_peaad")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2062593142]
-position = Vector2(0, -78)
+position = Vector2(96, 32)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_gci06")
 
@@ -58,9 +58,9 @@ position = Vector2(16, 0)
 
 [node name="Button" type="Button" parent="." unique_id=1137004351]
 offset_left = -144.0
-offset_top = -198.0
+offset_top = -176.0
 offset_right = 136.0
-offset_bottom = 10.0
+offset_bottom = 32.0
 flat = true
 metadata/_edit_use_anchors_ = true
 
@@ -73,9 +73,9 @@ collision_mask = 3
 shape = SubResource("RectangleShape2D_td2lr")
 
 [node name="package_number" type="Label" parent="." unique_id=593479868]
-offset_top = -78.0
+offset_top = -72.0
 offset_right = 40.0
-offset_bottom = -55.0
+offset_bottom = -49.0
 metadata/_edit_use_anchors_ = true
 
 [node name="marker" type="Sprite2D" parent="." unique_id=1687077137]

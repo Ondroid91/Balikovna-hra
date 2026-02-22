@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://pskyuno2h3sm" path="res://scripts/objects/package.gd" id="1_lxfn3"]
 [ext_resource type="PackedScene" uid="uid://cwlouw0eosvwu" path="res://nodes/objects/content/bottle.tscn" id="2_gjo1c"]
-[ext_resource type="Texture2D" uid="uid://cgrskdk51m2y8" path="res://assets/hotova_krabice.png" id="2_hkf07"]
-[ext_resource type="Texture2D" uid="uid://cps32f7f6hlkt" path="res://assets/krabice_ptevrena_.png" id="3_gjo1c"]
+[ext_resource type="Texture2D" uid="uid://bh1aa6jn4t4vp" path="res://assets/hotova_krabice.png" id="2_hkf07"]
+[ext_resource type="Texture2D" uid="uid://csvfofbq0er82" path="res://assets/krabice_ptevrena_.png" id="3_gjo1c"]
 [ext_resource type="PackedScene" uid="uid://bang5m5lddygi" path="res://nodes/objects/content/bomb.tscn" id="4_8huq6"]
 [ext_resource type="PackedScene" uid="uid://ck5y32o78tc8r" path="res://nodes/objects/content/regular_content.tscn" id="4_hnhxo"]
 [ext_resource type="PackedScene" uid="uid://d3ream4h0dg5x" path="res://nodes/objects/content/item_2.tscn" id="5_7w8eq"]
@@ -48,7 +48,7 @@ marker = NodePath("marker")
 items_list = Array[PackedScene]([ExtResource("2_gjo1c"), ExtResource("4_hnhxo"), ExtResource("4_8huq6"), ExtResource("5_7w8eq"), ExtResource("6_wir1l"), ExtResource("7_g75bu"), ExtResource("8_onf1p")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2062593142]
-position = Vector2(2.0000153, -62)
+position = Vector2(104, 48)
 scale = Vector2(0.3, 0.3)
 sprite_frames = SubResource("SpriteFrames_5q1qn")
 
@@ -57,9 +57,9 @@ visible = false
 pacakge = NodePath("..")
 
 [node name="Button" type="Button" parent="." unique_id=1137004351]
-offset_left = -160.0
+offset_left = -152.0
 offset_top = -184.0
-offset_right = 140.0
+offset_right = 148.0
 offset_bottom = 36.0
 flat = true
 
@@ -72,10 +72,9 @@ collision_mask = 3
 shape = SubResource("RectangleShape2D_td2lr")
 
 [node name="package_number" type="Label" parent="." unique_id=593479868]
-offset_left = 64.0
-offset_top = -104.0
-offset_right = 104.0
-offset_bottom = -81.0
+offset_top = -56.0
+offset_right = 40.0
+offset_bottom = -33.0
 
 [node name="marker" type="Sprite2D" parent="." unique_id=636020272]
 visible = false

@@ -59,6 +59,15 @@ func shift_ends_screen() -> void:
 	score_board.set_ending_name("Your shift ends")
 	score_board.show_score()
 
+func move_score_board() -> void:
+	var tween := create_tween()
+	tween.tween_property(
+		self,
+		"global_position",
+		Vector2(960, 540),
+		0.25
+		).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT)
+
 func make_score_background_light(speed : float) -> void:
 	score_background.modulate.a = 1.0
 	var tween := create_tween()
