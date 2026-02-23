@@ -73,6 +73,7 @@ var danger_packages : int = 0
 var incorrectly_removed_packages : int = 0
 var correctly_removed_packages : int = 0
 var final_damage : int = 0
+var first_bomb : bool = true
 
 func _ready() -> void:
 	bomb_expoded.connect(func(): alive = false)

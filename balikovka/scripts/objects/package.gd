@@ -115,7 +115,9 @@ func spawn_item_in_package() -> void:
 		ran_item = 12
 	elif chance_to_bomb == 10:
 		ran_item = 11
-	if gl.sended_packages == 3: ran_item = 10
+	if gl.sended_packages == 3 and gl.first_bomb: 
+		ran_item = 11
+		gl.first_bomb = false
 	var new_item = items_list[ran_item].instantiate()
 	new_item.visible = false
 	new_item.pacakge = self
