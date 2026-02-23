@@ -111,42 +111,42 @@ texture = ExtResource("2_4mmbl")
 
 [node name="page_button" type="Button" parent="." unique_id=1089812647]
 layout_mode = 0
-offset_left = 1296.0
-offset_top = 440.0
-offset_right = 1376.0
-offset_bottom = 472.0
+offset_left = 1476.0
+offset_top = 371.0
+offset_right = 1588.0
+offset_bottom = 409.0
 flat = true
 
 [node name="page_button2" type="Button" parent="." unique_id=215092386]
 layout_mode = 0
-offset_left = 1296.0
-offset_top = 480.0
-offset_right = 1384.0
-offset_bottom = 504.0
+offset_left = 1480.0
+offset_top = 422.0
+offset_right = 1608.0
+offset_bottom = 463.0
 flat = true
 
 [node name="page_button3" type="Button" parent="." unique_id=1691528500]
 layout_mode = 0
-offset_left = 1296.0
-offset_top = 512.0
-offset_right = 1376.0
-offset_bottom = 536.0
+offset_left = 1481.0
+offset_top = 469.0
+offset_right = 1590.0
+offset_bottom = 513.0
 flat = true
 
 [node name="page_button4" type="Button" parent="." unique_id=1050915808]
 layout_mode = 0
-offset_left = 1296.0
-offset_top = 544.0
-offset_right = 1368.0
-offset_bottom = 576.0
+offset_left = 1479.0
+offset_top = 524.0
+offset_right = 1585.0
+offset_bottom = 567.0
 flat = true
 
 [node name="page_button5" type="Button" parent="." unique_id=510542292]
 layout_mode = 0
-offset_left = 1288.0
-offset_top = 576.0
-offset_right = 1360.0
-offset_bottom = 608.0
+offset_left = 1476.0
+offset_top = 574.0
+offset_right = 1569.0
+offset_bottom = 615.0
 disabled = true
 flat = true
 

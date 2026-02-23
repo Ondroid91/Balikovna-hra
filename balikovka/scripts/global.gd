@@ -17,7 +17,6 @@ var forbbiten_item_damage : int = 10
 var max_damage : int = 200
 var allowed_radiation_level = 20
 var all_package_numbers : Array[String] = [
-	"",
 	"S321",
 	"45S6",
 	"D421",
@@ -60,7 +59,7 @@ var correct_wire_order2 : Array[String] = [
 ]
 
 # chances
-var chance_to_damaged : int = 5
+var chance_to_damaged : int = 3
 
 #signals
 signal bomb_expoded

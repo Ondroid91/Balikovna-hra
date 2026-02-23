@@ -95,36 +95,6 @@ bomb_timer = NodePath("Timer")
 display_timer = NodePath("display")
 ticking_snd = NodePath("ticking")
 
-[node name="pack" type="Button" parent="." unique_id=1449984356]
-offset_left = -192.0
-offset_top = -160.0
-offset_right = 192.0
-offset_bottom = 168.0
-flat = true
-metadata/_edit_use_anchors_ = true
-
-[node name="red_wire" type="Button" parent="." unique_id=501055227]
-offset_left = -29.0
-offset_top = -38.0
-offset_right = 43.0
-offset_bottom = -23.0
-flat = true
-
-[node name="blue_wire" type="Button" parent="." unique_id=465145628]
-offset_left = -29.0
-offset_top = -24.0
-offset_right = 43.0
-offset_bottom = -12.0
-flat = true
-metadata/_edit_use_anchors_ = true
-
-[node name="green_wire" type="Button" parent="." unique_id=1990390157]
-offset_left = -27.0
-offset_top = -11.0
-offset_right = 46.0
-offset_bottom = 6.0
-flat = true
-
 [node name="Timer" type="Timer" parent="." unique_id=343352790]
 wait_time = 10.0
 
@@ -162,3 +132,31 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ticking" type="AudioStreamPlayer" parent="." unique_id=617763594]
 stream = ExtResource("10_vr861")
+
+[node name="pack" type="Button" parent="." unique_id=1449984356]
+offset_left = -192.0
+offset_top = -160.0
+offset_right = 192.0
+offset_bottom = 168.0
+flat = true
+
+[node name="red_wire" type="Button" parent="." unique_id=501055227]
+offset_left = -29.0
+offset_top = -38.0
+offset_right = 43.0
+offset_bottom = -23.0
+flat = true
+
+[node name="blue_wire" type="Button" parent="." unique_id=465145628]
+offset_left = -29.0
+offset_top = -24.0
+offset_right = 43.0
+offset_bottom = -12.0
+flat = true
+
+[node name="green_wire" type="Button" parent="." unique_id=1990390157]
+offset_left = -27.0
+offset_top = -6.0
+offset_right = 46.0
+offset_bottom = 49.0
+flat = true

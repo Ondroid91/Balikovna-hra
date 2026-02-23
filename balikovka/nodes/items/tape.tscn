@@ -20,5 +20,6 @@ offset_left = -168.0
 offset_top = -160.0
 offset_right = 160.0
 offset_bottom = 168.0
+mouse_filter = 1
 action_mode = 0
 flat = true

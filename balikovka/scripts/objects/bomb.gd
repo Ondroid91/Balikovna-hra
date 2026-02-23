@@ -45,6 +45,7 @@ func _ready() -> void:
 	blue_wire_button.pressed.connect(func(): cut_wire(blue_wire_button))
 	green_wire_button.pressed.connect(func(): cut_wire(green_wire_button))
 	bomb_timer.timeout.connect(bomb_explode)
+
 	pacakge = self.get_parent()
 
 	if correct_order == "order1":
