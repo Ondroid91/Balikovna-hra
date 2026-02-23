@@ -57,7 +57,7 @@ marker = NodePath("marker")
 open_snd = NodePath("open")
 close_snd = NodePath("close")
 drop_snd = NodePath("drop")
-items_list = Array[PackedScene]([ExtResource("2_hg1e1"), ExtResource("3_pucdj"), ExtResource("4_xo6j7"), ExtResource("5_cb5hv"), ExtResource("6_4u6wv"), ExtResource("7_2uljq"), ExtResource("8_peaad"), ExtResource("9_peaad"), ExtResource("10_krv6q"), ExtResource("11_8bn2w"), ExtResource("12_3qc8e"), ExtResource("13_b3ky3"), ExtResource("14_ksl7p")])
+items_list = Array[PackedScene]([ExtResource("2_hg1e1"), ExtResource("3_pucdj"), ExtResource("5_cb5hv"), ExtResource("6_4u6wv"), ExtResource("7_2uljq"), ExtResource("8_peaad"), ExtResource("9_peaad"), ExtResource("10_krv6q"), ExtResource("12_3qc8e"), ExtResource("13_b3ky3"), ExtResource("14_ksl7p"), ExtResource("4_xo6j7"), ExtResource("11_8bn2w")])
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2062593142]
 position = Vector2(144, 48)

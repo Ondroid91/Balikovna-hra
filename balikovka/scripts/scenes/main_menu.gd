@@ -16,6 +16,7 @@ func _ready() -> void:
 		print("back to main"))
 	play.pressed.connect(func():
 		get_tree().paused = false
+		gl.reset_variables()
 		main_scene.set_scene("game")
 	)
 	play.mouse_entered.connect(func():

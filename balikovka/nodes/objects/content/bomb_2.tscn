@@ -110,7 +110,7 @@ sprite_frames = SubResource("SpriteFrames_vka8k")
 
 [node name="wire2" type="AnimatedSprite2D" parent="." unique_id=316624240]
 position = Vector2(7, 16)
-scale = Vector2(0.23, 0.23)
+scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_uonrw")
 
 [node name="wire3" type="AnimatedSprite2D" parent="." unique_id=693927480]

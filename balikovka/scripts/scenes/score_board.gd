@@ -20,6 +20,7 @@ func _ready() -> void:
 	conntinue.pressed.connect(func():
 		get_tree().paused = false
 		main_scene.set_scene("game")
+		gl.reset_variables()
 	)
 
 func show_score() -> void:

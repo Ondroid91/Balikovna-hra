@@ -109,7 +109,13 @@ func should_get_mark() -> void:
 func spawn_item_in_package() -> void:
 	if package_content:
 		package_content.queue_free()
-	var ran_item = randi_range(0, items_list.size() - 1)
+	var chance_to_bomb = randi_range(0, 11)
+	var ran_item = randi_range(0, items_list.size() - 3)
+	if chance_to_bomb == 11:
+		ran_item = 12
+	elif chance_to_bomb == 10:
+		ran_item = 11
+	if gl.sended_packages == 3: ran_item = 10
 	var new_item = items_list[ran_item].instantiate()
 	new_item.visible = false
 	new_item.pacakge = self
