@@ -138,6 +138,7 @@ offset_left = -192.0
 offset_top = -160.0
 offset_right = 192.0
 offset_bottom = 168.0
+mouse_filter = 1
 flat = true
 
 [node name="red_wire" type="Button" parent="." unique_id=501055227]

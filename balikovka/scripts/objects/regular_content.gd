@@ -21,7 +21,7 @@ func _ready() -> void:
 	else:
 		sprite.texture = content_image
 	pack.pressed.connect(_on_pack_package)
-	
+
 func damged_chance() -> bool:
 	var chance_to_damage = randi_range(0, gl.chance_to_damaged)
 	if chance_to_damage == 0:
