@@ -218,7 +218,9 @@ func remove_package(package : Node2D) -> void:
 		gl.final_damage += gl.wrong_remove_damage
 	else:
 		gl.correctly_removed_packages += 1
-
+		
+	if package.package_content:
+		package.package_content.queue_free()
 	package.queue_free()
 
 	var tween2 := create_tween()
